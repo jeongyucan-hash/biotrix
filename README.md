@@ -18,3 +18,6 @@ Brand prototype for BIOTRIX — Bio + Matrix.
 
 ## Prototype status
 The B2B contact button intentionally shows a prototype notice until verified contact information is finalized.
+
+## Preview branch
+- `prototype/biotrix-brand-v1`

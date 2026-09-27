@@ -39,7 +39,7 @@ export default async function Commerce(){
       <section className="hqPanel">
         <div className="panelHead">
           <h2>Commerce Control Center</h2>
-          <a className="hqButton" href="/shop">Open Shop Preview</a>
+          <div className="panelActions"><a className="hqButton" href="/products">Manage Products</a><a className="hqButton" href="/shop">Open Shop Preview</a></div>
         </div>
         <div className="hqList">
           <div><b>Products</b><span>상품·SKU·판매상태</span></div>

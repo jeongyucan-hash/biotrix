@@ -27,3 +27,6 @@ The B2B contact button intentionally shows a prototype notice until verified con
 
 ## Preview probe
 - Trigger after Vercel reconnect.
+
+## Pro upgrade probe
+- Triggered after Vercel Pro upgrade.

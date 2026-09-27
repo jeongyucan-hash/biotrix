@@ -75,3 +75,46 @@
 .taskPriority{display:inline-block;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#c7ff5a}
 .countBadge{font-size:11px;color:#7f8da3;font-weight:500}
 @media(max-width:640px){.taskCreate{grid-template-columns:1fr}.taskCard form{grid-template-columns:1fr}}
+
+
+/* HQ vNext */
+.briefBox{background:#0d1626;border:1px solid #26344c;border-radius:14px;padding:18px}
+.briefDate{font-size:11px;color:#77869b;letter-spacing:.08em}
+.briefBox h3{margin:8px 0 8px;font-size:18px}
+.briefBox p{color:#92a0b3;line-height:1.6}
+.briefMetrics{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:16px}
+.briefMetrics span{background:#101c2f;border:1px solid #25334a;border-radius:10px;padding:10px;font-size:12px;color:#8190a5}
+.briefMetrics b{display:block;color:#eef3f8;margin-top:5px;font-size:14px}
+.alertList,.approvalList,.knowledgeList,.poList{display:grid;gap:10px}
+.alertCard,.approvalCard,.knowledgeList article{background:#0d1626;border:1px solid #25334a;border-radius:13px;padding:16px}
+.alertCard h3,.approvalCard h3,.knowledgeList h3{margin:8px 0;font-size:16px}
+.alertCard p,.approvalCard p,.knowledgeList p{margin:0;color:#8d9caf;line-height:1.55;font-size:13px}
+.approvalMeta{display:flex;justify-content:space-between;gap:12px;font-size:10px;letter-spacing:.08em;color:#7e8da3;text-transform:uppercase}
+.approvalFacts{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.approvalFacts span{background:#111e31;border:1px solid #293750;border-radius:8px;padding:7px 9px;color:#8291a6;font-size:11px}
+.approvalFacts b{color:#eef3f8}
+.approvalActions{display:flex;gap:8px;margin-top:14px}
+.approvalActions form{margin:0}
+.approvalActions button,.approveButton,.rejectButton{border:1px solid #33415a;background:#17243a;color:#eaf0f7;border-radius:8px;padding:8px 12px;cursor:pointer}
+.approveButton{border-color:#526b37;color:#dfffa2}
+.rejectButton{border-color:#603e45;color:#ffc3cb}
+.approvalNote input,.inlineForm input,.dataForm input,.stackForm input,.stackForm textarea{width:100%;background:#0c1525;color:#eef3f8;border:1px solid #2a3851;border-radius:9px;padding:10px 12px}
+.approvalNote{margin-top:12px}
+.inlineForm{display:grid;grid-template-columns:140px auto;gap:8px;margin-top:14px}
+.dataForm{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.dataForm.compact{grid-template-columns:1fr 1fr}
+.stackForm{display:grid;gap:10px;margin-bottom:18px}
+.stackForm textarea{resize:vertical;font:inherit}
+.supplierTable,.trendTable{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.supplierTable>* ,.trendTable>*{padding:11px 8px;border-top:1px solid #253149;font-size:12px}
+.supplierTable span,.trendTable span{color:#8b99ac}
+.poRow{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:13px 0;border-top:1px solid #253149}
+.poRow strong{display:block;font-size:13px}
+.poRow span{display:block;margin-top:4px;color:#7f8ea3;font-size:11px}
+.financeHero{min-height:150px;display:flex;flex-direction:column;justify-content:center}
+.financeHero strong{font-size:38px;letter-spacing:-.04em}
+.financeHero span{margin-top:8px;color:#8290a3;font-size:12px}
+.knowledgeList{margin-top:18px}
+.knowledgeList article{padding:15px}
+@media(max-width:900px){.dataForm{grid-template-columns:1fr 1fr}.supplierTable,.trendTable{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.briefMetrics,.dataForm,.dataForm.compact,.inlineForm{grid-template-columns:1fr}}

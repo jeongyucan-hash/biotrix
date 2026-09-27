@@ -21,3 +21,6 @@ The B2B contact button intentionally shows a prototype notice until verified con
 
 ## Preview branch
 - `prototype/biotrix-brand-v1`
+
+## Preview check
+- Re-triggered after Vercel project cleanup.

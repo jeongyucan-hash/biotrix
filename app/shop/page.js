@@ -1,0 +1,6 @@
+import Link from "next/link";
+export const metadata={title:"Shop"};
+const categories=[["Fresh","과일·채소 등 신선식품"],["Wellness","일상 건강관리 제품"],["Beauty","기능·사용경험 기반 뷰티"]];
+export default function Shop(){
+return <><header className="siteHeader"><nav className="container nav"><Link className="brand" href="/">BIOTRIX</Link><div className="navLinks"><Link href="/shop">Shop</Link><Link href="/account" className="chip">My</Link><Link href="/cart" className="chip">Cart</Link></div></nav></header><main><section className="container pageHead"><div className="eyebrow">SHOP</div><h1>Curated for everyday life.</h1><p className="muted">실제 상품 데이터 연결 전의 Commerce v2 UI입니다.</p></section><section className="container section"><div className="grid3">{categories.map(([name,desc])=><article className="card" key={name}><div className="eyebrow">{name.toUpperCase()}</div><h2>{name}</h2><p className="muted">{desc}</p></article>)}</div></section><section className="container section"><h2 className="sectionTitle">New Arrivals</h2><p className="muted">상품 DB 연결 후 이 영역은 자동 렌더링됩니다.</p><div className="grid3">{[1,2,3].map(i=><article className="card productCard" key={i}><div className="productImage">상품 이미지</div><div className="productBody"><small>상품 등록 대기</small><h3>Product {i}</h3><p className="muted">가격·재고·배송정보 연결 예정</p></div></article>)}</div></section></main></>
+}

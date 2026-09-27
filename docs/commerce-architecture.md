@@ -162,3 +162,7 @@ Order-line contribution margin should be derivable from:
 - Preview: commerce-nextjs branch
 - Vercel handles preview deployments
 - Production promotion only after auth, DB and checkout testing
+
+## Deployment bootstrap
+
+This branch is the Next.js commerce application branch used for Vercel preview and production promotion.

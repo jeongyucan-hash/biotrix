@@ -483,6 +483,8 @@ export async function runFounderRoundtable(formData) {
       disagreements: synthesisResult.object.disagreements,
       unknowns: synthesisResult.object.unknowns,
       proposed_actions: synthesisResult.object.proposed_actions,
+      recommendation: synthesisResult.object.recommendation,
+      recommendation_rationale: synthesisResult.object.rationale,
       status: "review",
     });
 

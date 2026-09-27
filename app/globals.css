@@ -294,3 +294,95 @@
 .researchRuntime.ready{border-color:#40593a!important;color:#c7ff5a}
 .researchRuntime.off{border-color:#4b3b40!important;color:#b79ba4}
 @media(max-width:700px){.researchPrep{grid-template-columns:1fr}.researchJobSummary{grid-template-columns:1fr 1fr}}
+
+
+/* ChatGPT Work Queue */
+.workflowSteps{display:grid;gap:10px}
+.workflowSteps>div{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;padding:10px;background:#0d1626;border:1px solid #25334a;border-radius:10px}
+.workflowSteps b{width:28px;height:28px;border-radius:8px;background:#17253b;color:#c7ff5a;display:grid;place-items:center;font-size:10px}
+.workflowSteps span{color:#93a0b1;font-size:11px;line-height:1.5}
+.workQueue{display:grid;gap:14px}
+.workCard{background:#0d1626;border:1px solid #25334a;border-radius:14px;padding:16px}
+.workCardHead{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.workCard h3{margin:8px 0 5px;font-size:16px}
+.workCard p{margin:0;color:#8b99aa;font-size:11px;line-height:1.55}
+.miniButton{border:1px solid #40516e;background:#17243a;color:#d9e5f1;border-radius:8px;padding:8px 10px;font-size:9px;cursor:pointer;white-space:nowrap}
+.promptPacket{margin-top:12px;background:#0a1220;border:1px solid #293750;border-radius:10px;padding:10px}
+.promptPacket summary{cursor:pointer;color:#b9c5d4;font-size:10px}
+.promptPacket pre{white-space:pre-wrap;word-break:break-word;color:#8594a8;font-size:10px;line-height:1.55;margin:10px 0 0}
+.resultForm{display:grid;gap:8px;margin-top:12px}
+.resultForm textarea,.workStatusForm select{background:#0b1423;color:#eef3f8;border:1px solid #2b3952;border-radius:8px;padding:9px;font:inherit}
+.resultForm button,.workStatusForm button,.acceptButton{border:1px solid #40516e;background:#17243a;color:#e3edf6;border-radius:8px;padding:9px 11px;font-size:10px;cursor:pointer}
+.workResult{margin-top:12px;background:#101b2c;border:1px solid #30415e;border-radius:10px;padding:12px}
+.workResultHead{display:flex;justify-content:space-between;gap:10px;margin-bottom:8px}
+.workResultHead strong{font-size:11px}
+.workResultHead span{color:#738198;font-size:9px}
+.workResult p{white-space:pre-wrap;max-height:240px;overflow:auto}
+.workResult form{margin-top:10px}
+.acceptButton{border-color:#526b37!important;background:#18251d!important;color:#dfff9e!important}
+.workStatusForm{display:flex;justify-content:flex-end;gap:7px;margin-top:10px}
+
+/* R&D Command Center */
+.rdCounters{display:flex;gap:6px;flex-wrap:wrap}
+.rdCounters span{padding:6px 8px;border-radius:999px;background:#111d30;border:1px solid #2a3850;color:#8290a5;font-size:9px}
+.rdOverview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:12px}
+.rdOverview>div{background:#0d1626;border:1px solid #25334a;border-radius:10px;padding:10px;min-width:0}
+.rdOverview span{display:block;color:#748399;font-size:9px;text-transform:uppercase;letter-spacing:.06em}
+.rdOverview b{display:block;margin-top:5px;color:#dde6ef;font-size:10px;line-height:1.45;word-break:break-word}
+.rdStatusForm{display:flex;gap:8px;margin-bottom:14px}
+.rdStatusForm select,.compactStack input,.compactStack select,.compactStack textarea,.rdExperiment input,.rdExperiment select{background:#0b1423;color:#eef3f8;border:1px solid #2b3952;border-radius:8px;padding:9px;font:inherit}
+.rdStatusForm button,.compactStack button,.rdExperiment button{border:1px solid #40516e;background:#17243a;color:#e3edf6;border-radius:8px;padding:9px 11px;font-size:10px;cursor:pointer}
+.rdColumns{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.rdColumns>div{background:#0b1423;border:1px solid #26354d;border-radius:12px;padding:13px}
+.rdColumns h3{margin:0 0 10px;font-size:13px}
+.compactStack{display:grid;gap:7px}
+.rdList{display:grid;gap:8px;margin-top:10px}
+.rdList>div{background:#0f1b2d;border:1px solid #2a3952;border-radius:9px;padding:10px}
+.rdList span{display:block;color:#c7ff5a;font-size:8px;text-transform:uppercase;letter-spacing:.08em}
+.rdList b{display:block;margin-top:4px;font-size:11px}
+.rdList small{display:block;margin-top:5px;color:#748399;font-size:9px}
+.rdExperiment form{display:grid;grid-template-columns:110px 1fr auto;gap:6px;margin-top:9px}
+
+/* Growth Lab */
+.growthGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.growthCard{background:#0d1626;border:1px solid #25334a;border-radius:13px;padding:14px}
+.growthCard h3{margin:8px 0 6px;font-size:15px}
+.growthCard>p{margin:0;color:#8997a8;font-size:11px;line-height:1.55;min-height:35px}
+.growthMetrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:12px}
+.growthMetrics>div{background:#111d30;border:1px solid #293750;border-radius:8px;padding:8px}
+.growthMetrics span{display:block;color:#748399;font-size:8px;text-transform:uppercase}
+.growthMetrics b{display:block;margin-top:4px;font-size:10px;color:#edf3fa}
+.growthUpdateForm{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-top:12px}
+.growthUpdateForm select,.growthUpdateForm input,.growthUpdateForm textarea{background:#0b1423;color:#eef3f8;border:1px solid #2b3952;border-radius:8px;padding:9px;font:inherit}
+.growthUpdateForm textarea{grid-column:1/-1}
+.growthUpdateForm button{grid-column:1/-1;border:1px solid #40516e;background:#17243a;color:#e3edf6;border-radius:8px;padding:9px;cursor:pointer}
+
+/* Advisory Desk */
+.advisoryList{display:grid;gap:12px}
+.advisoryCard{background:#0d1626;border:1px solid #25334a;border-radius:13px;padding:15px}
+.advisoryCard h3{margin:8px 0 6px;font-size:15px}
+.advisoryCard>p{margin:0;color:#8391a4;font-size:11px;line-height:1.55}
+.advisoryCard .questionText{color:#e1e8f0;font-size:12px;margin-bottom:7px}
+.answerList{display:grid;gap:8px;margin-top:12px}
+.answerCard{background:#101c2e;border:1px solid #30415d;border-radius:10px;padding:11px}
+.answerCard>div:first-child{display:flex;justify-content:space-between;gap:10px}
+.answerCard b{font-size:10px}
+.answerCard span{color:#75849a;font-size:9px}
+.answerCard p{white-space:pre-wrap;margin:8px 0 0;color:#a9b5c4;font-size:10px;line-height:1.55}
+.answerCard form{margin-top:9px}
+.acceptedTag{display:inline-block!important;margin-top:9px;padding:5px 7px;border:1px solid #40593a;border-radius:999px;background:#17251b;color:#c7ff5a!important}
+
+@media(max-width:1000px){
+  .rdOverview{grid-template-columns:1fr 1fr}
+  .rdColumns{grid-template-columns:1fr}
+  .growthGrid{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+  .workCardHead{flex-direction:column}
+  .rdOverview{grid-template-columns:1fr}
+  .rdStatusForm{display:grid}
+  .rdExperiment form{grid-template-columns:1fr}
+  .growthMetrics{grid-template-columns:1fr 1fr}
+  .growthUpdateForm{grid-template-columns:1fr}
+  .growthUpdateForm textarea,.growthUpdateForm button{grid-column:1}
+}

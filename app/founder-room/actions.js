@@ -140,3 +140,21 @@ export async function decidePacket(formData){
   revalidatePath("/tasks");
   revalidatePath("/");
 }
+
+
+export async function updateAIRuntime(formData){
+  const { supabase,admin }=await getAdminContext();
+  if(admin.role!=="owner") throw new Error("owner_required");
+
+  const enabled=String(formData.get("enabled") || "false")==="true";
+  const maxCost=Number(formData.get("max_cost_usd") || 0);
+
+  if(!Number.isFinite(maxCost) || maxCost<0 || maxCost>25) return;
+
+  await supabase.rpc("set_ai_runtime_control",{
+    p_enabled:enabled,
+    p_max_cost_usd:maxCost,
+  });
+
+  revalidatePath("/founder-room");
+}

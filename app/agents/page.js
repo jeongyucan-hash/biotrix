@@ -1,6 +1,6 @@
 import HQShell from "../components/HQShell";
 import { createClient } from "../../lib/supabase/server";
-import { runInventoryAgent } from "./actions";
+import { approveProposal, rejectProposal, runInventoryAgent } from "./actions";
 
 export const metadata={title:"AI Agents · BIOTRIX HQ",robots:{index:false,follow:false}};
 
@@ -21,7 +21,7 @@ export default async function Agents(){
   const [{ data: approvals }, { data: runs }] = await Promise.all([
     supabase
       .from("approvals")
-      .select("id,title,description,requested_by,status,created_at")
+      .select("id,action_type,title,description,requested_by,status,payload,created_at")
       .eq("status","pending")
       .order("created_at",{ascending:false})
       .limit(8),
@@ -58,13 +58,38 @@ export default async function Agents(){
             <span>{approvals?.length || 0} pending</span>
           </div>
           {approvals?.length ? (
-            <div className="hqList">
-              {approvals.map((item)=>(
-                <div key={item.id}>
-                  <b>{item.title}</b>
-                  <span>{item.requested_by || "Agent"}</span>
-                </div>
-              ))}
+            <div className="approvalList">
+              {approvals.map((item)=>{
+                const available = item.payload?.available_stock;
+                const safety = item.payload?.safety_stock;
+                return (
+                  <article className="approvalCard" key={item.id}>
+                    <div className="approvalMeta">
+                      <span>{item.requested_by || "Agent"}</span>
+                      <span>{item.action_type}</span>
+                    </div>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                    {item.action_type === "inventory_restock" && (
+                      <div className="approvalFacts">
+                        <span>가용재고 <b>{available ?? "—"}</b></span>
+                        <span>안전재고 <b>{safety ?? "—"}</b></span>
+                        <span>SKU <b>{item.payload?.sku || "—"}</b></span>
+                      </div>
+                    )}
+                    <div className="approvalActions">
+                      <form action={approveProposal}>
+                        <input type="hidden" name="id" value={item.id} />
+                        <button className="approveButton" type="submit">승인</button>
+                      </form>
+                      <form action={rejectProposal}>
+                        <input type="hidden" name="id" value={item.id} />
+                        <button className="rejectButton" type="submit">거절</button>
+                      </form>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           ) : (
             <div className="hqEmpty">

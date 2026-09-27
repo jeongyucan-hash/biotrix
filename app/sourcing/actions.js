@@ -114,3 +114,14 @@ export async function promoteCandidate(formData){
   revalidatePath("/sourcing");
   revalidatePath("/founder-room");
 }
+
+
+export async function prepareResearchJob(formData){
+  const { supabase }=await getAdmin();
+  const missionId=String(formData.get("mission_id") || "");
+  if(!missionId) return;
+
+  await supabase.rpc("prepare_sourcing_research_job",{p_mission_id:missionId});
+
+  revalidatePath("/sourcing");
+}

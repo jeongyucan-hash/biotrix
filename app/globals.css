@@ -276,3 +276,21 @@
 .aiRuntimeControl>p{margin:10px 0 0;color:#738198;font-size:9px;line-height:1.5}
 @media(max-width:900px){.aiRuntimeControl form{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.aiRuntimeControl form{grid-template-columns:1fr}}
+
+
+/* Sourcing Research Prep */
+.researchPrep{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:start;background:#0b1423;border:1px solid #2a3851;border-radius:12px;padding:14px;margin-bottom:12px}
+.researchPrep>div>strong{display:block;font-size:12px}
+.researchPrep>div>p{margin:5px 0 0;color:#7d8b9f;font-size:10px;line-height:1.5}
+.researchJobSummary{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.researchJobSummary>div{background:#111d30;border:1px solid #293750;border-radius:8px;padding:8px}
+.researchJobSummary span{display:block;font-size:9px;color:#75849a}
+.researchJobSummary b{display:block;margin-top:4px;font-size:11px;color:#edf3fa}
+.researchJobSummary details{grid-column:1/-1;background:#0d1626;border:1px solid #293750;border-radius:8px;padding:9px}
+.researchJobSummary summary{cursor:pointer;font-size:10px;color:#c2cddd}
+.queryList{display:grid;gap:6px;margin-top:8px}
+.queryList span{padding:7px 8px;border-radius:7px;background:#121f32;color:#8f9fb4;font-size:10px}
+.researchRuntime{grid-column:1/-1!important}
+.researchRuntime.ready{border-color:#40593a!important;color:#c7ff5a}
+.researchRuntime.off{border-color:#4b3b40!important;color:#b79ba4}
+@media(max-width:700px){.researchPrep{grid-template-columns:1fr}.researchJobSummary{grid-template-columns:1fr 1fr}}

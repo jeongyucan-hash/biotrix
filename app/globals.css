@@ -65,3 +65,13 @@
 .loginCard button{margin-top:6px;padding:13px 14px;border:0;border-radius:10px;background:#c7ff5a;color:#121927;font-weight:900;cursor:pointer}
 .loginCard button:disabled{opacity:.55;cursor:wait}
 .loginMessage{margin-top:16px;padding:12px 14px;border-radius:10px;background:#17243a;color:#bdc8d8;font-size:13px}
+
+.taskCreate{display:grid;grid-template-columns:minmax(0,1fr) 160px auto;gap:10px}
+.taskCreate input,.taskCreate select,.taskCard select{background:#0c1525;color:#eef3f8;border:1px solid #2a3851;border-radius:9px;padding:10px 12px}
+.taskCard{background:#111c2f;border:1px solid #273650;border-radius:12px;padding:13px;margin-bottom:10px}
+.taskCard strong{display:block;margin:8px 0 12px}
+.taskCard form{display:grid;grid-template-columns:1fr auto;gap:8px}
+.taskCard button{border:1px solid #33425d;background:#18263d;color:#fff;border-radius:8px;padding:8px 10px}
+.taskPriority{display:inline-block;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#c7ff5a}
+.countBadge{font-size:11px;color:#7f8da3;font-weight:500}
+@media(max-width:640px){.taskCreate{grid-template-columns:1fr}.taskCard form{grid-template-columns:1fr}}

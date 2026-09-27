@@ -6,6 +6,7 @@ const items = [
   ["Dashboard","/"],
   ["Tasks","/tasks"],
   ["Commerce","/commerce"],
+  ["Procurement","/procurement"],
   ["Suppliers","/suppliers"],
   ["Finance","/finance"],
   ["Knowledge","/knowledge"],
@@ -31,6 +32,7 @@ export default async function HQShell({ active, title, eyebrow="BIOTRIX HQ", chi
       <aside className="hqSide">
         <div className="hqBrand">BIOTRIX HQ</div>
         <div className="hqSub">Company Operating System</div>
+
         <nav className="hqMenu">
           {items.map(([label, href]) => (
             <Link key={label} href={href} className={active===label ? "active" : ""}>
@@ -38,10 +40,13 @@ export default async function HQShell({ active, title, eyebrow="BIOTRIX HQ", chi
             </Link>
           ))}
         </nav>
+
         <div className="hqSideFoot">
-          <span className="statusDot"></span> {admin.role.toUpperCase()} · Supabase
+          <span className="statusDot"></span>
+          {admin.role.toUpperCase()} · Supabase
         </div>
       </aside>
+
       <main className="hqMain">
         <header className="hqTop">
           <div>
@@ -52,6 +57,7 @@ export default async function HQShell({ active, title, eyebrow="BIOTRIX HQ", chi
             <span className="hqBadge">{user.email}</span>
           </div>
         </header>
+
         {children}
       </main>
     </div>

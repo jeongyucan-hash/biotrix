@@ -1,0 +1,3 @@
+import HQShell from "../components/HQShell";
+export const metadata={title:"Tasks · BIOTRIX HQ",robots:{index:false,follow:false}};
+export default function Tasks(){return <HQShell active="Tasks" title="Tasks"><section className="hqPanel"><div className="panelHead"><h2>Company Task Board</h2><button className="hqButton">+ New Task</button></div><div className="kanban"><div><h3>To do</h3><p>등록된 업무 없음</p></div><div><h3>In progress</h3><p>진행 중 업무 없음</p></div><div><h3>Review</h3><p>검토 업무 없음</p></div><div><h3>Done</h3><p>완료 업무 없음</p></div></div></section></HQShell>}

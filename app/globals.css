@@ -51,3 +51,17 @@
 @media(max-width:1100px){.hqCards,.agentGrid{grid-template-columns:repeat(2,1fr)}.loopRow{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:820px){.hqShell{grid-template-columns:1fr}.hqSide{position:static;height:auto;border-right:0;border-bottom:1px solid #202a3d}.hqMenu{grid-template-columns:repeat(4,1fr);margin-top:20px}.hqSideFoot{display:none}.hqGrid2{grid-template-columns:1fr}.kanban{grid-template-columns:1fr 1fr}.hqMain{padding:22px}}
 @media(max-width:560px){.hqCards,.agentGrid,.kanban{grid-template-columns:1fr}.hqMenu{grid-template-columns:1fr 1fr}.loopRow{grid-template-columns:1fr 1fr}.hqTable{grid-template-columns:1fr 1fr}.hqTop{flex-direction:column}}
+
+
+/* HQ Login */
+.loginShell{min-height:100vh;display:grid;place-items:center;background:#09111f;padding:24px;color:#eef3f8}
+.loginCard{width:min(100%,460px);background:#101a2b;border:1px solid #25324a;border-radius:22px;padding:34px}
+.loginCard h1{font-size:34px;letter-spacing:-.04em;margin:10px 0 12px}
+.loginCard p{color:#8f9cae;line-height:1.6}
+.loginCard form{display:grid;gap:10px;margin-top:24px}
+.loginCard label{font-size:13px;color:#a8b4c5}
+.loginCard input{width:100%;padding:13px 14px;border-radius:10px;border:1px solid #31405a;background:#0b1423;color:#fff;outline:none}
+.loginCard input:focus{border-color:#c7ff5a}
+.loginCard button{margin-top:6px;padding:13px 14px;border:0;border-radius:10px;background:#c7ff5a;color:#121927;font-weight:900;cursor:pointer}
+.loginCard button:disabled{opacity:.55;cursor:wait}
+.loginMessage{margin-top:16px;padding:12px 14px;border-radius:10px;background:#17243a;color:#bdc8d8;font-size:13px}

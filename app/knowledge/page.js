@@ -1,0 +1,3 @@
+import HQShell from "../components/HQShell";
+export const metadata={title:"Knowledge · BIOTRIX HQ",robots:{index:false,follow:false}};
+export default function Knowledge(){return <HQShell active="Knowledge" title="Knowledge"><section className="hqGrid2"><article className="hqPanel"><div className="panelHead"><h2>Second Brain</h2><button className="hqButton">+ Document</button></div><div className="hqEmpty"><strong>회사 지식베이스</strong><p>상품 검토, 공급처 협의, 회의록, 의사결정 근거, 운영 SOP를 축적할 공간입니다.</p></div></article><article className="hqPanel"><div className="panelHead"><h2>Decisions</h2><span>Decision Memory</span></div><div className="hqEmpty"><strong>의사결정 이력</strong><p>무엇을 왜 결정했는지 기록해 AI가 다음 판단에서 과거 맥락을 활용하게 합니다.</p></div></article></section></HQShell>}

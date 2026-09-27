@@ -3,13 +3,13 @@ import "./globals.css";
 export const metadata = {
   metadataBase: new URL("https://biotrix.co.kr"),
   title: {
-    default: "BIOTRIX",
-    template: "%s | BIOTRIX",
+    default: "BIOTRIX HQ",
+    template: "%s",
   },
-  description: "BIOTRIX Commerce — Fresh, Wellness, Beauty",
+  description: "BIOTRIX Company Operating System",
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
 };
 

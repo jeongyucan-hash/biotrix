@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://biotrix.co.kr/sitemap.xml

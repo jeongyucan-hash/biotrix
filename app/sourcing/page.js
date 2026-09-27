@@ -1,6 +1,6 @@
 import HQShell from "../components/HQShell";
 import { createClient } from "../../lib/supabase/server";
-import { addCandidate, createMission, promoteCandidate, updateCandidateStatus } from "./actions";
+import { addCandidate, createMission, prepareResearchJob, promoteCandidate, updateCandidateStatus } from "./actions";
 
 export const metadata={title:"Sourcing · BIOTRIX HQ",robots:{index:false,follow:false}};
 
@@ -12,7 +12,7 @@ function won(value){
 export default async function Sourcing(){
   const supabase=await createClient();
 
-  const [missionsResult,candidatesResult]=await Promise.all([
+  const [missionsResult,candidatesResult,jobsResult,settingsResult]=await Promise.all([
     supabase
       .from("sourcing_missions")
       .select("*")
@@ -21,10 +21,21 @@ export default async function Sourcing(){
       .from("sourcing_candidates")
       .select("*")
       .order("updated_at",{ascending:false}),
+    supabase
+      .from("sourcing_research_jobs")
+      .select("id,mission_id,status,objective,search_queries,candidate_target,candidates_created,sources_found,model_name,calls_used,estimated_cost_usd,error_message,created_at,completed_at")
+      .order("created_at",{ascending:false}),
+    supabase
+      .from("company_settings")
+      .select("key,value")
+      .in("key",["ai.enabled","sourcing.research.enabled","sourcing.research.max_estimated_cost_usd"]),
   ]);
 
   const missions=missionsResult.data || [];
   const candidates=candidatesResult.data || [];
+  const jobs=jobsResult.data || [];
+  const settings=Object.fromEntries((settingsResult.data || []).map((row)=>[row.key,row.value]));
+  const automatedResearchEnabled=settings["ai.enabled"]===true && settings["sourcing.research.enabled"]===true;
 
   return (
     <HQShell active="Sourcing" title="Sourcing">
@@ -78,6 +89,8 @@ export default async function Sourcing(){
 
       {missions.map((mission)=>{
         const rows=candidates.filter((c)=>c.mission_id===mission.id);
+        const missionJobs=jobs.filter((j)=>j.mission_id===mission.id);
+        const latestJob=missionJobs[0];
 
         return (
           <section className="hqPanel" key={mission.id}>
@@ -96,6 +109,35 @@ export default async function Sourcing(){
                 <span>목표 마진 <b>{mission.target_gross_margin_pct ?? "—"}%</b></span>
                 <span>초기자금 <b>{won(mission.max_initial_cash)}</b></span>
               </div>
+            </div>
+            <div className="researchPrep">
+              <div>
+                <strong>Sourcing Research</strong>
+                <p>검색쿼리와 조사 작업을 먼저 준비합니다. 준비 단계에서는 AI/API 비용이 발생하지 않습니다.</p>
+              </div>
+
+              {latestJob ? (
+                <div className="researchJobSummary">
+                  <div><span>Status</span><b>{latestJob.status}</b></div>
+                  <div><span>Target</span><b>{latestJob.candidate_target} candidates</b></div>
+                  <div><span>Sources</span><b>{latestJob.sources_found}</b></div>
+                  <div><span>Cost</span><b>${Number(latestJob.estimated_cost_usd || 0).toFixed(4)}</b></div>
+                  <details>
+                    <summary>Prepared search queries</summary>
+                    <div className="queryList">
+                      {(latestJob.search_queries || []).map((query,index)=><span key={index}>{query}</span>)}
+                    </div>
+                  </details>
+                  <div className={automatedResearchEnabled ? "researchRuntime ready" : "researchRuntime off"}>
+                    {automatedResearchEnabled ? "Automated research ready" : "자동 웹조사는 아직 OFF"}
+                  </div>
+                </div>
+              ) : (
+                <form action={prepareResearchJob}>
+                  <input type="hidden" name="mission_id" value={mission.id} />
+                  <button className="hqButton" type="submit">Research Job 준비</button>
+                </form>
+              )}
             </div>
 
             <details className="newOpportunity">

@@ -166,3 +166,5 @@ Order-line contribution margin should be derivable from:
 ## Deployment bootstrap
 
 This branch is the Next.js commerce application branch used for Vercel preview and production promotion.
+
+Production branch deployment verification: commerce-nextjs is the intended Vercel production branch.

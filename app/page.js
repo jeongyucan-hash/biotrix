@@ -1,37 +1,52 @@
-import Link from "next/link";
+import HQShell from "./components/HQShell";
 
-export default function Home() {
+export const metadata = { title: "BIOTRIX HQ", robots: { index: false, follow: false } };
+
+export default function Dashboard() {
+  const cards = [
+    ["오늘 매출","—","Commerce 연결 전"],
+    ["오늘 주문","—","Commerce 연결 전"],
+    ["재고 위험","—","Inventory Agent 준비"],
+    ["승인 대기","—","Approval Queue 준비"],
+  ];
   return (
-    <>
-      <header className="siteHeader">
-        <nav className="container nav">
-          <Link className="brand" href="/">BIOTRIX</Link>
-          <div className="navLinks">
-            <Link href="/shop">Shop</Link>
-            <Link href="/account" className="chip">My</Link>
-            <Link href="/cart" className="chip">Cart</Link>
+    <HQShell active="Dashboard" title="Dashboard">
+      <section className="hqCards">
+        {cards.map(([label,value,sub]) => (
+          <article className="hqMetric" key={label}>
+            <div>{label}</div><strong>{value}</strong><span>{sub}</span>
+          </article>
+        ))}
+      </section>
+
+      <section className="hqGrid2">
+        <article className="hqPanel">
+          <div className="panelHead"><h2>AI Agent Alerts</h2><span>0 active</span></div>
+          <div className="hqEmpty">
+            <strong>아직 실행 중인 Agent가 없습니다.</strong>
+            <p>Commerce·Inventory·Finance 데이터를 연결하면 위험 신호와 제안이 이곳에 표시됩니다.</p>
           </div>
-        </nav>
-      </header>
-      <main>
-        <section className="container hero">
-          <div className="eyebrow">BIOTRIX COMMERCE V2</div>
-          <h1>브랜드와 쇼핑을<br/>하나의 경험으로.</h1>
-          <p>현재 운영 중인 BIOTRIX 사이트를 기반으로 상품, 회원, 주문, 결제, 관리자 기능을 확장할 차세대 커머스 구조입니다.</p>
-          <div className="actions">
-            <Link className="btn btnPrimary" href="/shop">Shop Preview</Link>
-            <Link className="btn" href="/admin">Admin Preview</Link>
+        </article>
+
+        <article className="hqPanel">
+          <div className="panelHead"><h2>Today</h2><span>Company Pulse</span></div>
+          <div className="hqList">
+            <div><b>Projects</b><span>프로젝트 DB 연결 완료</span></div>
+            <div><b>Tasks</b><span>업무 DB 연결 완료</span></div>
+            <div><b>Approvals</b><span>사람 승인 흐름 준비</span></div>
+            <div><b>Agent Runs</b><span>AI 실행 이력 저장 준비</span></div>
           </div>
-        </section>
-        <section className="container section">
-          <div className="grid3">
-            <article className="card"><div className="eyebrow">01 · FRESH</div><h2>Fresh</h2><p className="muted">신선식품 큐레이션과 산지·공급처 연계.</p></article>
-            <article className="card"><div className="eyebrow">02 · WELLNESS</div><h2>Wellness</h2><p className="muted">건강관리 제품과 반복구매 상품군.</p></article>
-            <article className="card"><div className="eyebrow">03 · BEAUTY</div><h2>Beauty</h2><p className="muted">기능과 사용 경험을 고려한 뷰티 포트폴리오.</p></article>
-          </div>
-        </section>
-      </main>
-      <footer className="footer"><div className="container footerInner"><strong>BIOTRIX</strong><span>Commerce v2 Preview</span></div></footer>
-    </>
+        </article>
+      </section>
+
+      <section className="hqPanel">
+        <div className="panelHead"><h2>Operating Loop</h2><span>BIOTRIX AI-Native Model</span></div>
+        <div className="loopRow">
+          {["Observe","Analyze","Propose","Approve","Act","Learn"].map((x,i)=>(
+            <div key={x}><small>0{i+1}</small><strong>{x}</strong></div>
+          ))}
+        </div>
+      </section>
+    </HQShell>
   );
 }

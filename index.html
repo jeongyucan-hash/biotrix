@@ -91,9 +91,21 @@
       <div class="container">
         <div class="section-heading portfolio-heading"><div><p class="eyebrow">FOCUS CATEGORIES</p><h2>지금 집중하는 제품군</h2></div><p>현재 BIOTRIX의 초기 사업·소싱 방향을 보여주는 카테고리입니다. 개별 판매 제품은 검토와 준비에 따라 순차적으로 공개합니다.</p></div>
         <div class="portfolio-grid">
-          <article class="portfolio-card"><div class="product-stage stage-food"><div class="abstract-pack pack-food">B</div><span class="stage-leaf l1"></span><span class="stage-leaf l2"></span></div><div class="portfolio-copy"><span>FOOD</span><h3>프리미엄 신선식품</h3><p>품질과 공급 안정성을 기준으로 선별한 과일·채소 중심의 식품군.</p></div></article>
-          <article class="portfolio-card"><div class="product-stage stage-health"><div class="abstract-pack pack-health">B</div><span class="stage-ring r1"></span><span class="stage-ring r2"></span></div><div class="portfolio-copy"><span>HEALTH</span><h3>건강기능식품</h3><p>일상적인 건강 관리 니즈와 근거, 반복 구매 가능성을 고려한 제품군.</p></div></article>
-          <article class="portfolio-card"><div class="product-stage stage-beauty"><div class="abstract-pack pack-beauty">B</div><span class="stage-leaf l3"></span></div><div class="portfolio-copy"><span>BEAUTY</span><h3>기능성 화장품</h3><p>과학적 컨셉과 사용 경험을 함께 고려한 스킨케어 중심 제품군.</p></div></article>
+          <article class="portfolio-card"><div class="product-stage stage-food"><div class="abstract-pack pack-food">B</div><span class="stage-leaf l1"></span><span class="stage-leaf l2"></span></div><div class="portfolio-copy"><span>FOOD</span><h3>프리미엄 신선식품</h3><p>품질과 공급 안정성을 기준으로 선별한 과일·채소 중심의 식품군.</p><button class="shop-out" data-shop="FOOD">쿠팡에서 구매하기 <b>↗</b></button></div></article>
+          <article class="portfolio-card"><div class="product-stage stage-health"><div class="abstract-pack pack-health">B</div><span class="stage-ring r1"></span><span class="stage-ring r2"></span></div><div class="portfolio-copy"><span>HEALTH</span><h3>건강기능식품</h3><p>일상적인 건강 관리 니즈와 근거, 반복 구매 가능성을 고려한 제품군.</p><button class="shop-out" data-shop="HEALTH">쿠팡에서 구매하기 <b>↗</b></button></div></article>
+          <article class="portfolio-card"><div class="product-stage stage-beauty"><div class="abstract-pack pack-beauty">B</div><span class="stage-leaf l3"></span></div><div class="portfolio-copy"><span>BEAUTY</span><h3>기능성 화장품</h3><p>과학적 컨셉과 사용 경험을 함께 고려한 스킨케어 중심 제품군.</p><button class="shop-out" data-shop="BEAUTY">쿠팡에서 구매하기 <b>↗</b></button></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="purchase-bridge" aria-labelledby="purchase-title">
+      <div class="container purchase-bridge-inner">
+        <div>
+          <p class="eyebrow">BRAND HUB → COUPANG</p>
+          <h2 id="purchase-title">브랜드는 BIOTRIX에서,<br>구매는 쿠팡에서.</h2>
+        </div>
+        <div class="purchase-bridge-copy">
+          <p>BIOTRIX 공식 홈페이지는 브랜드, 제품 철학, 품질 기준과 파트너십을 설명하는 허브 역할에 집중합니다. 실제 구매·결제·배송은 익숙하고 편리한 쿠팡으로 연결합니다.</p>
+          <div class="bridge-points"><span>브랜드 신뢰</span><i>→</i><span>제품 이해</span><i>→</i><span>쿠팡 구매</span></div>
         </div>
       </div>
     </section>
@@ -123,7 +135,8 @@
     toggle?.addEventListener('click',()=>{const open=document.body.classList.toggle('menu-open');toggle.setAttribute('aria-expanded',String(open));});
     nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{document.body.classList.remove('menu-open');toggle?.setAttribute('aria-expanded','false');}));
     const contact=document.querySelector('#prototype-contact');const toast=document.querySelector('#prototype-toast');
-    contact?.addEventListener('click',()=>{toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),3200);});
+    contact?.addEventListener('click',()=>{toast.textContent='프로토타입 단계입니다. 실제 문의 채널은 운영 정보 확정 후 연결합니다.';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),3200);});
+    document.querySelectorAll('.shop-out').forEach(btn=>btn.addEventListener('click',()=>{toast.textContent=btn.dataset.shop+' 카테고리의 실제 쿠팡 상품 URL 확정 후 바로 연결합니다.';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),3200);}));
   </script>
 </body>
 </html>

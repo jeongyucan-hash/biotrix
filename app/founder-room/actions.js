@@ -118,3 +118,25 @@ export async function updateOpportunity(formData){
 
   revalidatePath("/founder-room");
 }
+
+
+export async function decidePacket(formData){
+  const { supabase,admin }=await getAdminContext();
+  if(admin.role!=="owner") throw new Error("owner_required");
+
+  const packetId=String(formData.get("packet_id") || "");
+  const decision=String(formData.get("decision") || "");
+  const note=String(formData.get("note") || "").trim();
+
+  if(!packetId || !["go","hold","kill","more_data"].includes(decision)) return;
+
+  await supabase.rpc("decide_founder_packet",{
+    p_packet_id:packetId,
+    p_decision:decision,
+    p_note:note || null,
+  });
+
+  revalidatePath("/founder-room");
+  revalidatePath("/tasks");
+  revalidatePath("/");
+}

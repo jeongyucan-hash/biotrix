@@ -95,11 +95,6 @@ export default async function Agents(){
                       <span>안전재고 <b>{item.payload?.safety_stock ?? "—"}</b></span>
                     </div>
                   )}
-
-                  <form className="approvalNote">
-                    <input name="note" placeholder="검토 메모 (선택)" />
-                  </form>
-
                   <div className="approvalActions">
                     <form action={approveProposal}>
                       <input type="hidden" name="id" value={item.id} />

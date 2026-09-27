@@ -7,6 +7,7 @@ const items = [
   ["Tasks","/tasks"],
   ["Commerce","/commerce"],
   ["Products","/products"],
+  ["Sourcing","/sourcing"],
   ["Procurement","/procurement"],
   ["Suppliers","/suppliers"],
   ["Finance","/finance"],

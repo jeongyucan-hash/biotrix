@@ -1,21 +1,20 @@
-# BIOTRIX Website
+# BIOTRIX Website Prototype v1.0
 
-Production-ready static corporate landing page for Vercel.
+Brand prototype for BIOTRIX — Bio + Matrix.
 
-## Included
-- Responsive landing page
-- SEO + Open Graph metadata
-- Organization structured data
-- `robots.txt` + `sitemap.xml`
-- Privacy policy
-- Custom 404 page
-- Security response headers
-- No package manager, build step, environment variables, database, or runtime functions
+## Direction
+- Tagline: Elevating Life.
+- Visual system: Deep Green × Silver × Pure White
+- Core narrative: Nature × Science × Technology
+- Business focus: FOOD / HEALTH / BEAUTY
+- B2B partnership section included
+- No unverified partner logos, revenue claims, or product claims
 
-## Deploy on Vercel
+## Vercel
 - Framework Preset: Other
 - Build Command: empty
 - Output Directory: empty
+- No environment variables required
 
-## Next production inputs
-Add verified company contact details and statutory e-commerce disclosures only after those details are finalized.
+## Prototype status
+The B2B contact button intentionally shows a prototype notice until verified contact information is finalized.

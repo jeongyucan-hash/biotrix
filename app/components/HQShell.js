@@ -11,6 +11,7 @@ const items = [
   ["Suppliers","/suppliers"],
   ["Finance","/finance"],
   ["Knowledge","/knowledge"],
+  ["Founder Room","/founder-room"],
   ["AI Agents","/agents"],
 ];
 

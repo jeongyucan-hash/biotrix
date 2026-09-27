@@ -261,3 +261,18 @@
 @media(max-width:1100px){.sourcingGrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:760px){.candidateForm{grid-template-columns:1fr 1fr}.candidateForm textarea{grid-column:span 2}.threeCols{grid-template-columns:1fr}.sourcingGrid{grid-template-columns:1fr}}
 @media(max-width:520px){.candidateForm{grid-template-columns:1fr}.candidateForm textarea{grid-column:span 1}}
+
+
+/* AI Runtime Control */
+.aiRuntimeControl{margin-bottom:14px;background:#101a2b;border:1px solid #2b3952;border-radius:14px;padding:12px}
+.aiRuntimeControl summary{cursor:pointer;font-size:11px;font-weight:800;color:#c8d2df}
+.aiRuntimeControl form{display:grid;grid-template-columns:1.1fr 1fr auto auto;gap:10px;align-items:end;margin-top:12px}
+.aiRuntimeControl form>div{display:grid;gap:5px}
+.aiRuntimeControl label,.runtimeAuthState span{font-size:9px;color:#7d8ca0;text-transform:uppercase;letter-spacing:.07em}
+.aiRuntimeControl select,.aiRuntimeControl input{background:#0c1525;color:#eef3f8;border:1px solid #2a3851;border-radius:8px;padding:9px;font-size:10px}
+.aiRuntimeControl button{border:1px solid #526b37;background:#18251d;color:#dfff9e;border-radius:8px;padding:10px 12px;font-size:10px;font-weight:800;cursor:pointer}
+.runtimeAuthState{min-width:120px;padding:8px 10px;border:1px solid #293750;border-radius:8px;background:#0d1626}
+.runtimeAuthState b{font-size:10px;color:#c7ff5a}
+.aiRuntimeControl>p{margin:10px 0 0;color:#738198;font-size:9px;line-height:1.5}
+@media(max-width:900px){.aiRuntimeControl form{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.aiRuntimeControl form{grid-template-columns:1fr}}

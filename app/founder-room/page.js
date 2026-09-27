@@ -1,6 +1,6 @@
 import HQShell from "../components/HQShell";
 import { createClient } from "../../lib/supabase/server";
-import { createOpportunity, decidePacket, postFounderMessage, updateOpportunity } from "./actions";
+import { createOpportunity, decidePacket, postFounderMessage, updateAIRuntime, updateOpportunity } from "./actions";
 import { runFounderRoundtable } from "./roundtable";
 
 export const metadata={title:"Founder Room · BIOTRIX HQ",robots:{index:false,follow:false}};
@@ -93,6 +93,7 @@ export default async function FounderRoom(){
   const runs=runsResult.data || [];
   const settings=Object.fromEntries((settingsResult.data || []).map((row)=>[row.key,row.value]));
   const aiEnabled=settings["ai.enabled"]===true;
+  const gatewayAuthAvailable=Boolean(process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN);
 
   const agentMap=Object.fromEntries(
     members.map((m)=>[m.agent_code,m.agent_definitions?.name || m.agent_code])
@@ -124,6 +125,37 @@ export default async function FounderRoom(){
         <div><span>Call cap</span><b>{String(settings["founder_room.max_calls"] || 11)}</b></div>
         <div><span>Cost cap</span><b>{usd(settings["founder_room.max_estimated_cost_usd"] || 2)}</b></div>
       </section>
+
+      <details className="aiRuntimeControl">
+        <summary>AI Runtime Control · owner only</summary>
+        <form action={updateAIRuntime}>
+          <div>
+            <label>Runtime</label>
+            <select name="enabled" defaultValue={aiEnabled ? "true" : "false"}>
+              <option value="false">OFF — 모델 호출 금지</option>
+              <option value="true">ON — Founder Room 모델 호출 허용</option>
+            </select>
+          </div>
+          <div>
+            <label>회의 1회 비용 상한 (USD)</label>
+            <input
+              name="max_cost_usd"
+              type="number"
+              min="0"
+              max="25"
+              step="0.10"
+              defaultValue={Number(settings["founder_room.max_estimated_cost_usd"] || 2)}
+              required
+            />
+          </div>
+          <div className="runtimeAuthState">
+            <span>Gateway auth</span>
+            <b>{gatewayAuthAvailable ? "AVAILABLE" : "NOT DETECTED"}</b>
+          </div>
+          <button type="submit">Runtime 설정 저장</button>
+        </form>
+        <p>ON으로 변경한 뒤부터만 실제 AI Gateway 호출이 발생합니다. 외부 실행은 별도 사람 승인 체계를 그대로 유지합니다.</p>
+      </details>
 
       <section className="founderLayout">
         <aside className="founderTeam">

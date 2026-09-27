@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { createClient } from "../../lib/supabase/server";
 
 const items = [
   ["Dashboard","/"],
@@ -10,7 +12,20 @@ const items = [
   ["AI Agents","/agents"],
 ];
 
-export default function HQShell({ active, title, eyebrow="BIOTRIX HQ", children }) {
+export default async function HQShell({ active, title, eyebrow="BIOTRIX HQ", children }) {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+
+  if (!user) redirect("/login");
+
+  const { data: admin } = await supabase
+    .from("admin_users")
+    .select("role, active")
+    .eq("auth_user_id", user.id)
+    .maybeSingle();
+
+  if (!admin?.active) redirect("/setup");
+
   return (
     <div className="hqShell">
       <aside className="hqSide">
@@ -24,7 +39,7 @@ export default function HQShell({ active, title, eyebrow="BIOTRIX HQ", children 
           ))}
         </nav>
         <div className="hqSideFoot">
-          <span className="statusDot"></span> Supabase Connected
+          <span className="statusDot"></span> {admin.role.toUpperCase()} · Supabase
         </div>
       </aside>
       <main className="hqMain">
@@ -34,7 +49,7 @@ export default function HQShell({ active, title, eyebrow="BIOTRIX HQ", children 
             <h1>{title}</h1>
           </div>
           <div className="hqTopRight">
-            <span className="hqBadge">Internal Preview</span>
+            <span className="hqBadge">{user.email}</span>
           </div>
         </header>
         {children}

@@ -1,0 +1,3 @@
+import HQShell from "../components/HQShell";
+export const metadata={title:"Suppliers · BIOTRIX HQ",robots:{index:false,follow:false}};
+export default function Suppliers(){return <HQShell active="Suppliers" title="Suppliers"><section className="hqPanel"><div className="panelHead"><h2>Supplier Network</h2><button className="hqButton">+ Supplier</button></div><div className="hqTable"><b>공급처</b><b>담당자</b><b>정산조건</b><b>상태</b><span>등록된 공급처 없음</span><span>—</span><span>—</span><span>—</span></div></section></HQShell>}

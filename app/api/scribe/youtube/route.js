@@ -29,7 +29,7 @@ async function fetchViaSupadata(url, lang) {
 
   const endpoint = new URL("https://api.supadata.ai/v1/transcript");
   endpoint.searchParams.set("url", url);
-  if (lang) endpoint.searchParams.set("lang", lang);
+  endpoint.searchParams.set("lang", lang || "ko");
 
   const response = await fetch(endpoint, {
     headers: { "x-api-key": apiKey },

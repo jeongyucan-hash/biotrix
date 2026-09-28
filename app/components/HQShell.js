@@ -3,30 +3,36 @@ import { redirect } from "next/navigation";
 import { createClient } from "../../lib/supabase/server";
 
 const sections = [
-  ["운영", [
-    ["사이트 통합 관리","/sites"],["홈페이지 디자인실","/design"],["운영 콘솔","/admin"],["작업 기록","/activity"],["Dashboard","/"],["통합 업무함","/tasks"],
-    ["Work Queue","/work-queue"],["디자인 학습","/learning"],["Founder Room","/founder-room"],["AI Agents","/agents"],
+  ["운영 · 실행", [
+    ["대시보드","/"],["통합 업무함","/tasks"],["Work Queue","/work-queue"],["작업 기록","/activity"],
+    ["사이트 통합 관리","/sites"],["운영 콘솔","/admin"],
   ]],
-  ["커머스", [
+  ["매출 · 공급망", [
     ["첫 판매 준비","/launch"],["공급처 거래","/sourcing/outreach"],["Commerce","/commerce"],["Products","/products"],["Sourcing","/sourcing"],
     ["Procurement","/procurement"],["Suppliers","/suppliers"],["Finance","/finance"],
   ]],
-  ["기획 · 지식", [
-    ["R&D","/rd"],["Growth","/growth"],["Advisory","/advisory"],["Knowledge","/knowledge"],
+  ["성장 · 지식", [
+    ["Growth","/growth"],["R&D","/rd"],["Advisory","/advisory"],["Knowledge","/knowledge"],
+    ["홈페이지 디자인실","/design"],["디자인 학습","/learning"],["Founder Room","/founder-room"],["AI Agents","/agents"],
   ]],
-  ["설정", [["설정","/admin/settings"],["비밀번호 설정","/account/security"]]],
+  ["계정", [["설정","/admin/settings"],["비밀번호 설정","/account/security"]]],
 ];
 
 function MenuSections({ active, role }) {
   return sections.map(([section, items]) => {
     const visible = items.filter(([label]) => label !== "설정" || role === "owner");
     if (!visible.length) return null;
-    return <div className="hqMenuGroup" key={section}>
-      <div className="hqMenuHeading">{section}</div>
-      {visible.map(([label, href]) => (
-        <Link key={label} href={href} className={(active === "Tasks" ? "통합 업무함" : active) === label ? "active" : ""}>{label}</Link>
-      ))}
-    </div>;
+    const current = active === "Tasks" ? "통합 업무함" : active;
+    const matches = (label) => current === label || (current === "Dashboard" && label === "대시보드");
+    const hasActivePage = visible.some(([label]) => matches(label));
+    return <details className="hqMenuGroup" key={section} open={hasActivePage}>
+      <summary className="hqMenuHeading">{section}<span aria-hidden="true">⌄</span></summary>
+      <div className="hqMenuItems">
+        {visible.map(([label, href]) => (
+          <Link key={label} href={href} className={matches(label) ? "active" : ""}>{label}</Link>
+        ))}
+      </div>
+    </details>;
   });
 }
 

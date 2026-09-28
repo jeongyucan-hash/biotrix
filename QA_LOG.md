@@ -24,3 +24,9 @@
 - Remaining: authenticated browser end-to-end verification; title prefixes still bridge site/design categorization; existing general-task schema is retained. Direct table clients retain existing RLS permissions. No autonomous development worker is connected.
 - AI runtime remains disabled. Founder Room has model-call orchestration but production authentication/model response has not been verified; specialist configuration currently differs from GPT-only intent. No paid model calls were made.
 - Deployment: pending GitHub publication and Vercel READY verification; final deployment evidence is recorded in this session's HQ agent_runs and Knowledge document.
+
+## 2026-09-28 — DM-3 publication and evidence pipeline
+- Main public brand site fast-forwarded to eb456f7a1c03f26c9cdfddaa82d86c3a93b4904c; static project deployment succeeded and live browser showed the new hero. Separate HQ project failure on this static branch is expected and not a public site failure.
+- HQ branch adds DM-3 master and individual 14-board private downloads, live status metadata, plus /learning for admin-entered aggregate observations and Beta-binomial recommendations.
+- No visitor tracking and no trained result yet. Input tables were created with admin-only RLS, no anonymous grants. Eight focused tests passed; production build pending final readback.
+- Remaining: deploy HQ current branch, verify auth guard/status, save master identities, update DB version and report current run outcome. Product purchase/contact and actual customer measurement remain external business inputs.

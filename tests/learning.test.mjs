@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {evaluateVariants} from '../lib/learning/model.mjs';
+test('aggregate evidence changes conservative recommendation only after sample threshold',()=>{const r=evaluateVariants([{page:'/',variant:'a',impressions:100,actions:20},{page:'/',variant:'b',impressions:100,actions:35}]);assert.equal(r.recommendation,'b');assert.equal(r.observationsCount,2);assert.equal(r.variants[0].actions,35);});
+test('insufficient evidence yields no deployment candidate',()=>{assert.equal(evaluateVariants([{page:'/',variant:'a',impressions:20,actions:8},{page:'/',variant:'b',impressions:20,actions:1}]).recommendation,null);assert.throws(()=>evaluateVariants([{page:'/',variant:'a',impressions:10,actions:11}]));});

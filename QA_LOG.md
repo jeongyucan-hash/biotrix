@@ -82,3 +82,13 @@
 ## 2026-09-28 — hourly branding check
 
 - Changed scheduled GitHub Actions audit from daily 03:17 UTC to hourly at minute 17 UTC (KST :17). Reduced individual report artifact retention from 30 to 7 days to bound storage. Manual dispatch remains available. First scheduled execution still requires remote verification.
+
+
+## 2026-09-28 — Search registration (search-registration-20260928)
+
+- Daum registration submitted successfully for biotrix.co.kr using andrew@biotrix.co.kr; review pending.
+- Google URL-prefix ownership verified via HTML meta tag. sitemap.xml submitted; Google currently reports unable to read, while direct live fetch returns HTTP 200 application/xml. Indexing is not claimed complete.
+- Published Google meta tag (70fe7db) and narrowed legacy /product robots exclusions (31d451e). Live readback confirms both. All eight sitemap routes pass local robots checks; admin/account/cart and legacy product exclusions remain.
+- Naver login callback failed; Bing Google login awaiting device confirmation. Business/map listing eligibility remains unconfirmed.
+- Repository: jeongyucan-hash/biotrix, production branch main. Local isolated branch seo/search-registration-20260928 has validation commit 871b7b3; CLI push lacked credentials, so production changes were applied through the authorized GitHub connector using current blob SHA guards.
+- HQ writeback follows under session search-registration-20260928; confirmation is recorded in HQ rather than inferred from this commit.

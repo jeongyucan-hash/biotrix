@@ -118,3 +118,10 @@
 - HQ `agent_runs` and Knowledge document synchronization: pending connector record.
 
 - Follow-up: commit `598d07a9119352c3585e73a3ea2ed118b8c85d1e` deployed with `Vercel – biotrix-hq` success. HQ `agent_runs` `747171d0-a511-4f98-88eb-202609281901` and Knowledge document `747171d0-a511-4f98-88eb-202609281902` were saved and read back. Authenticated live UI and a new paid execution remain unverified.
+
+
+## 2026-09-28 — HQ and Yuchan OS workspace navigation
+
+- Added a persistent workspace switch bar to all HQ routes and grouped the module menu under operations, commerce/supply, growth/knowledge, and account. Each group opens automatically for the active route and can be collapsed.
+- Verification: production build passed on the checked HQ source snapshot before publication. Existing canonical hostnames were retained; no DNS or provider settings were changed.
+- Follow-up: verify the production deployment and the signed-in cross-site link after release. The Yuchan OS remains owner-only.

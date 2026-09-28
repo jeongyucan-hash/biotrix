@@ -36,3 +36,8 @@
 - Compared A/B/C vector marks in full header and 16px sizes; selected the negative-space B. Raster previews at 16/32px retained recognizable shape.
 - Public main commit c40a178e8a5eef6b0cef56f8d73ce146ddcf1465 updates mark, favicon, and header wordmark. Six-page static audit passed; Vercel public status succeeded.
 - HQ master rebuilt as 14-page PDF, Illustrator-compatible PDF, editable SVG, source ZIP, 14 individual PDF boards and standalone logo SVG. Board 04 visual inspection passed.
+
+## 2026-09-28 — DM-3.2 white canvas
+
+- A안 Negative B retained. Public site switches global ivory, header, hero fallback, slide controls, footer and mobile menu to white in commit ddba19b77196c5f4671fa562a51eac6671513d85. Static audit passed six pages/149 links.
+- HQ master 14 pages regenerated with White #FFFFFF token; board 04 rendered and visually inspected. Source ZIP contains updated production CSS.

@@ -1,7 +1,8 @@
 from pathlib import Path
 base=Path(__file__).with_name('build_master.py').read_text()
 exec(base.split('# 01')[0])
-OUT=ROOT/'release-v3.1';OUT.mkdir(exist_ok=True);(OUT/'boards').mkdir(exist_ok=True)
+I=W
+OUT=ROOT/'release-v3.2';OUT.mkdir(exist_ok=True);(OUT/'boards').mkdir(exist_ok=True)
 from reportlab.graphics.shapes import Drawing
 from reportlab.graphics import renderPDF
 from fontTools.svgLib.path import parse_path
@@ -16,20 +17,20 @@ boards=[]
 # The original board utility provides simple native vector primitives only.
 def page(title,section,note=''):
  b=Board(title,section);boards.append(b);b.header(len(boards));
- b.ops=[tuple(str(x).replace('DM-2.0','DM-3.1') if isinstance(x,str) else x for x in op) for op in b.ops]
+ b.ops=[tuple(str(x).replace('DM-2.0','DM-3.2') if isinstance(x,str) else x for x in op) for op in b.ops]
  if note:b.note(note)
  return b
-b=page('좋은 일상은, 작은 선택에서.','EDITORIAL EVERYDAY','DM-3.1 / 사진의 반복을 줄이고, 장면과 타이포그래피로 브랜드의 리듬을 만듭니다.')
+b=page('좋은 일상은, 작은 선택에서.','EDITORIAL EVERYDAY','DM-3.2 / 사진의 반복을 줄이고, 장면과 타이포그래피로 브랜드의 리듬을 만듭니다.')
 b.text(48,261,'Everyday,',66,F,False);b.text(48,340,'a little better.',66,F,False);b.lines(50,419,['잘 먹고, 나를 돌보고,','편안하게 가꾸는 일.'],25,F,False,43);b.button(48,551,'우리의 세 가지 분야',205);b.photo(645,190,507,498,'food');b.text(48,674,'소유: HQ 홈페이지 디자인실 / 공개 홈페이지 구현 기준',13,G)
 b=page('반복 대신, 서로 다른 네 개의 장면.','ART DIRECTION','한 원본을 잘라 다른 사진처럼 쓰지 않습니다. 아래 네 장면은 각각 독립적으로 생성했습니다.')
 for i,(key,title,desc) in enumerate([('food','01 / THE TABLE','식탁의 계절 · 대각선 정물 구도'),('wellness','02 / THE MORNING','사람이 있는 공간 · 환경과 움직임'),('beauty','03 / THE TEXTURE','물과 소재 · 매크로 질감'),('brand','04 / THE LANDSCAPE','자연의 깊이 · 넓은 풍경')]):
  x=48+(i%2)*564;y=183+(i//2)*267;b.photo(x,y,340,226,key);b.text(x+357,y+46,title,12,F,True);b.lines(x+357,y+86,desc.split(' · '),13,G,False,26)
 b=page('하나의 사진에는 하나의 역할.','PLACEMENT RULES','홈의 사진 원본은 각각 한 번만 배치합니다. 카드 탐색에는 사진을 반복하지 않습니다.')
 for i,(t,lines) in enumerate([('메인 슬라이드',['식탁 → 아침 → 소재의 질감','사진 영역만 전환 / 문구는 고정','6.5초 · 이전/다음 · 일시정지']),('브랜드 이야기',['과수원 풍경은 브랜드 관점에 사용','보유 농장이나 공급자로 소개하지 않음','브랜드 이미지라는 캡션 제공']),('분야 탐색',['큰 영문 서체 + 한글 분야명','선·여백·배경 반응으로 탐색 유도','반복 사진 카드 제거'])]):b.card(48+i*374,190,352,230,t,lines)
-b.rect(48,465,1104,228,F,12);b.lines(76,510,['통일감은 같은 사진이 아니라, 시각적 기준에서 만듭니다.','Forest · Ivory · 따뜻한 빛 · 자연스러운 질감 · 명확한 글자 위계','원본 출처: OpenAI 이미지 생성 / 실제 상품·시설·인물의 증빙 사진 아님','제품 출시 시에는 검증된 실제 상품 사진을 별도로 사용합니다.'],20,W,False,44)
+b.rect(48,465,1104,228,F,12);b.lines(76,510,['통일감은 같은 사진이 아니라, 시각적 기준에서 만듭니다.','Forest · White · 따뜻한 빛 · 자연스러운 질감 · 명확한 글자 위계','원본 출처: OpenAI 이미지 생성 / 실제 상품·시설·인물의 증빙 사진 아님','제품 출시 시에는 검증된 실제 상품 사진을 별도로 사용합니다.'],20,W,False,44)
 b=page('색·서체·로고의 일관성.','FOUNDATIONS','B의 내부 여백으로 잎의 움직임을 만듭니다. 한 가지 색상으로 16px에서도 또렷하게 사용합니다.')
 b.rect(48,185,538,188,W,12);b.logo(80,222,1.5);b.text(215,345,'NEGATIVE B / Forest · one ink',12,G)
-for i,(name,col) in enumerate([('Forest',F),('Ivory',I),('Sage','#E2E8DC'),('Peach','#EEE1D3')]):
+for i,(name,col) in enumerate([('Forest',F),('White',I),('Sage','#E2E8DC'),('Peach','#EEE1D3')]):
  x=627+i*135;b.rect(x,185,120,118,col,8,L);b.text(x,333,name,13,F);b.text(x,354,col,11,G)
 b.card(48,409,536,283,'TYPOGRAPHY',['한글: 시스템 Sans / 가독성과 자연스러운 줄바꿈','영문 분야: Georgia / Food · Wellness · Beauty','홈 H1: 데스크톱 36~58px · 모바일 33~49px','본문: 14~17px · 행간 1.7~1.95','캡션 10~12px / 실제 페이지와 토큰 파일 대조'])
 b.card(612,409,540,283,'LAYOUT',['최대 1320px / PC 여백 56px','태블릿 32px / 모바일 20px','홈: 문구 43% : 사진 57%','모바일: 문구 → 4:3 사진 → 컨트롤','간격·서체는 assets/editorial.css가 실행 기준'])
@@ -37,7 +38,7 @@ def nav(b,x,y,w):
  b.rect(x,y,w,42,I);b.logo(x+15,y+7,.37);b.text(x+w-300,y+26,'브랜드 소개    사업 분야    제품    파트너십    문의',8,G)
 def foot(b,x,y,w):b.rect(x,y,w,55,F);b.text(x+20,y+34,'BIOTRIX / 일상에 가까운 좋은 선택.',12,W)
 b=page('홈 / 첫 화면의 대비.','HOME · DESKTOP','문구와 사진을 겹치지 않고 분리합니다. 흰 그라데이션을 덮어 사진을 희미하게 만들지 않습니다.')
-nav(b,48,184,1104);b.rect(48,226,475,348,I);b.text(72,267,'A LITTLE BETTER, EVERY DAY',9,F,True);b.lines(72,332,['좋은 일상은,','작은 선택에서.'],34,F,False,50);b.lines(73,431,['잘 먹고, 나를 돌보고, 편안하게 가꾸는 일.','BIOTRIX가 함께하고 싶은 일상입니다.'],12,G);b.button(73,503,'우리의 세 가지 분야',178);b.photo(523,226,629,348,'food');b.rect(523,574,629,42,'#ECE8DE');b.text(543,601,'FOOD · 식탁에 놓인 계절',11,F);b.text(967,601,'←    01 / 03    일시정지    →',10,F);b.text(72,651,'거창한 변화보다, 매일 손이 가는 좋은 것들.',27,F);b.text(73,698,'이후 흐름: 세 분야 탐색 → 브랜드 관점 → 파트너십',13,G)
+nav(b,48,184,1104);b.rect(48,226,475,348,I);b.text(72,267,'A LITTLE BETTER, EVERY DAY',9,F,True);b.lines(72,332,['좋은 일상은,','작은 선택에서.'],34,F,False,50);b.lines(73,431,['잘 먹고, 나를 돌보고, 편안하게 가꾸는 일.','BIOTRIX가 함께하고 싶은 일상입니다.'],12,G);b.button(73,503,'우리의 세 가지 분야',178);b.photo(523,226,629,348,'food');b.rect(523,574,629,42,W);b.text(543,601,'FOOD · 식탁에 놓인 계절',11,F);b.text(967,601,'←    01 / 03    일시정지    →',10,F);b.text(72,651,'거창한 변화보다, 매일 손이 가는 좋은 것들.',27,F);b.text(73,698,'이후 흐름: 세 분야 탐색 → 브랜드 관점 → 파트너십',13,G)
 b=page('홈 / 사진을 반복하지 않는 탐색.','HOME · LOWER SECTIONS','사진 카드 대신 큰 분야명과 선으로 화면의 속도를 바꿉니다.')
 for i,(title,kor,desc) in enumerate([('Food','식품','제철의 맛을 가까이.'),('Wellness','건강','나에게 맞는 작은 습관.'),('Beauty','뷰티','나를 돌보는 기분 좋은 시간.')]):
  y=192+i*106;b.rule(48,y,630);b.text(60,y+62,f'0{i+1}',14,G);b.text(112,y+64,title,47,F);b.text(384,y+59,kor,12,G);b.text(438,y+58,'↗',28,F);b.text(111,y+93,desc,11,G)
@@ -69,11 +70,11 @@ b.card(48,187,538,249,'SLIDESHOW',['독립된 사진 3장 / 순서와 캡션 표
 b.card(612,187,540,249,'RESPONSIVE',['320 / 390 / 768 / 1440px','화면 너비보다 큰 요소 없음','핵심 피사체·한글 줄바꿈 확인','메뉴·FAQ·앵커 링크 검수','이미지 로딩·대체 텍스트 확인'])
 b.rect(48,469,1104,224,F,12);b.lines(75,517,['구현 기준 파일','assets/editorial.css · assets/editorial.js · 6개 HTML 페이지','사진 출처와 용도: assets/EDITORIAL_SOURCES.md','검수·코드·실제 배포 결과: HQ 작업 기록에서 확인'],20,W,False,44)
 b=page('HQ / 기준에서 배포까지 연결.','DESIGN OFFICE','홈페이지 디자인실이 마스터·사진·결정·수정 요청을 관리합니다.')
-b.card(48,185,350,241,'결정',['사용자 피드백을 결정으로 기록','DM-2.0 사진 반복 기준 폐기','DM-3.1 장면 중심 방향 채택','사진 원본과 배치 역할 등록'])
+b.card(48,185,350,241,'결정',['사용자 피드백을 결정으로 기록','DM-2.0 사진 반복 기준 폐기','DM-3.2 장면 중심 방향 채택','사진 원본과 배치 역할 등록'])
 b.card(425,185,350,241,'실행',['HQ 요청 → ChatGPT Work 구현','마스터·HTML·CSS·이미지를 연결','기존 커머스·HQ 브랜치 보존','무인 AI 실행으로 표시하지 않음'])
 b.card(801,185,351,241,'검수와 배포',['PC·모바일 실제 화면 확인','빌드·파일·링크·동작 확인','운영 도메인에서 반영 재확인','작업·결정·산출물·커밋 기록'])
 b.rect(48,466,1104,228,W,12);b.lines(75,511,['소유 부서: 홈페이지 디자인실 (website_design)','HQ 주소: https://biotrix-hq.vercel.app/design','공개 홈페이지: https://biotrix.co.kr','검수 중과 배포 완료를 구분해 표시하며, 변경 이력을 남깁니다.'],20,F,False,45)
-b=page('편집 파일과 사용 범위.','HANDOFF','DM-3.1 / 원본·코드·기록이 같은 버전을 가리키도록 관리합니다.')
+b=page('편집 파일과 사용 범위.','HANDOFF','DM-3.2 / 원본·코드·기록이 같은 버전을 가리키도록 관리합니다.')
 b.card(48,185,537,291,'DELIVERABLES',['PDF: 14개 디자인 보드 / 검색 가능한 텍스트','SVG: 편집 가능한 벡터와 텍스트','AI: 벡터 PDF 기반 Illustrator 호환본','ZIP: SVG 보드·이미지·토큰·출처·사용 안내','개별 보드는 공통 이미지 파일을 참조','홈페이지 실행 기준은 같은 버전의 코드'])
 b.card(612,185,540,291,'FORMAT & PROVENANCE',['AI 호환본은 네이티브 Adobe AI 저장이 아님','Illustrator 앱에서 실제 열기 검수 미실시','사진은 래스터, 글자와 도형은 벡터','생성 사진을 실제 상품·시설의 증거로 쓰지 않음','원본을 반복 크롭하여 새 사진으로 세지 않음','사진 프롬프트·원본·사용 위치를 기록'])
 b.rect(48,515,1104,179,F,12);b.lines(76,563,['이 마스터는 사진 교체만을 위한 문서가 아닙니다.','화면의 구조, 읽는 순서, 사진의 역할과 실제 동작까지 함께 정의합니다.','배포 완료 여부와 남은 운영 항목은 HQ의 최신 기록을 기준으로 확인합니다.'],20,W,False,43)
@@ -114,14 +115,14 @@ def svg_ops(b):
  return ''.join(out)
 def svgdoc(body,w,h,embed=True):
  defs=''.join(f'<symbol id="photo-{key}" viewBox="0 0 1536 1024"><image width="1536" height="1024" xlink:href="'+(('data:image/jpeg;base64,'+PHOTO64S[key]) if embed else '../editorial-'+key+'.jpg')+'"/></symbol>' for key in photos)
- return f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{w}" height="{h}" viewBox="0 0 {w} {h}"><title>BIOTRIX DM-3.1</title><defs>{defs}</defs>{body}</svg>'
-pdf=OUT/'BIOTRIX_Design_Master_v3.1.pdf';c=canvas.Canvas(str(pdf),pagesize=(1200,800));c.setTitle('BIOTRIX DM-3.1 Editorial Everyday');c.setAuthor('BIOTRIX HQ Design Office')
+ return f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{w}" height="{h}" viewBox="0 0 {w} {h}"><title>BIOTRIX DM-3.2</title><defs>{defs}</defs>{body}</svg>'
+pdf=OUT/'BIOTRIX_Design_Master_v3.2.pdf';c=canvas.Canvas(str(pdf),pagesize=(1200,800));c.setTitle('BIOTRIX DM-3.2 Editorial Everyday');c.setAuthor('BIOTRIX HQ Design Office')
 for i,b in enumerate(boards):render(c,b);c.showPage();(OUT/'boards'/f'{i+1:02}.svg').write_text(svgdoc(svg_ops(b),1200,800,False))
-c.save();ai=OUT/'BIOTRIX_Design_Master_v3.1.ai';c=canvas.Canvas(str(ai),pagesize=(3680,4112));c.setTitle('BIOTRIX DM-3.1 - PDF-based Illustrator compatibility, not native AI');groups=[]
+c.save();ai=OUT/'BIOTRIX_Design_Master_v3.2.ai';c=canvas.Canvas(str(ai),pagesize=(3680,4112));c.setTitle('BIOTRIX DM-3.2 - PDF-based Illustrator compatibility, not native AI');groups=[]
 for i,b in enumerate(boards):
  x=i%3*1240;y=i//3*828;render(c,b,x,y,4112);groups.append(f'<g id="board-{i+1:02}" transform="translate({x} {y})">{svg_ops(b)}</g>')
-c.save();(OUT/'BIOTRIX_Design_Master_v3.1.svg').write_text(svgdoc(''.join(groups),3680,4112))
-(OUT/'README.md').write_text('''# BIOTRIX DM-3.1 / Editorial Everyday
+c.save();(OUT/'BIOTRIX_Design_Master_v3.2.svg').write_text(svgdoc(''.join(groups),3680,4112))
+(OUT/'README.md').write_text('''# BIOTRIX DM-3.2 / Editorial Everyday
 
 14 design boards owned by HQ Website Design Office. This replaces the repetitive DM-2.0 triptych direction.
 
@@ -136,7 +137,7 @@ The source ZIP includes editable SVG, individual boards, images, implementation 
 for f in ['editorial.css','editorial.js','EDITORIAL_SOURCES.md']:
  shutil.copy(ROOT.parent/'biotrix-editorial/assets'/f,OUT/f)
 shutil.copy(ROOT/'fonts/OFL.txt',OUT/'OFL.txt')
-with zipfile.ZipFile(OUT/'BIOTRIX_Design_Source_v3.1.zip','w',zipfile.ZIP_DEFLATED) as z:
+with zipfile.ZipFile(OUT/'BIOTRIX_Design_Source_v3.2.zip','w',zipfile.ZIP_DEFLATED) as z:
  for f in sorted(OUT.rglob('*')):
-  if f.is_file() and f.suffix not in ['.zip','.pdf','.ai','.webp','.png']:z.write(f,'BIOTRIX_DM3.1/'+str(f.relative_to(OUT)))
+  if f.is_file() and f.suffix not in ['.zip','.pdf','.ai','.webp','.png']:z.write(f,'BIOTRIX_DM3.2/'+str(f.relative_to(OUT)))
 print(json.dumps({'pages':len(boards),'files':{p.name:p.stat().st_size for p in OUT.iterdir() if p.is_file()}},ensure_ascii=False))

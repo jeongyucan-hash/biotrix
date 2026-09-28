@@ -5,6 +5,7 @@ import { createClient } from "../../lib/supabase/server";
 import { requestResearch, parseResearch, researchConfiguration, researchError } from '../../lib/sourcing/research.mjs';
 import {quickMission} from '../../lib/sourcing/intake.mjs';
 import {gatewayCredentials} from '../../lib/ai/gateway-auth';
+import {estimateGatewayCost} from '../../lib/ai/pricing.mjs';
 
 export async function quickResearch(previousState,formData){
   let missionId;
@@ -52,7 +53,7 @@ function num(value){
 }
 
 export async function runResearch(previousState,formData){
-  let supabase, job, response, called=false;
+  let supabase, job, response, called=false, cost={estimatedCostUsd:null,costReason:'response_unavailable'};
   try {
     ({supabase}=await getAdmin());
     const credentials=await gatewayCredentials();
@@ -70,10 +71,12 @@ export async function runResearch(previousState,formData){
     job=started.data;
     called=true;
     response=await requestResearch(job.objective,{env:credentials});
+    cost=await estimateGatewayCost(response.model || job.model_name,response.usage);
     const result=parseResearch(response);
     const finished=await supabase.rpc('finish_sourcing_research',{
       p_job_id:job.id,p_result:result,p_error:null,p_response_id:response.id || null,
-      p_usage:{...response.usage,requests:1},
+      p_usage:{...response.usage,requests:1,model:response.model || job.model_name,
+        estimated_cost_usd:cost.estimatedCostUsd,cost_reason:cost.costReason},
     });
     if(finished.error) throw new Error('result_save_failed');
     const saved=await supabase.from('sourcing_research_jobs').select('status').eq('id',job.id).single();
@@ -85,7 +88,8 @@ export async function runResearch(previousState,formData){
     if(job && supabase){
       const failed=await supabase.rpc('finish_sourcing_research',{
         p_job_id:job.id,p_result:null,p_error:message,p_response_id:response?.id || null,
-        p_usage:{...response?.usage,requests:called ? 1 : 0},
+        p_usage:{...response?.usage,requests:called ? 1 : 0,model:response?.model || job.model_name,
+          estimated_cost_usd:cost.estimatedCostUsd,cost_reason:cost.costReason},
       });
       revalidatePath('/sourcing');
       if(failed.error) return {error:`${message} 실패 기록도 저장되지 않았습니다. 작업 ID: ${job.id}`};

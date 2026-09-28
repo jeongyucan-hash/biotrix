@@ -6,6 +6,7 @@ import QuickResearch from './QuickResearch';
 import {gatewayCredentials} from '../../lib/ai/gateway-auth';
 import {researchConfiguration} from '../../lib/sourcing/research.mjs';
 import {safeUrl} from '../../lib/ai/responses.mjs';
+import {costLabel,recentCost} from '../../lib/sourcing/cost.mjs';
 
 export const maxDuration=180;
 
@@ -30,7 +31,7 @@ export default async function Sourcing(){
       .order("updated_at",{ascending:false}),
     supabase
       .from("sourcing_research_jobs")
-      .select("id,mission_id,status,objective,search_queries,candidate_target,candidates_created,sources_found,model_name,calls_used,estimated_cost_usd,error_message,created_at,started_at,completed_at,result_json,input_tokens,output_tokens")
+      .select("id,mission_id,status,objective,search_queries,candidate_target,candidates_created,sources_found,model_name,calls_used,estimated_cost_usd,cost_reason,error_message,created_at,started_at,completed_at,result_json,input_tokens,output_tokens")
       .order("created_at",{ascending:false}),
     supabase
       .from("company_settings")
@@ -41,6 +42,7 @@ export default async function Sourcing(){
   const missions=missionsResult.data || [];
   const candidates=candidatesResult.data || [];
   const jobs=jobsResult.data || [];
+  const spend=recentCost(jobs);
   const settings=Object.fromEntries((settingsResult.data || []).map((row)=>[row.key,row.value]));
   const automatedResearchEnabled=settings["ai.enabled"]===true && settings["sourcing.research.enabled"]===true;
   const configured=researchConfiguration(await gatewayCredentials()).configured;
@@ -49,6 +51,10 @@ export default async function Sourcing(){
     <HQShell active="Sourcing" title="Sourcing">
       <section className="hqPanel"><h2><a href="/sourcing/outreach">공급처에 문의하고 견적 비교하기 →</a></h2><p>공급처 연락처로 문의 초안을 준비하고, 발송 상태와 회신을 한곳에서 관리합니다.</p></section>
       <QuickResearch enabled={automatedResearchEnabled} configured={configured}/>
+      <section className="hqPanel"><h2>최근 24시간 조사 비용</h2>
+        <p>토큰 기준 추정 합계 약 ${spend.known.toFixed(4)} · 실행 {spend.count}건{spend.unknown ? ` · 가격 미확인 ${spend.unknown}건은 합계 제외` : ''}</p>
+        <p>웹검색 등 별도 도구 요금과 실제 청구액은 포함되지 않을 수 있습니다.</p>
+      </section>
       {missions.filter(m=>!['completed','cancelled'].includes(m.status)).slice(0,3).length>0 && <section className="hqPanel"><h2>이미 맡긴 요청 — 다시 입력하지 마세요</h2>
         {missions.filter(m=>!['completed','cancelled'].includes(m.status)).slice(0,3).map(m=><div key={m.id}><h3>{m.title}</h3><ResearchControl missionId={m.id} enabled={automatedResearchEnabled} configured={configured} closed={false} job={jobs.find(j=>j.mission_id===m.id) || null} compact/><a href={`#mission-${m.id}`}>결과 확인 ↓</a></div>)}
       </section>}
@@ -136,7 +142,8 @@ export default async function Sourcing(){
                   <div><span>상태</span><b>{{queued:'준비됨 · 실행 전',running:'실행 중',completed:'조사 완료 · 조건 검토 필요',failed:'실패',cancelled:'취소'}[latestJob.status]}</b></div>
                   <div><span>Target</span><b>{latestJob.candidate_target} candidates</b></div>
                   <div><span>Sources</span><b>{latestJob.sources_found}</b></div>
-                  <div><span>비용</span><b>{latestJob.calls_used ? '사용량 기록 · 청구액 미확인' : '호출 전'}</b></div>
+                  <div><span>비용</span><b>{costLabel(latestJob)}</b></div>
+                  <small>입력 {latestJob.input_tokens ?? '—'} / 출력 {latestJob.output_tokens ?? '—'} 토큰 · {latestJob.model_name}</small>
                   <div><span>실행 시각</span><b>{new Date(latestJob.created_at).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',hour12:false})} KST</b></div>
                   {latestJob.error_message && <p role="alert">{latestJob.error_message}</p>}
                   {latestJob.result_json && <details open>
@@ -161,7 +168,7 @@ export default async function Sourcing(){
               {missionJobs.length>1 && <details>
                 <summary>이전 조사 기록 {missionJobs.length-1}건</summary>
                 <ul>{missionJobs.slice(1).map(j=><li key={j.id}>
-                  {new Date(j.created_at).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',hour12:false})} KST · {j.status} · 출처 {j.sources_found}개
+                  {new Date(j.created_at).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',hour12:false})} KST · {j.status} · 출처 {j.sources_found}개 · {j.model_name} · 입력 {j.input_tokens ?? '—'} / 출력 {j.output_tokens ?? '—'} 토큰 · {costLabel(j)}
                   {j.error_message && <p>{j.error_message}</p>}
                   {j.result_json && <p>{j.result_json.summary}</p>}
                 </li>)}</ul>

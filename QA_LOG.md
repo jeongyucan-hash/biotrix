@@ -110,3 +110,9 @@
 - Requires company sender/domain/provider setup. Reply ingestion is manual.
   Authenticated browser QA and actual mail delivery are not yet verified.
 - This entry describes prepared code; deployment evidence is in HQ agent_runs.
+## 2026-09-28 19:15 KST — Sourcing execution cost tracking
+- Moved Gateway catalog pricing and token cost estimation to `lib/ai/pricing.mjs`, shared by structured AI calls and sourcing. Unavailable catalog/price/usage leaves USD cost null with a specific reason, never an invented zero. Amount is a token-based estimate; web-search/tool charges and actual invoice may differ.
+- Sourcing persists observed input/output tokens, response model, estimated USD cost or reason on both completed and failed responses. `/sourcing` shows each execution and the last 24 hours' known subtotal with unpriced call count. Existing admin check, serialized start, 10 runs per 24 hours, cooldown and duplicate handling remain unchanged.
+- Eight focused Node tests passed; Next.js 15.5.26 production build passed. Security advisor found only the pre-existing leaked-password-protection warning. Migration `sourcing_cost_tracking` applied to project `qmhqdjxmpatncobkozkr`; function definition and historical row read-back verified.
+- First historical successful run (9,114 input, 1,402 output tokens) retains null cost with `historical_pricing_not_recorded`, as no contemporaneous catalog price was saved. No new paid research call was made. Deployment and authenticated UI verification are pending until the code is published.
+- HQ `agent_runs` and Knowledge document synchronization: pending connector record.

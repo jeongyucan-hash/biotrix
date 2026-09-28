@@ -1,3 +1,8 @@
+## 2026-09-28 — Domestic first-sale sourcing screen
+- Revisited run `097cdbac-e926-45e7-936c-aa11aec245dd`: its five overseas OEM/private-label candidates remain unapproved. No paid research rerun, outreach, purchase or listing.
+- Tightened `lib/sourcing/research.mjs` to prioritize domestic B2B/consignment, Korean consumer fulfillment, order-by-order low-inventory supply, KRW 1m ceiling and Coupang-first; excludes overseas OEM/bulk/overseas shipping and unavailable items. Unknown unit costs, stock, MOQ and permissions remain unknown.
+- Public official-source screen found three **platform-level discovery leads**, not approved product suppliers: 도매매, 온채널 and 오너클랜. Details, source URLs and product-level gates in `docs/domestic-supplier-screen-20260928.md`. An unavailable apple listing was excluded.
+- Five sourcing Node tests passed; `git diff --check` passed. No live paid model execution or authenticated HQ browser verification. HQ agent_runs/documents synchronization and deployment status recorded after commit when confirmed.
 
 ## 2026-09-28 15:34 KST — Paid Gateway activation and live sourcing verified
 - User authorized AI activation and payment. Purchased the minimum $10 one-time credit with $11.65 checkout total; dashboard balance changed from $5 free to $15 credit. Auto-reload remained disabled. No additional keys or access-control changes.

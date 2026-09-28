@@ -99,3 +99,9 @@
 - Bing device authentication completed. Published msvalidate.01 tag in commit f50eae8 and confirmed the live tag. Site ownership verified; authenticated dashboard for https://biotrix.co.kr/ is available.
 - Submitted https://biotrix.co.kr/sitemap.xml to Bing. Readback shows one sitemap, processing, zero current errors/warnings; indexing is pending.
 - Google remains verified with sitemap unable-to-read status; Daum submission remains under review. HQ session records updated separately.
+
+## 2026-09-28 — Naver terms approved, verification challenge pending
+
+- User explicitly approved Naver Search Advisor terms; accepted and opened site registration for https://biotrix.co.kr.
+- Published Naver verification meta tag in b2d2667; direct production HTTP readback confirms the exact tag.
+- Clicked HTML-tag ownership verification. Naver requires a user-completed CAPTCHA. Stopped at the challenge without solving/bypassing it. Ownership and sitemap submission remain pending.

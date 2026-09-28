@@ -105,3 +105,10 @@
 - User explicitly approved Naver Search Advisor terms; accepted and opened site registration for https://biotrix.co.kr.
 - Published Naver verification meta tag in b2d2667; direct production HTTP readback confirms the exact tag.
 - Clicked HTML-tag ownership verification. Naver requires a user-completed CAPTCHA. Stopped at the challenge without solving/bypassing it. Ownership and sitemap submission remain pending.
+
+## 2026-09-28 — Search readiness follow-up
+
+- Existing root `robots.txt`, `sitemap.xml` with the eight requested clean URLs, and issued Google/Naver verification tags confirmed on public main. Existing title, description, canonical and Open Graph retained.
+- Added minimal Organization JSON-LD and documented the single edit location for issued verification values in `SEO_VERIFICATION.md`.
+- Production robots and sitemap responded HTTP 200 before the update. Post-deployment readback pending; search console indexing is not implied.
+- HQ agent_runs and documents sync pending connector availability.

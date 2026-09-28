@@ -119,3 +119,9 @@
 - Submitted https://biotrix.co.kr/sitemap.xml; confirmed sitemap.xml row dated 2026-09-28 15:59:46 KST.
 - Requested homepage crawl; confirmed / request row dated 16:01:03 KST. Search visibility/indexing is pending and not guaranteed by registration.
 - Bing ownership and sitemap submission were completed earlier; Daum review and Google sitemap unreadable status remain outstanding.
+
+## 2026-09-28 — Kakao link preview
+
+- Added a 1200x630 PNG social card using the existing BIOTRIX symbol, white canvas and forest-green brand colors; retained editable SVG source.
+- Added absolute og:image, dimensions, MIME, alt text, locale/site name and Twitter large-image metadata to all eight public pages; preserved existing titles, descriptions, canonical and verification tags.
+- SVG rendering visually inspected; git diff --check passed. Production asset/metadata verification and Kakao cache status are recorded in HQ after deployment.

@@ -450,3 +450,6 @@
 @media(max-width:700px){.consoleGroups,.consoleMetrics,.consoleSystemGrid{grid-template-columns:1fr}.hqMobileNav nav{grid-template-columns:1fr 1fr}}
 @media(max-width:1180px){.adminWorkGrid{grid-template-columns:1fr}.adminSummary{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.adminOperator,.adminInvite,.adminCustomer{grid-template-columns:1fr}.adminOperator{align-items:stretch}.adminSummary{grid-template-columns:repeat(2,minmax(0,1fr))}.adminDraftList summary{flex-direction:column}}
+
+/* Work history */
+.historyMeta,.historyLinks,.historyPagination,.historySync{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.historyMeta{color:#667085;font-size:12px}.historyMeta time{margin-left:auto}.historyList h2{font-size:18px;line-height:1.6;overflow-wrap:anywhere}.historyLinks{margin:15px 0;color:#176447}.historyList details{margin-top:16px}.historyList summary{cursor:pointer}.historyList pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f7f6;padding:16px;font-size:12px;max-height:360px;overflow:auto}.historyNote,.historySync p{font-size:13px;color:#667085}.historyPagination{justify-content:center;padding:24px}.historySync button:disabled{opacity:.6;cursor:wait}@media(max-width:620px){.historyMeta time{margin-left:0;width:100%}}

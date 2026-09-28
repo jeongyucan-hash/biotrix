@@ -11,6 +11,7 @@ const groups = [
     items: [
       ["Dashboard", "/", "경영 지표와 오늘의 브리프"],
       ["Tasks", "/tasks", "업무 등록과 진행 상태"],
+      ["작업 기록", "/activity", "코드 변경·검수·배포 이력"],
       ["Founder Room", "/founder-room", "기회 검토와 다부서 토론"],
       ["AI Agents", "/agents", "에이전트 실행과 승인"],
       ["Work Queue", "/work-queue", "AI 업무 요청과 결과 검수"],

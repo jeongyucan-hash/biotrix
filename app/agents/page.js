@@ -119,7 +119,7 @@ export default async function Agents(){
         <article className="hqPanel">
           <div className="panelHead">
             <h2>Recent Agent Runs</h2>
-            <span>Execution History</span>
+            <a href="/activity">전체 작업 기록 →</a>
           </div>
 
           {runs.length ? (

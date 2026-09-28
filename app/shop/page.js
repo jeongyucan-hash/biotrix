@@ -42,7 +42,7 @@ export default async function Shop() {
     <>
       <header className="siteHeader">
         <nav className="container nav">
-          <Link className="brand" href="/">BIOTRIX</Link>
+          <Link className="brand" href="/shop">BIOTRIX</Link>
           <div className="navLinks">
             <Link href="/shop">Shop</Link>
             <Link href="/account" className="chip">My</Link>

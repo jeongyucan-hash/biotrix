@@ -7,6 +7,9 @@ export async function middleware(request) {
   if (
     pathname.startsWith("/login") ||
     pathname.startsWith("/auth/") ||
+    pathname === "/shop" ||
+    pathname === "/cart" ||
+    pathname === "/account" ||
     pathname.startsWith("/_next/") ||
     pathname === "/favicon.ico"
   ) {

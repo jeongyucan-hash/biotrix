@@ -47,3 +47,7 @@
 - Added deterministic asset integrity, public logo/favicons, white canvas and image reuse audit, with a scheduled GitHub Actions report and admin-triggered HQ review history.
 - Local `node --test tests/brandAudit.test.mjs tests/learning.test.mjs` passed 3 tests; local combined HQ/public audit passed with zero issues. Build and deployment verification recorded after promotion.
 - Existing beta-binomial evaluation still has no real visitor data. Scheduled static checks do not represent autonomous ML training or automatically alter deployed pages.
+
+## 2026-09-28 — hourly audit cadence
+
+- GitHub Actions brand audit cadence changed to hourly :17 UTC; reports retained 7 days. This changes the static inspection frequency only. Observation and learning semantics remain unchanged.

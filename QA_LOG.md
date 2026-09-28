@@ -116,3 +116,5 @@
 - Eight focused Node tests passed; Next.js 15.5.26 production build passed. Security advisor found only the pre-existing leaked-password-protection warning. Migration `sourcing_cost_tracking` applied to project `qmhqdjxmpatncobkozkr`; function definition and historical row read-back verified.
 - First historical successful run (9,114 input, 1,402 output tokens) retains null cost with `historical_pricing_not_recorded`, as no contemporaneous catalog price was saved. No new paid research call was made. Deployment and authenticated UI verification are pending until the code is published.
 - HQ `agent_runs` and Knowledge document synchronization: pending connector record.
+
+- Follow-up: commit `598d07a9119352c3585e73a3ea2ed118b8c85d1e` deployed with `Vercel – biotrix-hq` success. HQ `agent_runs` `747171d0-a511-4f98-88eb-202609281901` and Knowledge document `747171d0-a511-4f98-88eb-202609281902` were saved and read back. Authenticated live UI and a new paid execution remain unverified.

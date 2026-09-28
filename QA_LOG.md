@@ -1,4 +1,11 @@
 
+## 2026-09-28 15:34 KST — Paid Gateway activation and live sourcing verified
+- User authorized AI activation and payment. Purchased the minimum $10 one-time credit with $11.65 checkout total; dashboard balance changed from $5 free to $15 credit. Auto-reload remained disabled. No additional keys or access-control changes.
+- Before payment the authenticated request returned HTTP 403; after paid-tier activation the same HQ action succeeded without a code change. This supports a free-tier model restriction; the old log did not expose an exact error body.
+- Authenticated HQ UI run 097cdbac-e926-45e7-936c-aa11aec245dd completed at 15:33:18 KST: one model request, 30 source URLs, five candidates, 9,114 input and 1,402 output tokens. Database and rendered UI verified; supplier-research document with matching ID persisted.
+- Runtime code d38fe3671c802138703bc2460b5c5435b846bc0f was already deployed READY. This follow-up is documentation only; concurrent outreach changes d42041f preserved.
+- Limitations: a bounded user-triggered investigation, not a scheduled autonomous worker or seller-listing integration. Initial candidates are overseas OEM/private-label suppliers and are NOT approved for the near-term domestic launch. Actual prices, Korean compliance, stock and marketplace permissions remain unverified. Inference charge is separate from the top-up purchase and has not yet been read back.
+
 ## 2026-09-28 15:15:38 KST — Runtime AI authentication fix
 - User screenshot proves the execution control is disabled by missing-auth preflight; research job table remained empty. Vercel dashboard shows OIDC Team mode for biotrix-hq. Existing code incorrectly checked environment credentials only.
 - Official https://vercel.com/docs/oidc documents x-vercel-oidc-token for runtime Functions. Added server-side request-scoped credential resolution shared by page preflight and action execution; forwarded only to the existing Gateway endpoint, never client props or logs. Environment API-key/local-token fallback preserved. Incoming header ignored outside Vercel.

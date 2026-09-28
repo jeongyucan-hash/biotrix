@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { createClient } from "../../lib/supabase/server";
+import { requestResearch, parseResearch, researchConfiguration, researchError } from '../../lib/sourcing/research.mjs';
 
 async function getAdmin(){
   const supabase=await createClient();
@@ -19,8 +20,51 @@ async function getAdmin(){
 }
 
 function num(value){
+  if(value===null || value===undefined || String(value).trim()==='') return null;
   const n=Number(value);
   return Number.isFinite(n) ? n : null;
+}
+
+export async function runResearch(previousState,formData){
+  let supabase, job, response, called=false;
+  try {
+    ({supabase}=await getAdmin());
+    if(!researchConfiguration().configured) throw new Error('missing_auth');
+    const missionId=String(formData.get('mission_id') || '');
+    const instruction=String(formData.get('instruction') || '').trim();
+    const started=await supabase.rpc('start_sourcing_research',{p_mission_id:missionId,p_instruction:instruction});
+    if(started.error) {
+      const messages={research_disabled:'AI 실행이 꺼져 있습니다. 운영 설정에서 소싱 조사를 활성화해야 합니다.',
+        research_already_running:'다른 조사가 실행 중입니다. 완료 후 다시 실행해 주세요.',
+        daily_research_limit:'24시간 조사 한도(10회)에 도달했습니다.',research_cooldown:'연속 실행을 방지했습니다. 30초 후 다시 실행해 주세요.',
+        mission_closed:'완료 또는 취소된 미션은 실행할 수 없습니다.'};
+      return {error:messages[started.error.message] || '조사 시작을 저장하지 못했습니다. 설정과 권한을 확인해 주세요.'};
+    }
+    job=started.data;
+    called=true;
+    response=await requestResearch(job.objective);
+    const result=parseResearch(response);
+    const finished=await supabase.rpc('finish_sourcing_research',{
+      p_job_id:job.id,p_result:result,p_error:null,p_response_id:response.id || null,
+      p_usage:{...response.usage,requests:1},
+    });
+    if(finished.error) throw new Error('result_save_failed');
+    const saved=await supabase.from('sourcing_research_jobs').select('status').eq('id',job.id).single();
+    if(saved.error || saved.data?.status!=='completed') throw new Error('result_save_failed');
+    revalidatePath('/sourcing');revalidatePath('/knowledge');
+    return {message:`조사를 완료했습니다. 출처 ${result.sources.length}개를 저장했습니다. 후보와 미확인 조건을 아래에서 검토해 주세요.`};
+  } catch(error) {
+    const message=researchError(error);
+    if(job && supabase){
+      const failed=await supabase.rpc('finish_sourcing_research',{
+        p_job_id:job.id,p_result:null,p_error:message,p_response_id:response?.id || null,
+        p_usage:{...response?.usage,requests:called ? 1 : 0},
+      });
+      revalidatePath('/sourcing');
+      if(failed.error) return {error:`${message} 실패 기록도 저장되지 않았습니다. 작업 ID: ${job.id}`};
+    }
+    return {error:message};
+  }
 }
 
 export async function createMission(formData){

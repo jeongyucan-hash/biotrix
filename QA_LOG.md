@@ -51,3 +51,11 @@
 ## 2026-09-28 — hourly audit cadence
 
 - GitHub Actions brand audit cadence changed to hourly :17 UTC; reports retained 7 days. This changes the static inspection frequency only. Observation and learning semantics remain unchanged.
+
+## 2026-09-28 14:13 KST — HQ real sourcing execution
+- Root cause: sourcing prepared jobs/queries but never called a model or search; both execution flags were OFF. Fixed raw REST Responses text parsing shared with Founder Room.
+- Added authenticated GPT web research, persisted running/completed/failed state, retrieved-source validation, duplicate/cooldown/24-hour limits and atomic candidate + Knowledge report storage. Unknown pricing stays unknown; no external sending/order tools.
+- Design authority: active design.department DM-3.2; reused existing HQ components.
+- Five focused Node tests passed. Live Supabase rollback tests verified active admin success, duplicate prevention, atomic failure, error records and anonymous/nonadmin denial. Read-back confirmed zero fixtures. Next production build and diff check passed.
+- Limitations: user-triggered bounded run, not a scheduled worker. Live provider credentials/credit and authenticated browser completion not verified: review browser is at HQ magic-link login. Billing unknown, not falsely shown as zero. See docs/sourcing-execution.md.
+- Migration sourcing_execution applied and RLS read back enabled. Deployment pending publication; exact release evidence will be saved in HQ run 747171d0-a511-4f98-88eb-202609280301 and Knowledge document 747171d0-a511-4f98-88eb-202609280302.

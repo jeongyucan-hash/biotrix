@@ -1,6 +1,11 @@
 import HQShell from "../components/HQShell";
 import { createClient } from "../../lib/supabase/server";
-import { addCandidate, createMission, prepareResearchJob, promoteCandidate, updateCandidateStatus } from "./actions";
+import { addCandidate, createMission, promoteCandidate, updateCandidateStatus } from "./actions";
+import ResearchControl from './ResearchControl';
+import {researchConfiguration} from '../../lib/sourcing/research.mjs';
+import {safeUrl} from '../../lib/ai/responses.mjs';
+
+export const maxDuration=180;
 
 export const metadata={title:"Sourcing · BIOTRIX HQ",robots:{index:false,follow:false}};
 
@@ -23,7 +28,7 @@ export default async function Sourcing(){
       .order("updated_at",{ascending:false}),
     supabase
       .from("sourcing_research_jobs")
-      .select("id,mission_id,status,objective,search_queries,candidate_target,candidates_created,sources_found,model_name,calls_used,estimated_cost_usd,error_message,created_at,completed_at")
+      .select("id,mission_id,status,objective,search_queries,candidate_target,candidates_created,sources_found,model_name,calls_used,estimated_cost_usd,error_message,created_at,started_at,completed_at,result_json,input_tokens,output_tokens")
       .order("created_at",{ascending:false}),
     supabase
       .from("company_settings")
@@ -36,9 +41,11 @@ export default async function Sourcing(){
   const jobs=jobsResult.data || [];
   const settings=Object.fromEntries((settingsResult.data || []).map((row)=>[row.key,row.value]));
   const automatedResearchEnabled=settings["ai.enabled"]===true && settings["sourcing.research.enabled"]===true;
+  const configured=researchConfiguration().configured;
 
   return (
     <HQShell active="Sourcing" title="Sourcing">
+      {[missionsResult,candidatesResult,jobsResult,settingsResult].some(r=>r.error) && <p role="alert">일부 데이터를 불러오지 못했습니다. 결과가 없는 것으로 판단하지 말고 새로고침해 주세요.</p>}
       <section className="hqGrid2">
         <article className="hqPanel">
           <div className="panelHead">
@@ -113,31 +120,44 @@ export default async function Sourcing(){
             <div className="researchPrep">
               <div>
                 <strong>Sourcing Research</strong>
-                <p>검색쿼리와 조사 작업을 먼저 준비합니다. 준비 단계에서는 AI/API 비용이 발생하지 않습니다.</p>
+                <p>공개 공급처 조사 → 출처 확인 → 후보·지식 저장. 로그인 뒤 상품목록이나 공급처 답변은 별도로 확보해야 합니다.</p>
               </div>
 
               {latestJob ? (
                 <div className="researchJobSummary">
-                  <div><span>Status</span><b>{latestJob.status}</b></div>
+                  <div><span>상태</span><b>{{queued:'준비됨 · 실행 전',running:'실행 중',completed:'조사 완료 · 조건 검토 필요',failed:'실패',cancelled:'취소'}[latestJob.status]}</b></div>
                   <div><span>Target</span><b>{latestJob.candidate_target} candidates</b></div>
                   <div><span>Sources</span><b>{latestJob.sources_found}</b></div>
-                  <div><span>Cost</span><b>${Number(latestJob.estimated_cost_usd || 0).toFixed(4)}</b></div>
+                  <div><span>비용</span><b>{latestJob.calls_used ? '사용량 기록 · 청구액 미확인' : '호출 전'}</b></div>
+                  <div><span>실행 시각</span><b>{new Date(latestJob.created_at).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',hour12:false})} KST</b></div>
+                  {latestJob.error_message && <p role="alert">{latestJob.error_message}</p>}
+                  {latestJob.result_json && <details open>
+                    <summary>조사 결과 · 출처 {latestJob.sources_found}개 · 신규 후보 {latestJob.candidates_created}개</summary>
+                    <p style={{whiteSpace:'pre-wrap'}}>{latestJob.result_json.summary}</p>
+                    <p style={{whiteSpace:'pre-wrap'}}>{latestJob.result_json.limitations}</p>
+                    <ul>{(latestJob.result_json.sources || []).filter(s=>safeUrl(s.url)).map(s=><li key={s.url}><a href={s.url} target="_blank" rel="noopener noreferrer">{s.title || s.url}</a></li>)}</ul>
+                    <small>입력 {latestJob.input_tokens} / 출력 {latestJob.output_tokens} 토큰 · {latestJob.model_name}</small>
+                  </details>}
                   <details>
                     <summary>Prepared search queries</summary>
                     <div className="queryList">
                       {(latestJob.search_queries || []).map((query,index)=><span key={index}>{query}</span>)}
                     </div>
                   </details>
-                  <div className={automatedResearchEnabled ? "researchRuntime ready" : "researchRuntime off"}>
-                    {automatedResearchEnabled ? "Automated research ready" : "자동 웹조사는 아직 OFF"}
-                  </div>
                 </div>
               ) : (
-                <form action={prepareResearchJob}>
-                  <input type="hidden" name="mission_id" value={mission.id} />
-                  <button className="hqButton" type="submit">Research Job 준비</button>
-                </form>
+                <p>실행 기록 없음</p>
               )}
+              <ResearchControl missionId={mission.id} enabled={automatedResearchEnabled} configured={configured}
+                closed={['completed','cancelled'].includes(mission.status)} job={latestJob || null}/>
+              {missionJobs.length>1 && <details>
+                <summary>이전 조사 기록 {missionJobs.length-1}건</summary>
+                <ul>{missionJobs.slice(1).map(j=><li key={j.id}>
+                  {new Date(j.created_at).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',hour12:false})} KST · {j.status} · 출처 {j.sources_found}개
+                  {j.error_message && <p>{j.error_message}</p>}
+                  {j.result_json && <p>{j.result_json.summary}</p>}
+                </li>)}</ul>
+              </details>}
             </div>
 
             <details className="newOpportunity">

@@ -1,4 +1,9 @@
 
+## 2026-09-28 15:15:38 KST — Runtime AI authentication fix
+- User screenshot proves the execution control is disabled by missing-auth preflight; research job table remained empty. Vercel dashboard shows OIDC Team mode for biotrix-hq. Existing code incorrectly checked environment credentials only.
+- Official https://vercel.com/docs/oidc documents x-vercel-oidc-token for runtime Functions. Added server-side request-scoped credential resolution shared by page preflight and action execution; forwarded only to the existing Gateway endpoint, never client props or logs. Environment API-key/local-token fallback preserved. Incoming header ignored outside Vercel.
+- No keys created, read out, or copied; no billing settings changed. Actual Gateway request and owner UI validation remain pending. Final deployment/checks are tracked in HQ agent_runs 747171d0-a511-4f98-88eb-202609280701 and document 747171d0-a511-4f98-88eb-202609280702.
+
 ## 2026-09-28 15:08:33 KST — One-sentence sourcing intake
 - Added top-level plain-language request -> persist mission -> existing bounded research action. No extra model call for intake. Existing requests have top-of-page execution controls; optional detailed setup is collapsed.
 - Explicit defaults: Coupang, initial cash cap KRW 1,000,000. No invented prices or margin; defaults visible before submission. No external messages, purchases or listings.

@@ -3,6 +3,7 @@ import { createClient } from "../../lib/supabase/server";
 import { addCandidate, createMission, promoteCandidate, updateCandidateStatus } from "./actions";
 import ResearchControl from './ResearchControl';
 import QuickResearch from './QuickResearch';
+import {gatewayCredentials} from '../../lib/ai/gateway-auth';
 import {researchConfiguration} from '../../lib/sourcing/research.mjs';
 import {safeUrl} from '../../lib/ai/responses.mjs';
 
@@ -42,7 +43,7 @@ export default async function Sourcing(){
   const jobs=jobsResult.data || [];
   const settings=Object.fromEntries((settingsResult.data || []).map((row)=>[row.key,row.value]));
   const automatedResearchEnabled=settings["ai.enabled"]===true && settings["sourcing.research.enabled"]===true;
-  const configured=researchConfiguration().configured;
+  const configured=researchConfiguration(await gatewayCredentials()).configured;
 
   return (
     <HQShell active="Sourcing" title="Sourcing">

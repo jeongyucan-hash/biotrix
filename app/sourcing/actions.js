@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { createClient } from "../../lib/supabase/server";
 import { requestResearch, parseResearch, researchConfiguration, researchError } from '../../lib/sourcing/research.mjs';
 import {quickMission} from '../../lib/sourcing/intake.mjs';
+import {gatewayCredentials} from '../../lib/ai/gateway-auth';
 
 export async function quickResearch(previousState,formData){
   let missionId;
@@ -12,7 +13,7 @@ export async function quickResearch(previousState,formData){
     let mission;
     try { mission=quickMission(formData.get('request')); }
     catch(error) { return {error:error.message}; }
-    if(!researchConfiguration().configured) return {error:'AI 연결 설정이 필요합니다. 요청을 다시 입력하지 말고 관리자에게 알려 주세요.'};
+    if(!researchConfiguration(await gatewayCredentials()).configured) return {error:'AI 연결 설정이 필요합니다. 요청을 다시 입력하지 말고 관리자에게 알려 주세요.'};
     missionId=String(formData.get('request_id') || '');
     if(!/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(missionId)) return {error:'화면을 새로고침한 후 다시 시도해 주세요.'};
     const inserted=await supabase.from('sourcing_missions').insert({...mission,id:missionId,created_by:user.id});
@@ -54,7 +55,8 @@ export async function runResearch(previousState,formData){
   let supabase, job, response, called=false;
   try {
     ({supabase}=await getAdmin());
-    if(!researchConfiguration().configured) throw new Error('missing_auth');
+    const credentials=await gatewayCredentials();
+    if(!researchConfiguration(credentials).configured) throw new Error('missing_auth');
     const missionId=String(formData.get('mission_id') || '');
     const instruction=String(formData.get('instruction') || '').trim();
     const started=await supabase.rpc('start_sourcing_research',{p_mission_id:missionId,p_instruction:instruction});
@@ -67,7 +69,7 @@ export async function runResearch(previousState,formData){
     }
     job=started.data;
     called=true;
-    response=await requestResearch(job.objective);
+    response=await requestResearch(job.objective,{env:credentials});
     const result=parseResearch(response);
     const finished=await supabase.rpc('finish_sourcing_research',{
       p_job_id:job.id,p_result:result,p_error:null,p_response_id:response.id || null,

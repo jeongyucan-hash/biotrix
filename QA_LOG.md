@@ -22,11 +22,14 @@
 ### Verification
 - Static audit: 6 public pages, 108 internal links, section anchors, assets, heading structure and placeholder copy passed.
 - JavaScript syntax checks passed for shared navigation and slideshow scripts.
-- Browser review and deployment check: pending in this working revision.
+- Browser checks passed: 320px and 390px mobile layouts, no horizontal overflow on all six pages, menu Escape dismissal, slideshow pause/selection, and FAQ keyboard interaction.
+- Production published by fast-forwarding main to 63da7fefda7c2f07c566657fc129d80a85f90d82. Vercel production deployment succeeded; https://biotrix.co.kr/ was verified through HTTP and a live browser.
+- HQ commit 17535fdf527a4f7a968c0589fbf29371abf07ce6 passed 3 ingestion tests and a production build; its Vercel deployment succeeded. Authenticated HQ UI review remains unverified.
 
 ### Agency records
 - Confirmed that `agent_runs` was empty: previous commits were not automatically recorded in HQ.
 - Backfilled the preceding logo/copy/slideshow session: `aad305b2-1540-2aa6-8da2-8db2254181ae`.
+- Backfilled 210 distinct GitHub commits into the real agency database.
 - Current QA session: `40b2727c-5cef-9433-fa4b-04eedc8824a5`.
 - HQ `/activity` adds protected session history and GitHub commit ingestion on page open, at most once per 30 minutes. It is not a background worker or conversation recorder.
 

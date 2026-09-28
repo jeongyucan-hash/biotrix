@@ -92,3 +92,10 @@
 - Naver login callback failed; Bing Google login awaiting device confirmation. Business/map listing eligibility remains unconfirmed.
 - Repository: jeongyucan-hash/biotrix, production branch main. Local isolated branch seo/search-registration-20260928 has validation commit 871b7b3; CLI push lacked credentials, so production changes were applied through the authorized GitHub connector using current blob SHA guards.
 - HQ writeback follows under session search-registration-20260928; confirmation is recorded in HQ rather than inferred from this commit.
+
+## 2026-09-28 — Naver retry and Bing verification
+
+- Naver retry passed the prior login failure and reached the first-use Search Advisor terms dialog. Awaiting explicit approval of Naver terms; no site verification/submission claimed.
+- Bing device authentication completed. Published msvalidate.01 tag in commit f50eae8 and confirmed the live tag. Site ownership verified; authenticated dashboard for https://biotrix.co.kr/ is available.
+- Submitted https://biotrix.co.kr/sitemap.xml to Bing. Readback shows one sitemap, processing, zero current errors/warnings; indexing is pending.
+- Google remains verified with sitemap unable-to-read status; Daum submission remains under review. HQ session records updated separately.

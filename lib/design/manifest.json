@@ -37,8 +37,8 @@
       "label": "전체 원본 패키지",
       "description": "AI 호환본·PDF·SVG·개별 보드·사진·토큰·사용 안내",
       "mime": "application/zip",
-      "bytes": 6597795,
-      "sha256": "4d12e51385915655f686042530aecc9e260d06d8dc9c7a7d8262b77e8d9e8597",
+      "bytes": 2869188,
+      "sha256": "0b97b04409cea7a9517bcd9918dcdba776cd91deaaa94ecc32fd52901265f39f",
       "download": true,
       "inline": false
     },

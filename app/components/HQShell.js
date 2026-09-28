@@ -2,23 +2,33 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "../../lib/supabase/server";
 
-const items = [
-  ["Dashboard","/"],
-  ["Tasks","/tasks"],
-  ["Commerce","/commerce"],
-  ["Products","/products"],
-  ["Sourcing","/sourcing"],
-  ["R&D","/rd"],
-  ["Growth","/growth"],
-  ["Advisory","/advisory"],
-  ["Procurement","/procurement"],
-  ["Suppliers","/suppliers"],
-  ["Finance","/finance"],
-  ["Knowledge","/knowledge"],
-  ["Work Queue","/work-queue"],
-  ["Founder Room","/founder-room"],
-  ["AI Agents","/agents"],
+const sections = [
+  ["운영", [
+    ["운영 콘솔","/admin"],["Dashboard","/"],["Tasks","/tasks"],
+    ["Work Queue","/work-queue"],["Founder Room","/founder-room"],["AI Agents","/agents"],
+  ]],
+  ["커머스", [
+    ["Commerce","/commerce"],["Products","/products"],["Sourcing","/sourcing"],
+    ["Procurement","/procurement"],["Suppliers","/suppliers"],["Finance","/finance"],
+  ]],
+  ["기획 · 지식", [
+    ["R&D","/rd"],["Growth","/growth"],["Advisory","/advisory"],["Knowledge","/knowledge"],
+  ]],
+  ["설정", [["설정","/admin/settings"]]],
 ];
+
+function MenuSections({ active, role }) {
+  return sections.map(([section, items]) => {
+    const visible = items.filter(([label]) => label !== "설정" || role === "owner");
+    if (!visible.length) return null;
+    return <div className="hqMenuGroup" key={section}>
+      <div className="hqMenuHeading">{section}</div>
+      {visible.map(([label, href]) => (
+        <Link key={label} href={href} className={active === label ? "active" : ""}>{label}</Link>
+      ))}
+    </div>;
+  });
+}
 
 export default async function HQShell({ active, title, eyebrow="BIOTRIX HQ", children }) {
   const supabase = await createClient();
@@ -37,16 +47,16 @@ export default async function HQShell({ active, title, eyebrow="BIOTRIX HQ", chi
   return (
     <div className="hqShell">
       <aside className="hqSide">
-        <div className="hqBrand">BIOTRIX HQ</div>
+        <div className="hqBrand">BIOTRIX ADMIN</div>
         <div className="hqSub">Company Operating System</div>
 
-        <nav className="hqMenu">
-          {items.map(([label, href]) => (
-            <Link key={label} href={href} className={active===label ? "active" : ""}>
-              {label}
-            </Link>
-          ))}
+        <nav className="hqMenu" aria-label="어드민 메뉴">
+          <MenuSections active={active} role={admin.role} />
         </nav>
+        <details className="hqMobileNav">
+          <summary>메뉴 열기</summary>
+          <nav aria-label="어드민 모바일 메뉴"><MenuSections active={active} role={admin.role} /></nav>
+        </details>
 
         <div className="hqSideFoot">
           <span className="statusDot"></span>

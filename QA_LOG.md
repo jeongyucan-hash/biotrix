@@ -16,3 +16,11 @@
 - PDF visual review and page bounds passed; SVG image references fixed and rendered in Inkscape. Native Adobe AI export/app verification is unavailable.
 - Six automated tests and Next.js production build passed. Active-admin checks protect page, actions and file routes; no public asset directory exposes the masters.
 - Browser reached HQ login; authenticated UI verification was not available. Deployment status is recorded in HQ agent_runs at release completion.
+
+## 2026-09-28 12:36:22 KST — Unified inbox and reliable work acceptance
+- Preserved design-office changes from c314131. /tasks now includes AI/site/design work alongside existing general tasks; detailed links resolve older requested items beyond the recent list.
+- Work results save and advance status in one authenticated invoker RPC. Retrying the same result ID is idempotent. Acceptance atomically creates and links a Knowledge document and protects against duplicate acceptance. Forms display success/failure and disable while pending.
+- Applied 20260928033100_reliable_work_results.sql to production. Transactional integration checks passed for save retry, repeated acceptance, document link and protected status; fixtures rolled back. Anonymous and nonadmin calls were denied. npm run build and git diff --check passed.
+- Remaining: authenticated browser end-to-end verification; title prefixes still bridge site/design categorization; existing general-task schema is retained. Direct table clients retain existing RLS permissions. No autonomous development worker is connected.
+- AI runtime remains disabled. Founder Room has model-call orchestration but production authentication/model response has not been verified; specialist configuration currently differs from GPT-only intent. No paid model calls were made.
+- Deployment: pending GitHub publication and Vercel READY verification; final deployment evidence is recorded in this session's HQ agent_runs and Knowledge document.

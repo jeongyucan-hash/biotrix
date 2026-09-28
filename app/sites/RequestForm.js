@@ -13,6 +13,6 @@ export default function RequestForm({ selected }) {
     <label>완료 기준<textarea name="criteria" rows={3} defaultValue="모바일과 PC에서 확인하고, 변경 내용·검수 결과·실제 반영 주소를 보고해주세요." required maxLength={3000} /></label>
     <label>우선순위<select name="priority" defaultValue="medium"><option value="medium">보통</option><option value="high">높음</option><option value="urgent">긴급</option><option value="low">낮음</option></select></label>
     <button className="hqButton" disabled={pending || state?.ok} type="submit">{pending ? '접수 중…' : state?.ok ? '접수 완료' : 'HQ에 업무 맡기기'}</button>
-    {state && <div role={state.ok ? 'status' : 'alert'}><p>{state.message}</p>{state.ok && <><Link href={`/work-queue#work-${state.id}`}>업무 상세 열기 →</Link><p><a href="/sites#request">다른 업무 등록</a></p></>}</div>}
+    {state && <div role={state.ok ? 'status' : 'alert'}><p>{state.message}</p>{state.ok && <><Link href={`/work-queue?id=${state.id}#work-${state.id}`}>업무 상세 열기 →</Link><p><a href="/sites#request">다른 업무 등록</a></p></>}</div>}
   </form>;
 }

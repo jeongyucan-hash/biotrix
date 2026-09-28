@@ -2,7 +2,7 @@
 import { useActionState } from 'react';
 import Link from 'next/link';
 import { requestDesignWork, recordDesignDecision } from './actions';
-function Status({state}) {return state && <div role={state.ok?'status':'alert'}><p>{state.message}</p>{state.id && <Link href={`/work-queue#work-${state.id}`}>실행 요청과 검수 열기 →</Link>}{state.ok && <p><a href="/design">새 기록 작성하기</a></p>}</div>;}
+function Status({state}) {return state && <div role={state.ok?'status':'alert'}><p>{state.message}</p>{state.id && <Link href={`/work-queue?id=${state.id}#work-${state.id}`}>실행 요청과 검수 열기 →</Link>}{state.ok && <p><a href="/design">새 기록 작성하기</a></p>}</div>;}
 export function DesignRequestForm() {
  const [state,action,pending]=useActionState(requestDesignWork,null);
  return <form action={action} className="stackForm">

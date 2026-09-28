@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { formatKST } from "../../lib/sites/catalog";
 import HQShell from "../components/HQShell";
 import { createClient } from "../../lib/supabase/server";
 import { createTask, updateTaskStatus } from "./actions";
@@ -18,12 +20,18 @@ export default async function Tasks(){
     .select("id,title,description,status,priority,due_at,created_at")
     .order("created_at",{ascending:false});
 
+  const {data:work,error:workError}=await supabase.from("chatgpt_work_items").select("id,title,status,priority,department,updated_at").order("updated_at",{ascending:false}).limit(100);
+  const labels={prepared:"접수",in_progress:"진행 중",result_ready:"검수 대기",accepted:"채택",archived:"보관",cancelled:"취소"};
   return (
-    <HQShell active="Tasks" title="Tasks">
+    <HQShell active="Tasks" title="통합 업무함">
+      <section className="hqPanel"><div className="panelHead"><h2>AI · 사이트 · 디자인 업무</h2><Link href="/work-queue">업무 접수 →</Link></div><p>일반 업무와 AI 업무를 이곳에서 확인합니다. 기존 기록은 유지되며 AI 업무의 실행·검수는 상세에서 처리합니다.</p>
+        {workError ? <p role="alert">AI 업무를 불러오지 못했습니다.</p> : work?.length ? <div className="siteWorkList">{work.map(item=><Link key={item.id} href={`/work-queue?id=${item.id}#work-${item.id}`}><strong>{item.title}</strong><span>{labels[item.status]||item.status} · {item.department} · {item.priority}</span><small>{formatKST(item.updated_at)}</small></Link>)}</div> : <p>접수된 AI 업무가 없습니다.</p>}
+        <p>최근 최대 100건 · 채택은 배포 완료와 별개입니다.</p>
+      </section>
       <section className="hqPanel">
         <div className="panelHead">
-          <h2>New Task</h2>
-          <span>Operational Work Queue</span>
+          <h2>일반 업무 등록</h2>
+          <span>직접 처리할 업무</span>
         </div>
         <form action={createTask} className="taskCreate">
           <input name="title" placeholder="업무 제목" required />

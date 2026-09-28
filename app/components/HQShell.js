@@ -4,7 +4,7 @@ import { createClient } from "../../lib/supabase/server";
 
 const sections = [
   ["운영", [
-    ["사이트 통합 관리","/sites"],["홈페이지 디자인실","/design"],["운영 콘솔","/admin"],["작업 기록","/activity"],["Dashboard","/"],["Tasks","/tasks"],
+    ["사이트 통합 관리","/sites"],["홈페이지 디자인실","/design"],["운영 콘솔","/admin"],["작업 기록","/activity"],["Dashboard","/"],["통합 업무함","/tasks"],
     ["Work Queue","/work-queue"],["Founder Room","/founder-room"],["AI Agents","/agents"],
   ]],
   ["커머스", [
@@ -24,7 +24,7 @@ function MenuSections({ active, role }) {
     return <div className="hqMenuGroup" key={section}>
       <div className="hqMenuHeading">{section}</div>
       {visible.map(([label, href]) => (
-        <Link key={label} href={href} className={active === label ? "active" : ""}>{label}</Link>
+        <Link key={label} href={href} className={(active === "Tasks" ? "통합 업무함" : active) === label ? "active" : ""}>{label}</Link>
       ))}
     </div>;
   });

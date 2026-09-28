@@ -1,3 +1,6 @@
+import { randomUUID } from "node:crypto";
+import Link from "next/link";
+import ActionForm from "../components/ActionForm";
 import HQShell from "../components/HQShell";
 import { createClient } from "../../lib/supabase/server";
 import CopyButton from "./CopyButton";
@@ -5,7 +8,9 @@ import { acceptWorkResult, createWorkItem, saveWorkResult, setWorkStatus } from 
 
 export const metadata={title:"Work Queue · BIOTRIX HQ",robots:{index:false,follow:false}};
 
-export default async function WorkQueue(){
+export default async function WorkQueue({searchParams}){
+  const params=await searchParams;
+  const requestedId=/^[0-9a-f-]{36}$/i.test(params?.id||"") ? params.id : null;
   const supabase=await createClient();
 
   const [itemsResult,resultsResult,oppsResult,missionsResult]=await Promise.all([
@@ -16,12 +21,22 @@ export default async function WorkQueue(){
   ]);
 
   const items=itemsResult.data || [];
+  if(requestedId && !items.some(item=>item.id===requestedId)){
+    const {data:item}=await supabase.from("chatgpt_work_items").select("*").eq("id",requestedId).maybeSingle();
+    if(item) items.unshift(item);
+  }
   const results=resultsResult.data || [];
+  if(requestedId){
+    const {data:extra}=await supabase.from("chatgpt_work_results").select("*").eq("work_item_id",requestedId).order("created_at",{ascending:false});
+    for(const result of extra||[]) if(!results.some(r=>r.id===result.id)) results.push(result);
+    results.sort((a,b)=>new Date(b.created_at)-new Date(a.created_at));
+  }
   const opportunities=oppsResult.data || [];
   const missions=missionsResult.data || [];
 
   return (
     <HQShell active="Work Queue" title="ChatGPT Work Queue" eyebrow="CHATGPT-NATIVE OPERATIONS">
+      <p><Link href="/tasks">← 통합 업무함</Link> · 접수는 자동 실행을 의미하지 않습니다.</p>
       <section className="hqGrid2">
         <article className="hqPanel">
           <div className="panelHead">
@@ -29,7 +44,7 @@ export default async function WorkQueue(){
             <span>API 없이 ChatGPT/Work로 전달</span>
           </div>
 
-          <form action={createWorkItem} className="stackForm">
+          <ActionForm action={createWorkItem} className="stackForm">
             <input name="title" placeholder="업무명" required />
             <select name="department" defaultValue="sourcing">
               <option value="founder">Founder / Chief of Staff</option>
@@ -61,7 +76,7 @@ export default async function WorkQueue(){
 
             <textarea name="objective" rows="6" placeholder="ChatGPT/Work가 완료해야 할 결과를 명확히 적으세요." required />
             <button className="hqButton" type="submit">Work Packet 생성</button>
-          </form>
+          </ActionForm>
         </article>
 
         <article className="hqPanel">
@@ -110,12 +125,13 @@ export default async function WorkQueue(){
                     <pre>{item.prompt_text}</pre>
                   </details>
 
-                  {!latest && item.status!=="cancelled" && (
-                    <form action={saveWorkResult} className="resultForm">
+                  {!latest && !["cancelled","archived","accepted"].includes(item.status) && (
+                    <ActionForm action={saveWorkResult} className="resultForm">
                       <input type="hidden" name="work_item_id" value={item.id} />
+                      <input type="hidden" name="result_id" value={randomUUID()} />
                       <textarea name="result_text" rows="7" placeholder="ChatGPT/Work 결과를 여기에 붙여 넣으세요." required />
                       <button type="submit">결과 저장</button>
-                    </form>
+                    </ActionForm>
                   )}
 
                   {latest && (
@@ -126,26 +142,26 @@ export default async function WorkQueue(){
                       </div>
                       <p>{latest.result_text}</p>
                       {!latest.accepted && (
-                        <form action={acceptWorkResult}>
+                        <ActionForm action={acceptWorkResult}>
                           <input type="hidden" name="result_id" value={latest.id} />
                           <button className="acceptButton" type="submit">Accept → Knowledge 저장</button>
-                        </form>
+                        </ActionForm>
                       )}
                     </div>
                   )}
 
-                  <form action={setWorkStatus} className="workStatusForm">
+                  <ActionForm action={setWorkStatus} className="workStatusForm">
                     <input type="hidden" name="id" value={item.id} />
                     <select name="status" defaultValue={item.status}>
                       <option value="prepared">Prepared</option>
                       <option value="in_progress">In progress</option>
-                      <option value="result_ready">Result ready</option>
-                      <option value="accepted">Accepted</option>
+                      <option value="result_ready" disabled>검수 대기 — 결과 저장으로 변경</option>
+                      <option value="accepted" disabled>채택 — 결과 검수로 변경</option>
                       <option value="archived">Archived</option>
                       <option value="cancelled">Cancelled</option>
                     </select>
                     <button type="submit">Status</button>
-                  </form>
+                  </ActionForm>
                 </article>
               );
             })}

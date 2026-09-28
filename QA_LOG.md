@@ -66,3 +66,7 @@
 ## 2026-09-28 — white canvas update
 
 - User selected direction A and requested removing ivory background tone. Updated all global ivory, header, hero visual fallback, slide controls, footer and mobile navigation surfaces to white. Sage/Peach section accents remain.
+
+## 2026-09-28 — scheduled branding check
+
+- Added default-branch GitHub Action to check public logo/favicons, white canvas, homepage image reuse and HQ master asset hashes daily at 03:17 UTC or manually. Report is stored in workflow artifacts for 30 days; deployment is not automatic.

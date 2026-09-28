@@ -44,3 +44,17 @@
 - Replaced metallic header mark with the flat vector mark. Retained keyboard navigation, pause/manual slideshow and reduced-motion handling.
 - Provenance is recorded in assets/EDITORIAL_SOURCES.md and the contact FAQ.
 - Static links/assets/headings audit and JavaScript syntax checks run before preview. Responsive browser QA and production readback are recorded in HQ when complete.
+
+## 2026-09-28 12:44:31 KST — Development review snapshot
+
+- Created six-page development/benchmark review at user request. Distinguished existing production from DM-3 preview and unfinished HQ/master publication.
+- HQ document confirmed: b273d77f-be44-7ed1-7a15-520f2aea4d7c (website-development).
+- Compared official Aesop, OSEA, Kurly information architecture and Shopify structured product/AI commerce reference; did not claim comparative conversion or revenue results.
+- Remaining gates: full responsive interaction QA, main promotion, HQ v3 assets/status update, real product and contact paths, measured performance/conversion.
+
+## 2026-09-28 — DM-3.0 verified release
+
+- Public `main` was fast-forwarded to `eb456f7a1c03f26c9cdfddaa82d86c3a93b4904c`. The public Vercel deployment succeeded, and `https://biotrix.co.kr/` displayed the new split hero and independent food photograph in the browser.
+- HQ `hq-nextjs` release `3c8fc52cbe1f426b7a72b9cc817fb1be5ccd1d9d` succeeded. HQ `design.master` is v3.0 with 19 private assets (full master, source files, mood image, and 14 individual PDF boards). Admin-only learning page stores aggregate observations and model evaluation. No observations or trained recommendation yet.
+- Six public pages and 149 internal links passed static audit. Browser confirmed home at 320px has no horizontal overflow; image loading, manual slideshow and pause were checked. The authenticated HQ UI and all page interaction paths have not been fully exercised.
+- Remaining business inputs: real product details/purchase destinations and a verified inquiry receiving channel. Generated scenes are illustrative.

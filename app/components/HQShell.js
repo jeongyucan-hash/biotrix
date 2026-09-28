@@ -12,7 +12,7 @@ const sections = [
     ["Procurement","/procurement"],["Suppliers","/suppliers"],["Finance","/finance"],
   ]],
   ["성장 · 지식", [
-    ["Growth","/growth"],["R&D","/rd"],["Advisory","/advisory"],["Knowledge","/knowledge"],
+    ["Growth","/growth"],["R&D","/rd"],["Advisory","/advisory"],["Knowledge","/knowledge"],["Scribe","/scribe"],
     ["홈페이지 디자인실","/design"],["디자인 학습","/learning"],["Founder Room","/founder-room"],["AI Agents","/agents"],
   ]],
   ["계정", [["설정","/admin/settings"],["비밀번호 설정","/account/security"]]],

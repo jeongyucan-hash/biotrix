@@ -125,3 +125,6 @@
 - Added a persistent workspace switch bar to all HQ routes and grouped the module menu under operations, commerce/supply, growth/knowledge, and account. Each group opens automatically for the active route and can be collapsed.
 - Verification: production build passed on the checked HQ source snapshot before publication. Existing canonical hostnames were retained; no DNS or provider settings were changed.
 - Follow-up: verify the production deployment and the signed-in cross-site link after release. The Yuchan OS remains owner-only.
+
+
+- Release verification: HQ commit `0c7c2ebb776a7b7e5667d947e55d30aab7915bac` is Vercel deployment `dpl_9EKim3sT5qZpRH6cDZDZzLCM1eH3`, state `READY`, with `biotrix-hq.vercel.app` alias. Yuchan OS commit `d3e7f5a9dd423e90385c9669a53ac33078470feb` deployed successfully at its existing owner-only address. Its production build and 7 focused tests passed; publisher test was not run because its generated image fixture was absent. Domain aliases remain unconfigured.

@@ -1,7 +1,7 @@
 from pathlib import Path
 base=Path(__file__).with_name('build_master.py').read_text()
 exec(base.split('# 01')[0])
-OUT=ROOT/'release-v3';OUT.mkdir(exist_ok=True);(OUT/'boards').mkdir(exist_ok=True)
+OUT=ROOT/'release-v3.1';OUT.mkdir(exist_ok=True);(OUT/'boards').mkdir(exist_ok=True)
 from reportlab.graphics.shapes import Drawing
 from reportlab.graphics import renderPDF
 from fontTools.svgLib.path import parse_path
@@ -16,10 +16,10 @@ boards=[]
 # The original board utility provides simple native vector primitives only.
 def page(title,section,note=''):
  b=Board(title,section);boards.append(b);b.header(len(boards));
- b.ops=[tuple(str(x).replace('DM-2.0','DM-3.0') if isinstance(x,str) else x for x in op) for op in b.ops]
+ b.ops=[tuple(str(x).replace('DM-2.0','DM-3.1') if isinstance(x,str) else x for x in op) for op in b.ops]
  if note:b.note(note)
  return b
-b=page('좋은 일상은, 작은 선택에서.','EDITORIAL EVERYDAY','DM-3.0 / 사진의 반복을 줄이고, 장면과 타이포그래피로 브랜드의 리듬을 만듭니다.')
+b=page('좋은 일상은, 작은 선택에서.','EDITORIAL EVERYDAY','DM-3.1 / 사진의 반복을 줄이고, 장면과 타이포그래피로 브랜드의 리듬을 만듭니다.')
 b.text(48,261,'Everyday,',66,F,False);b.text(48,340,'a little better.',66,F,False);b.lines(50,419,['잘 먹고, 나를 돌보고,','편안하게 가꾸는 일.'],25,F,False,43);b.button(48,551,'우리의 세 가지 분야',205);b.photo(645,190,507,498,'food');b.text(48,674,'소유: HQ 홈페이지 디자인실 / 공개 홈페이지 구현 기준',13,G)
 b=page('반복 대신, 서로 다른 네 개의 장면.','ART DIRECTION','한 원본을 잘라 다른 사진처럼 쓰지 않습니다. 아래 네 장면은 각각 독립적으로 생성했습니다.')
 for i,(key,title,desc) in enumerate([('food','01 / THE TABLE','식탁의 계절 · 대각선 정물 구도'),('wellness','02 / THE MORNING','사람이 있는 공간 · 환경과 움직임'),('beauty','03 / THE TEXTURE','물과 소재 · 매크로 질감'),('brand','04 / THE LANDSCAPE','자연의 깊이 · 넓은 풍경')]):
@@ -27,8 +27,8 @@ for i,(key,title,desc) in enumerate([('food','01 / THE TABLE','식탁의 계절 
 b=page('하나의 사진에는 하나의 역할.','PLACEMENT RULES','홈의 사진 원본은 각각 한 번만 배치합니다. 카드 탐색에는 사진을 반복하지 않습니다.')
 for i,(t,lines) in enumerate([('메인 슬라이드',['식탁 → 아침 → 소재의 질감','사진 영역만 전환 / 문구는 고정','6.5초 · 이전/다음 · 일시정지']),('브랜드 이야기',['과수원 풍경은 브랜드 관점에 사용','보유 농장이나 공급자로 소개하지 않음','브랜드 이미지라는 캡션 제공']),('분야 탐색',['큰 영문 서체 + 한글 분야명','선·여백·배경 반응으로 탐색 유도','반복 사진 카드 제거'])]):b.card(48+i*374,190,352,230,t,lines)
 b.rect(48,465,1104,228,F,12);b.lines(76,510,['통일감은 같은 사진이 아니라, 시각적 기준에서 만듭니다.','Forest · Ivory · 따뜻한 빛 · 자연스러운 질감 · 명확한 글자 위계','원본 출처: OpenAI 이미지 생성 / 실제 상품·시설·인물의 증빙 사진 아님','제품 출시 시에는 검증된 실제 상품 사진을 별도로 사용합니다.'],20,W,False,44)
-b=page('색·서체·로고의 일관성.','FOUNDATIONS','기존 B 심볼은 평면형으로 정리하고, 영문 디스플레이 서체로 화면에 대비를 줍니다.')
-b.rect(48,185,538,188,W,12);b.logo(80,222,1.5);b.text(80,345,'FLAT B / Forest + Sage',12,G)
+b=page('색·서체·로고의 일관성.','FOUNDATIONS','B의 내부 여백으로 잎의 움직임을 만듭니다. 한 가지 색상으로 16px에서도 또렷하게 사용합니다.')
+b.rect(48,185,538,188,W,12);b.logo(80,222,1.5);b.text(215,345,'NEGATIVE B / Forest · one ink',12,G)
 for i,(name,col) in enumerate([('Forest',F),('Ivory',I),('Sage','#E2E8DC'),('Peach','#EEE1D3')]):
  x=627+i*135;b.rect(x,185,120,118,col,8,L);b.text(x,333,name,13,F);b.text(x,354,col,11,G)
 b.card(48,409,536,283,'TYPOGRAPHY',['한글: 시스템 Sans / 가독성과 자연스러운 줄바꿈','영문 분야: Georgia / Food · Wellness · Beauty','홈 H1: 데스크톱 36~58px · 모바일 33~49px','본문: 14~17px · 행간 1.7~1.95','캡션 10~12px / 실제 페이지와 토큰 파일 대조'])
@@ -69,16 +69,17 @@ b.card(48,187,538,249,'SLIDESHOW',['독립된 사진 3장 / 순서와 캡션 표
 b.card(612,187,540,249,'RESPONSIVE',['320 / 390 / 768 / 1440px','화면 너비보다 큰 요소 없음','핵심 피사체·한글 줄바꿈 확인','메뉴·FAQ·앵커 링크 검수','이미지 로딩·대체 텍스트 확인'])
 b.rect(48,469,1104,224,F,12);b.lines(75,517,['구현 기준 파일','assets/editorial.css · assets/editorial.js · 6개 HTML 페이지','사진 출처와 용도: assets/EDITORIAL_SOURCES.md','검수·코드·실제 배포 결과: HQ 작업 기록에서 확인'],20,W,False,44)
 b=page('HQ / 기준에서 배포까지 연결.','DESIGN OFFICE','홈페이지 디자인실이 마스터·사진·결정·수정 요청을 관리합니다.')
-b.card(48,185,350,241,'결정',['사용자 피드백을 결정으로 기록','DM-2.0 사진 반복 기준 폐기','DM-3.0 장면 중심 방향 채택','사진 원본과 배치 역할 등록'])
+b.card(48,185,350,241,'결정',['사용자 피드백을 결정으로 기록','DM-2.0 사진 반복 기준 폐기','DM-3.1 장면 중심 방향 채택','사진 원본과 배치 역할 등록'])
 b.card(425,185,350,241,'실행',['HQ 요청 → ChatGPT Work 구현','마스터·HTML·CSS·이미지를 연결','기존 커머스·HQ 브랜치 보존','무인 AI 실행으로 표시하지 않음'])
 b.card(801,185,351,241,'검수와 배포',['PC·모바일 실제 화면 확인','빌드·파일·링크·동작 확인','운영 도메인에서 반영 재확인','작업·결정·산출물·커밋 기록'])
 b.rect(48,466,1104,228,W,12);b.lines(75,511,['소유 부서: 홈페이지 디자인실 (website_design)','HQ 주소: https://biotrix-hq.vercel.app/design','공개 홈페이지: https://biotrix.co.kr','검수 중과 배포 완료를 구분해 표시하며, 변경 이력을 남깁니다.'],20,F,False,45)
-b=page('편집 파일과 사용 범위.','HANDOFF','DM-3.0 / 원본·코드·기록이 같은 버전을 가리키도록 관리합니다.')
+b=page('편집 파일과 사용 범위.','HANDOFF','DM-3.1 / 원본·코드·기록이 같은 버전을 가리키도록 관리합니다.')
 b.card(48,185,537,291,'DELIVERABLES',['PDF: 14개 디자인 보드 / 검색 가능한 텍스트','SVG: 편집 가능한 벡터와 텍스트','AI: 벡터 PDF 기반 Illustrator 호환본','ZIP: SVG 보드·이미지·토큰·출처·사용 안내','개별 보드는 공통 이미지 파일을 참조','홈페이지 실행 기준은 같은 버전의 코드'])
 b.card(612,185,540,291,'FORMAT & PROVENANCE',['AI 호환본은 네이티브 Adobe AI 저장이 아님','Illustrator 앱에서 실제 열기 검수 미실시','사진은 래스터, 글자와 도형은 벡터','생성 사진을 실제 상품·시설의 증거로 쓰지 않음','원본을 반복 크롭하여 새 사진으로 세지 않음','사진 프롬프트·원본·사용 위치를 기록'])
 b.rect(48,515,1104,179,F,12);b.lines(76,563,['이 마스터는 사진 교체만을 위한 문서가 아닙니다.','화면의 구조, 읽는 순서, 사진의 역할과 실제 동작까지 함께 정의합니다.','배포 완료 여부와 남은 운영 항목은 HQ의 최신 기록을 기준으로 확인합니다.'],20,W,False,43)
 # Render identical primitives into PDF and editable SVG.
-BPATH='M10 4h25c14 0 23 7 23 18 0 7-4 12-10 15 8 3 12 8 12 16 0 11-9 18-24 18H10V4Zm14 13v15h10c7 0 11-3 11-8 0-4-4-7-11-7H24Zm0 27v14h12c7 0 11-3 11-7s-4-7-11-7H24Z';RPATH='M10 5c7 5 15 11 23 18 7 6 14 10 23 12-7 2-13 5-19 9-10 7-18 16-27 26V52c9-10 18-17 27-22C27 23 18 18 10 16V5Z'
+BPATH='M15 7H44C61 7 70 15 70 28C70 37 65 43 57 47C67 50 74 57 74 69C74 83 64 92 45 92H15Z'
+CUTS=['M25 18C32 27 41 31 50 35C58 39 62 44 62 49C54 45 47 45 39 41C32 37 27 29 25 18Z','M25 80C27 67 31 57 40 51C46 47 53 46 62 49C52 53 45 61 38 70C33 76 29 79 25 80Z']
 def render(c,b,ox=0,oy=0,H=800):
  c.saveState();c.translate(ox,H-oy);c.scale(1,-1)
  for typ,*a in b.ops:
@@ -90,7 +91,7 @@ def render(c,b,ox=0,oy=0,H=800):
    x,y,w,h,key=a;c.saveState();p=c.beginPath();p.rect(x,y,w,h);c.clipPath(p,stroke=0,fill=0);sc=max(w/1536,h/1024);dw=1536*sc;dh=1024*sc;pos=.75 if key=='wellness' else .65 if key=='food' else .5;dx=x+(w-dw)*pos;dy=y+(h-dh)/2;c.translate(dx,dy+dh);c.scale(1,-1);c.drawImage(str(photos[key]),0,0,dw,dh);c.restoreState()
   elif typ=='logo':
    x,y,s,rev,word=a;c.saveState();c.translate(x,y);c.scale(s,s)
-   for path,col in [(BPATH,W if rev else F),(RPATH,W if rev else S)]:
+   for path,col in [(BPATH,W if rev else F)]+[(cut,F if rev else W) for cut in CUTS]:
     pen=ReportLabPen(None);parse_path(path,pen);pen.path.fillColor=HexColor(col);pen.path.strokeColor=None;pen.path.fillMode=0;d=Drawing(72,78);d.add(pen.path);renderPDF.draw(d,c,0,0)
    if word:
     c.saveState();c.translate(82,50);c.scale(1,-1);c.setFillColor(HexColor(W if rev else K));c.setFont('Bold',35);c.drawString(0,0,'BIOTRIX');c.restoreState()
@@ -107,20 +108,20 @@ def svg_ops(b):
   elif typ=='photo':
    x,y,w,h,key=a;sc=max(w/1536,h/1024);dw=1536*sc;dh=1024*sc;pos=.75 if key=='wellness' else .65 if key=='food' else .5;dx=x+(w-dw)*pos;dy=y+(h-dh)/2;cid=f'clip-{boards.index(b)}-{n}';out.append(f'<defs><clipPath id="{cid}"><rect x="{x}" y="{y}" width="{w}" height="{h}"/></clipPath></defs><g clip-path="url(#{cid})"><use xlink:href="#photo-{key}" x="{dx}" y="{dy}" width="{dw}" height="{dh}"/></g>')
   else:
-   x,y,s,rev,word=a;out.append(f'<g transform="translate({x} {y}) scale({s})"><path d="{BPATH}" fill="{W if rev else F}" fill-rule="evenodd"/><path d="{RPATH}" fill="{W if rev else S}"/>')
+   x,y,s,rev,word=a;out.append(f'<g transform="translate({x} {y}) scale({s})"><path d="{BPATH}" fill="{W if rev else F}"/>'+''.join(f'<path d="{cut}" fill="{F if rev else W}"/>' for cut in CUTS))
    if word:out.append(f'<text x="82" y="50" font-family="Noto Sans KR" font-weight="700" font-size="35" fill="{W if rev else K}">BIOTRIX</text>')
    out.append('</g>')
  return ''.join(out)
 def svgdoc(body,w,h,embed=True):
  defs=''.join(f'<symbol id="photo-{key}" viewBox="0 0 1536 1024"><image width="1536" height="1024" xlink:href="'+(('data:image/jpeg;base64,'+PHOTO64S[key]) if embed else '../editorial-'+key+'.jpg')+'"/></symbol>' for key in photos)
- return f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{w}" height="{h}" viewBox="0 0 {w} {h}"><title>BIOTRIX DM-3.0</title><defs>{defs}</defs>{body}</svg>'
-pdf=OUT/'BIOTRIX_Design_Master_v3.pdf';c=canvas.Canvas(str(pdf),pagesize=(1200,800));c.setTitle('BIOTRIX DM-3.0 Editorial Everyday');c.setAuthor('BIOTRIX HQ Design Office')
+ return f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{w}" height="{h}" viewBox="0 0 {w} {h}"><title>BIOTRIX DM-3.1</title><defs>{defs}</defs>{body}</svg>'
+pdf=OUT/'BIOTRIX_Design_Master_v3.1.pdf';c=canvas.Canvas(str(pdf),pagesize=(1200,800));c.setTitle('BIOTRIX DM-3.1 Editorial Everyday');c.setAuthor('BIOTRIX HQ Design Office')
 for i,b in enumerate(boards):render(c,b);c.showPage();(OUT/'boards'/f'{i+1:02}.svg').write_text(svgdoc(svg_ops(b),1200,800,False))
-c.save();ai=OUT/'BIOTRIX_Design_Master_v3.ai';c=canvas.Canvas(str(ai),pagesize=(3680,4112));c.setTitle('BIOTRIX DM-3.0 - PDF-based Illustrator compatibility, not native AI');groups=[]
+c.save();ai=OUT/'BIOTRIX_Design_Master_v3.1.ai';c=canvas.Canvas(str(ai),pagesize=(3680,4112));c.setTitle('BIOTRIX DM-3.1 - PDF-based Illustrator compatibility, not native AI');groups=[]
 for i,b in enumerate(boards):
  x=i%3*1240;y=i//3*828;render(c,b,x,y,4112);groups.append(f'<g id="board-{i+1:02}" transform="translate({x} {y})">{svg_ops(b)}</g>')
-c.save();(OUT/'BIOTRIX_Design_Master_v3.svg').write_text(svgdoc(''.join(groups),3680,4112))
-(OUT/'README.md').write_text('''# BIOTRIX DM-3.0 / Editorial Everyday
+c.save();(OUT/'BIOTRIX_Design_Master_v3.1.svg').write_text(svgdoc(''.join(groups),3680,4112))
+(OUT/'README.md').write_text('''# BIOTRIX DM-3.1 / Editorial Everyday
 
 14 design boards owned by HQ Website Design Office. This replaces the repetitive DM-2.0 triptych direction.
 
@@ -135,7 +136,7 @@ The source ZIP includes editable SVG, individual boards, images, implementation 
 for f in ['editorial.css','editorial.js','EDITORIAL_SOURCES.md']:
  shutil.copy(ROOT.parent/'biotrix-editorial/assets'/f,OUT/f)
 shutil.copy(ROOT/'fonts/OFL.txt',OUT/'OFL.txt')
-with zipfile.ZipFile(OUT/'BIOTRIX_Design_Source_v3.zip','w',zipfile.ZIP_DEFLATED) as z:
+with zipfile.ZipFile(OUT/'BIOTRIX_Design_Source_v3.1.zip','w',zipfile.ZIP_DEFLATED) as z:
  for f in sorted(OUT.rglob('*')):
-  if f.is_file() and f.suffix not in ['.zip','.pdf','.ai','.webp']:z.write(f,'BIOTRIX_DM3/'+str(f.relative_to(OUT)))
+  if f.is_file() and f.suffix not in ['.zip','.pdf','.ai','.webp','.png']:z.write(f,'BIOTRIX_DM3.1/'+str(f.relative_to(OUT)))
 print(json.dumps({'pages':len(boards),'files':{p.name:p.stat().st_size for p in OUT.iterdir() if p.is_file()}},ensure_ascii=False))

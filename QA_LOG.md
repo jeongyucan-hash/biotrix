@@ -30,3 +30,9 @@
 - HQ branch adds DM-3 master and individual 14-board private downloads, live status metadata, plus /learning for admin-entered aggregate observations and Beta-binomial recommendations.
 - No visitor tracking and no trained result yet. Input tables were created with admin-only RLS, no anonymous grants. Eight focused tests passed; production build pending final readback.
 - Remaining: deploy HQ current branch, verify auth guard/status, save master identities, update DB version and report current run outcome. Product purchase/contact and actual customer measurement remain external business inputs.
+
+## 2026-09-28 — DM-3.1 logo revision
+
+- Compared A/B/C vector marks in full header and 16px sizes; selected the negative-space B. Raster previews at 16/32px retained recognizable shape.
+- Public main commit c40a178e8a5eef6b0cef56f8d73ce146ddcf1465 updates mark, favicon, and header wordmark. Six-page static audit passed; Vercel public status succeeded.
+- HQ master rebuilt as 14-page PDF, Illustrator-compatible PDF, editable SVG, source ZIP, 14 individual PDF boards and standalone logo SVG. Board 04 visual inspection passed.

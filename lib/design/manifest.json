@@ -1,46 +1,46 @@
 {
-  "version": "3.0",
+  "version": "3.1",
   "boardCount": 14,
   "files": [
     {
-      "name": "BIOTRIX_Design_Master_v3.pdf",
+      "name": "BIOTRIX_Design_Master_v3.1.pdf",
       "label": "PDF · 전체 디자인 마스터",
       "description": "14개 보드 / 브랜드·PC·모바일·HQ",
       "mime": "application/pdf",
       "download": true,
       "inline": false,
-      "bytes": 1820206,
-      "sha256": "7f3fb142a120659a7bd62c55f30a4bd28d794bc0c20cadae2f4487a34a818415"
+      "bytes": 1819831,
+      "sha256": "201d5e2beb947e4469d3a83aba6687001e024907296a1861269657351a62348a"
     },
     {
-      "name": "BIOTRIX_Design_Master_v3.ai",
+      "name": "BIOTRIX_Design_Master_v3.1.ai",
       "label": "AI 호환본",
       "description": "벡터 PDF 기반 교환 파일 / 네이티브 AI 아님",
       "mime": "application/pdf",
       "download": true,
       "inline": false,
-      "bytes": 1806237,
-      "sha256": "10755894a248ee3b0fdadb1ee7ea7d195bc2394294d764462451bed7782375e8"
+      "bytes": 1806039,
+      "sha256": "815ab373336abc161160ca4e2a22d86225183ffd4de0ec292ce51271b9150b20"
     },
     {
-      "name": "BIOTRIX_Design_Master_v3.svg",
+      "name": "BIOTRIX_Design_Master_v3.1.svg",
       "label": "SVG · 편집 원본",
       "description": "14개 보드 그룹 / 라이브 텍스트와 벡터",
       "mime": "image/svg+xml",
       "download": true,
       "inline": false,
-      "bytes": 1918520,
-      "sha256": "700ddfbd3cdac2c3d55e2514c4ccb2b0eb71f94548198408c83b742369d84d3e"
+      "bytes": 1918429,
+      "sha256": "044e548dd979f0d42552b33c5c9e5df12096416baef590984621cc6b9c9fea1e"
     },
     {
-      "name": "BIOTRIX_Design_Source_v3.zip",
+      "name": "BIOTRIX_Design_Source_v3.1.zip",
       "label": "전체 원본 패키지",
       "description": "개별 SVG 보드·사진·스타일·소스·안내",
       "mime": "application/zip",
       "download": true,
       "inline": false,
-      "bytes": 2844001,
-      "sha256": "54ffe65fe89cdf99354fcdb4d5a23861e9101fb93abfccfea79938b2e1bc8536"
+      "bytes": 2843985,
+      "sha256": "9c5700f7c238222979688502f572ecdc4e18b37ac07c32670edd00a766a60bfe"
     },
     {
       "name": "editorial-food.jpg",
@@ -53,144 +53,154 @@
       "sha256": "ca591a105026c614ed514fe8123c9f8502c35890670ef65271adb66100e34cd5"
     },
     {
-      "name": "BIOTRIX_Board_01_v3.pdf",
+      "name": "BIOTRIX_Board_01_v3.1.pdf",
       "label": "01 · 브랜드 방향",
       "description": "개별 시안 PDF / 14개 보드 중 하나",
       "mime": "application/pdf",
       "download": true,
       "inline": false,
-      "bytes": 388936,
-      "sha256": "43deebad431d6c3302153832ae9d60774ca83c96d6b457a72c10cb6598bdd5ae"
+      "bytes": 389018,
+      "sha256": "fbb6ee31c0c382d80771d1738a4b3e2d8ac943d15d8437bda849207df1cbb765"
     },
     {
-      "name": "BIOTRIX_Board_02_v3.pdf",
+      "name": "BIOTRIX_Board_02_v3.1.pdf",
       "label": "02 · 사진 아트 디렉션",
       "description": "개별 시안 PDF / 14개 보드 중 하나",
       "mime": "application/pdf",
       "download": true,
       "inline": false,
-      "bytes": 1790583,
-      "sha256": "402e04b087cc40e06a03a7cf801095b37fc272a655012bcd507d0c5d95b8ee22"
+      "bytes": 1790710,
+      "sha256": "a7f8ec98a13e82b35193aafa56e78edff74bbdb76b45ae13313152ae2841a500"
     },
     {
-      "name": "BIOTRIX_Board_03_v3.pdf",
+      "name": "BIOTRIX_Board_03_v3.1.pdf",
       "label": "03 · 사진 사용 기준",
       "description": "개별 시안 PDF / 14개 보드 중 하나",
       "mime": "application/pdf",
       "download": true,
       "inline": false,
-      "bytes": 45699,
-      "sha256": "0ce995c7fd048365aa6c8a31ba1860b787552f4b1638555fb2edb1e1ef7b80e8"
+      "bytes": 45765,
+      "sha256": "1ed8c7b57ade3ca86dfaf5304d1fb16e9beca9decfbb8037ed752e551856e7f7"
     },
     {
-      "name": "BIOTRIX_Board_04_v3.pdf",
+      "name": "BIOTRIX_Board_04_v3.1.pdf",
       "label": "04 · 로고·색상·서체",
       "description": "개별 시안 PDF / 14개 보드 중 하나",
       "mime": "application/pdf",
       "download": true,
       "inline": false,
-      "bytes": 46382,
-      "sha256": "d2336fd70c037f64f1951a1955bc9ceae9d5395f895acbb3a09c36992bbfb534"
+      "bytes": 46403,
+      "sha256": "14dc61f55fe18a024a4c5ec014a4574d6a06f38c9dba3600f2e4cf25e89a0e77"
     },
     {
-      "name": "BIOTRIX_Board_05_v3.pdf",
+      "name": "BIOTRIX_Board_05_v3.1.pdf",
       "label": "05 · 메인 데스크톱",
       "description": "개별 시안 PDF / 14개 보드 중 하나",
       "mime": "application/pdf",
       "download": true,
       "inline": false,
-      "bytes": 389896,
-      "sha256": "3df770070e61c046bd6184547f9af57c14ec55e7090f0c8ada997ebff0e75161"
+      "bytes": 389918,
+      "sha256": "d6739cf8f7f5695d9de240e8b23a1d825f7a37bed34fc50c575587b99cb3ac94"
     },
     {
-      "name": "BIOTRIX_Board_06_v3.pdf",
+      "name": "BIOTRIX_Board_06_v3.1.pdf",
       "label": "06 · 메인 분야·스토리",
       "description": "개별 시안 PDF / 14개 보드 중 하나",
       "mime": "application/pdf",
       "download": true,
       "inline": false,
-      "bytes": 586454,
-      "sha256": "97710810bad8e0b7757e08048eeed5f27d8004e50dd16a3c56cd82fcb84f0fa5"
+      "bytes": 586537,
+      "sha256": "56370263c7be00558af8f3e37abb704c37ecad94b42e32c5a07cc7a3e0404cd5"
     },
     {
-      "name": "BIOTRIX_Board_07_v3.pdf",
+      "name": "BIOTRIX_Board_07_v3.1.pdf",
       "label": "07 · 모바일 슬라이드",
       "description": "개별 시안 PDF / 14개 보드 중 하나",
       "mime": "application/pdf",
       "download": true,
       "inline": false,
-      "bytes": 1251210,
-      "sha256": "2956f4e6d3aea3c7230eb0ba4276627bdc51ae7f421366a2ee5273ac846ab9b4"
+      "bytes": 1251252,
+      "sha256": "62d9077ebad692cb7313b4a0f4fd6a80dc0bfacf6f5817071ba932981dfe3056"
     },
     {
-      "name": "BIOTRIX_Board_08_v3.pdf",
+      "name": "BIOTRIX_Board_08_v3.1.pdf",
       "label": "08 · 브랜드 소개",
       "description": "개별 시안 PDF / 14개 보드 중 하나",
       "mime": "application/pdf",
       "download": true,
       "inline": false,
-      "bytes": 46035,
-      "sha256": "003cb869b5c703c2bc8bd4c6a5a9254405f3ce67a755856f5e9bd8dcdf393ae5"
+      "bytes": 46053,
+      "sha256": "5dc2d81a9553d9b97f8801881fa6a3c9744db76d138ac30b7d650bac22f67389"
     },
     {
-      "name": "BIOTRIX_Board_09_v3.pdf",
+      "name": "BIOTRIX_Board_09_v3.1.pdf",
       "label": "09 · 사업 분야",
       "description": "개별 시안 PDF / 14개 보드 중 하나",
       "mime": "application/pdf",
       "download": true,
       "inline": false,
-      "bytes": 45142,
-      "sha256": "8dd9d3d5d0cde445f24233d4be2ef9abfd8ad23210cf8b0ff8e238515c588bbc"
+      "bytes": 45202,
+      "sha256": "9f245c6db3800f6d24c63c9d8fb1664b092f40bf1e94fd624e8836f430d491b0"
     },
     {
-      "name": "BIOTRIX_Board_10_v3.pdf",
+      "name": "BIOTRIX_Board_10_v3.1.pdf",
       "label": "10 · 제품 안내",
       "description": "개별 시안 PDF / 14개 보드 중 하나",
       "mime": "application/pdf",
       "download": true,
       "inline": false,
-      "bytes": 45659,
-      "sha256": "c2819839e8840488057169119b76baa837e4e5a4faec596919d40eac02336265"
+      "bytes": 45713,
+      "sha256": "5aa3dbb2e4a588c876ba1ea7cb175c56610cab7053e18d7f162a7837c4b7bfe4"
     },
     {
-      "name": "BIOTRIX_Board_11_v3.pdf",
+      "name": "BIOTRIX_Board_11_v3.1.pdf",
       "label": "11 · 제휴·문의",
       "description": "개별 시안 PDF / 14개 보드 중 하나",
       "mime": "application/pdf",
       "download": true,
       "inline": false,
-      "bytes": 45776,
-      "sha256": "a794fb0d5d41616ea32db0b669776f842931fc26fc23af4febffb4fc912b9cf6"
+      "bytes": 45830,
+      "sha256": "6d381ccb8fcbc85e085362d9dd13dc60a00dfa2782886d028e98d12df0529824"
     },
     {
-      "name": "BIOTRIX_Board_12_v3.pdf",
+      "name": "BIOTRIX_Board_12_v3.1.pdf",
       "label": "12 · 상호작용·품질",
       "description": "개별 시안 PDF / 14개 보드 중 하나",
       "mime": "application/pdf",
       "download": true,
       "inline": false,
-      "bytes": 45711,
-      "sha256": "201c1225e6880db14134c24a922c1f2ba243b1de7d9047d5172e73db4d82d5be"
+      "bytes": 45763,
+      "sha256": "8aa2682226ecaf427c4d4743090731161d7160c2b89d4c6088f2a9c04d3a5720"
     },
     {
-      "name": "BIOTRIX_Board_13_v3.pdf",
+      "name": "BIOTRIX_Board_13_v3.1.pdf",
       "label": "13 · HQ 워크플로",
       "description": "개별 시안 PDF / 14개 보드 중 하나",
       "mime": "application/pdf",
       "download": true,
       "inline": false,
-      "bytes": 45784,
-      "sha256": "2ca09dc2cf1a48821c32bcf88fc7d1d8c4a6bba105f2b5648334cd5278447c90"
+      "bytes": 45842,
+      "sha256": "20269282e5181ff540769b0804e4606fd869370a95395e91337e803f5a456aa5"
     },
     {
-      "name": "BIOTRIX_Board_14_v3.pdf",
+      "name": "BIOTRIX_Board_14_v3.1.pdf",
       "label": "14 · 인수인계",
       "description": "개별 시안 PDF / 14개 보드 중 하나",
       "mime": "application/pdf",
       "download": true,
       "inline": false,
-      "bytes": 45864,
-      "sha256": "562d6720f46e57e746984343f9d6c6cc9891f2602de5169cc13cb35b7cb98396"
+      "bytes": 45927,
+      "sha256": "a3797623c466f7bd058cad344fe831164b687ec493d33b1e896eeabb7958b9df"
+    },
+    {
+      "name": "BIOTRIX_Logo_Negative_B.svg",
+      "label": "로고 심볼 · SVG",
+      "description": "단색 벡터 / B 내부 네거티브 스페이스 / 확대 가능",
+      "mime": "image/svg+xml",
+      "download": true,
+      "inline": false,
+      "bytes": 555,
+      "sha256": "dbde129d9587caecb6acda15e7d3b6b7f87e7db280b36f32989f157ce13bddee"
     }
   ]
 }

@@ -128,3 +128,9 @@
 
 
 - Release verification: HQ commit `0c7c2ebb776a7b7e5667d947e55d30aab7915bac` is Vercel deployment `dpl_9EKim3sT5qZpRH6cDZDZzLCM1eH3`, state `READY`, with `biotrix-hq.vercel.app` alias. Yuchan OS commit `d3e7f5a9dd423e90385c9669a53ac33078470feb` deployed successfully at its existing owner-only address. Its production build and 7 focused tests passed; publisher test was not run because its generated image fixture was absent. Domain aliases remain unconfigured.
+# 2026-09-29 · HQ navigation regrouping
+
+- Branch: `feat/hq-navigation-groups` from `hq-nextjs` (`fa93b821`). Changed only the HQ shell and its styles; public website untouched.
+- Moved navigation to a sticky top bar. Dashboard and Tasks are direct links; the remaining existing routes are grouped under Execution, Sales/Supply, Growth/Finance, Content/Knowledge, and System. Owner-only Settings remains role filtered. Compact screens show the same routes in a two-column expandable menu.
+- Verification: `git diff --check` and `npm run build` passed. `npm ci` could not run because the existing lockfile lacks the already declared `youtube-transcript@1.3.1`; installed without modifying the lockfile to verify this change. Authenticated visual browser QA and production deployment remain unverified.
+- HQ `agent_runs` and `documents` synchronization pending; no database write is claimed.

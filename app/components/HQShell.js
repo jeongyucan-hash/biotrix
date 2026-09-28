@@ -8,7 +8,7 @@ const sections = [
     ["Work Queue","/work-queue"],["디자인 학습","/learning"],["Founder Room","/founder-room"],["AI Agents","/agents"],
   ]],
   ["커머스", [
-    ["첫 판매 준비","/launch"],["Commerce","/commerce"],["Products","/products"],["Sourcing","/sourcing"],
+    ["첫 판매 준비","/launch"],["공급처 거래","/sourcing/outreach"],["Commerce","/commerce"],["Products","/products"],["Sourcing","/sourcing"],
     ["Procurement","/procurement"],["Suppliers","/suppliers"],["Finance","/finance"],
   ]],
   ["기획 · 지식", [

@@ -18,6 +18,8 @@ Owner-only account and mailing controls live at `/admin/settings`.
   from `customers`; the Admin does not create consent.
 - Mail copy is saved to `mailing_drafts` as a draft. There is no send action,
   email service integration, unsubscribe workflow, or delivery tracking yet.
+  Supplier inquiries now have a separate `/sourcing/outreach` workflow; see
+  `supplier-outreach.md`. Its sender connection is required before actual sending.
 - Changes to operators and new drafts attempt to write `audit_logs`.
 
 The SQL for this release is in

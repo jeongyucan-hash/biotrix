@@ -86,3 +86,15 @@
 - Three financial/readiness/validation tests passed; production build passed. RLS migration applied. Transactional database integration verified admin write/readback, stale update rejection, review insertion, completion evidence, nonadmin and anonymous denial; fixtures rolled back. Security advisors reported no new table findings (existing password-protection warning remains).
 - Live browser has no authenticated HQ session. Full authenticated UI save/edit verification is not yet confirmed. Deployment pending GitHub push and Vercel READY verification.
 - No external seller connection, listing, payment or paid AI execution. Final deployment and knowledge synchronization evidence will be stored in HQ agent_runs/documents.
+# 2026-09-28 Supplier inquiry workflow
+
+- Added `/sourcing/outreach`: prefilled inquiries, saved-message review, guarded
+  provider sending, original reply/quotation recording, cost comparison, and
+  idempotent transfer into first-sale planning. DM-3.2 components reused.
+- 3 real supplier drafts saved and read back; no messages/orders sent.
+- 4 Node tests and production build passed. Provider tests are mocked.
+- Live SQL rollback tests passed for owner access, duplicate claims, evidence
+  constraints and nonadmin/anonymous denial. No new security advisor warnings.
+- Requires company sender/domain/provider setup. Reply ingestion is manual.
+  Authenticated browser QA and actual mail delivery are not yet verified.
+- This entry describes prepared code; deployment evidence is in HQ agent_runs.

@@ -47,6 +47,7 @@ export default async function Sourcing(){
 
   return (
     <HQShell active="Sourcing" title="Sourcing">
+      <section className="hqPanel"><h2><a href="/sourcing/outreach">공급처에 문의하고 견적 비교하기 →</a></h2><p>공급처 연락처로 문의 초안을 준비하고, 발송 상태와 회신을 한곳에서 관리합니다.</p></section>
       <QuickResearch enabled={automatedResearchEnabled} configured={configured}/>
       {missions.filter(m=>!['completed','cancelled'].includes(m.status)).slice(0,3).length>0 && <section className="hqPanel"><h2>이미 맡긴 요청 — 다시 입력하지 마세요</h2>
         {missions.filter(m=>!['completed','cancelled'].includes(m.status)).slice(0,3).map(m=><div key={m.id}><h3>{m.title}</h3><ResearchControl missionId={m.id} enabled={automatedResearchEnabled} configured={configured} closed={false} job={jobs.find(j=>j.mission_id===m.id) || null} compact/><a href={`#mission-${m.id}`}>결과 확인 ↓</a></div>)}

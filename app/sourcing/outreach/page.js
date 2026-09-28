@@ -1,0 +1,29 @@
+import {randomUUID} from 'node:crypto';
+import HQShell from '../../components/HQShell';
+import ActionForm from '../../components/ActionForm';
+import {createClient} from '../../../lib/supabase/server';
+import {sender,stages,mailReady} from '../../../lib/sourcing/outreach.mjs';
+import {prepareOutreach,saveOutreach,sendOutreach,saveQuote,useQuote} from './actions';
+export const dynamic='force-dynamic';
+export const metadata={title:'공급처 거래 · BIOTRIX HQ',robots:{index:false,follow:false}};
+const won=n=>n===null||n===undefined?'미확인':Number(n).toLocaleString('ko-KR')+'원';
+export default async function Outreach(){
+ const db=await createClient();const [c,o,q]=await Promise.all([db.from('sourcing_candidates').select('id,name,supplier_contact,product_summary').order('updated_at',{ascending:false}),db.from('supplier_outreach').select('*').order('created_at'),db.from('supplier_quotes').select('*').order('created_at',{ascending:false})]);
+ const candidates=c.data||[],outreach=o.data||[],quotes=q.data||[],ready=mailReady();
+ return <HQShell active="공급처 거래" title="공급처 거래">
+ <section className="hqPanel"><h2>문의부터 견적 비교까지</h2><p>공급처 선택 → 문의 검토·발송 → 회신 기록 → 견적 비교 → <a href="/launch">첫 판매 준비</a></p>
+ <p><b>발신: {sender}</b> · {ready?'발송 설정 있음 · 도착 여부는 별도 확인':'회사 메일 발신 연결 필요'}</p>
+ <p>{ready?'저장된 초안을 확인한 뒤 건별 발송합니다.':'문의 초안과 견적 관리는 사용할 수 있습니다. 발송 서비스와 회사 도메인 연결을 완료하면 발송 버튼이 활성화됩니다.'} 회신 자동 수집은 아직 연결되지 않아, 받은 원문을 아래에 기록합니다.</p>
+ <div className="missionTargets"><span>문의 초안 <b>{outreach.filter(r=>r.status==='draft').length}</b></span><span>발송 접수 <b>{outreach.filter(r=>r.status==='accepted').length}</b></span><span>견적 기록 <b>{quotes.length}</b></span></div></section>
+ {[c,o,q].some(r=>r.error)&&<p role="alert">일부 데이터를 불러오지 못했습니다. 새로고침해 주세요.</p>}
+ <section className="hqPanel"><h2>공급처 선택</h2><ActionForm action={prepareOutreach} className="stackForm"><label>문의할 공급처<select name="candidate_id" required><option value="">선택하세요</option>{candidates.filter(r=>!outreach.some(x=>x.candidate_id===r.id)).map(r=><option key={r.id} value={r.id}>{r.name}</option>)}</select></label><button className="hqButton">연락처와 문의 초안 준비</button></ActionForm></section>
+ {outreach.map(row=>{const candidate=candidates.find(c=>c.id===row.candidate_id);const editable=['draft','failed'].includes(row.status);return <section className="hqPanel" key={row.id}>
+ <div className="panelHead"><h2>{candidate?.name||'공급처'}</h2><span>{stages[row.status]}</span></div><p>{candidate?.supplier_contact}</p><p>{candidate?.product_summary}</p>
+ {row.error&&<p role="alert">{row.error}</p>}{row.provider_id&&<small>발송 접수번호 {row.provider_id}</small>}
+ {editable?<ActionForm key={row.version} action={saveOutreach} className="stackForm"><input type="hidden" name="id" value={row.id}/><input type="hidden" name="version" value={row.version}/><label>받는 이메일<input type="email" name="recipient" defaultValue={row.recipient} required/></label><label>제목<input name="subject" maxLength={160} defaultValue={row.subject} required/></label><label>문의 내용<textarea name="body" rows={13} maxLength={10000} defaultValue={row.body} required/></label><button className="hqButton">초안 저장</button></ActionForm>:<details><summary>발송 요청 내용 보기</summary><p>{row.recipient} · {row.subject}</p><p style={{whiteSpace:'pre-wrap'}}>{row.body}</p></details>}
+ {row.status==='draft'&&<details><summary>저장된 초안 검토 및 발송</summary><p>받는 사람: {row.recipient}</p><p>제목: {row.subject}</p><p style={{whiteSpace:'pre-wrap'}}>{row.body}</p><ActionForm action={sendOutreach} className="stackForm"><input type="hidden" name="id" value={row.id}/><input type="hidden" name="version" value={row.version}/><label><input type="checkbox" name="approve" required disabled={!ready}/>위 받는 사람과 저장된 내용으로 발송합니다.</label><button className="hqButton" disabled={!ready}>{ready?'문의 메일 발송':'회사 메일 연결 대기'}</button></ActionForm></details>}
+ <details><summary>받은 회신·견적 기록</summary><p>메일·카카오·전화로 확인한 내용을 남기세요. 비용이 없으면 0, 미확인이면 빈칸입니다. 배송비 포함 견적이면 공급가에 총액, 배송비에 0을 입력하세요.</p><ActionForm action={saveQuote} className="stackForm"><input type="hidden" name="outreach_id" value={row.id}/><input type="hidden" name="quote_id" value={randomUUID()}/><label>규격·옵션<input name="spec" required/></label><div className="launchFields"><label>공급가(원)<input type="number" min={0} max={1e9} step="0.01" name="purchase"/></label><label>포장·배송비(원)<input type="number" min={0} max={1e9} step="0.01" name="shipping"/></label><label>견적 유효일<input type="date" name="valid_until"/></label></div><label>회신 원문<textarea name="reply" rows={5} required maxLength={10000}/></label><label>확인 근거·날짜<input name="evidence" placeholder="예: 9/28 담당자 이메일 회신" required/></label><label>거래 조건·미확인 사항<textarea name="terms" placeholder="MOQ, 쿠팡 판매·이미지 허용, 출고 마감, 불량 보상, 결제 조건"/></label><button className="hqButton">회신과 견적 저장</button></ActionForm></details>
+ </section>})}
+ <section className="hqPanel"><h2>견적 비교</h2><p>공급가와 포장·배송비 합계입니다. 플랫폼 수수료·광고·클레임 비용은 <a href="/launch">첫 판매 준비</a>에서 검토합니다. 여러 견적은 회신 순서대로 남습니다.</p>{quotes.length?<div style={{overflowX:'auto'}}><table><thead><tr><th>공급처 / 규격</th><th>공급가</th><th>포장·배송</th><th>합계</th><th>유효일 / 근거</th></tr></thead><tbody>{quotes.map(r=>{const d=r.data,parent=outreach.find(o=>o.id===r.outreach_id),name=candidates.find(c=>c.id===parent?.candidate_id)?.name;return <tr key={r.id}><td>{name}<br/>{d.spec}<details><summary>회신·조건</summary><p style={{whiteSpace:'pre-wrap'}}>{d.reply}</p><p>{d.terms}</p></details></td><td>{won(d.purchase)}</td><td>{won(d.shipping)}</td><td>{won(d.purchase===null||d.shipping===null?null:d.purchase+d.shipping)}</td><td>{d.valid_until||'미확인'}<p>{d.evidence}</p><ActionForm action={useQuote}><input type="hidden" name="quote_id" value={r.id}/><button className="hqButton">판매 준비로 가져오기</button></ActionForm></td></tr>})}</tbody></table></div>:<p>아직 받은 견적이 없습니다. 홈페이지 표시가격을 실제 견적으로 집계하지 않습니다.</p>}</section>
+ </HQShell>;
+}

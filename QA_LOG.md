@@ -112,3 +112,10 @@
 - Added minimal Organization JSON-LD and documented the single edit location for issued verification values in `SEO_VERIFICATION.md`.
 - Production robots and sitemap responded HTTP 200 before the update. Post-deployment readback pending; search console indexing is not implied.
 - HQ agent_runs and documents sync pending connector availability.
+
+## 2026-09-28 — Naver registration completed
+
+- After user completed the verification challenge, confirmed ownership: site list no longer requests verification and authenticated site dashboard is accessible.
+- Submitted https://biotrix.co.kr/sitemap.xml; confirmed sitemap.xml row dated 2026-09-28 15:59:46 KST.
+- Requested homepage crawl; confirmed / request row dated 16:01:03 KST. Search visibility/indexing is pending and not guaranteed by registration.
+- Bing ownership and sitemap submission were completed earlier; Daum review and Google sitemap unreadable status remain outstanding.

@@ -1,5 +1,13 @@
 # BIOTRIX QA Log
 
+## 2026-09-28 14:40 KST — Compact logo lockup L1
+
+- User requested a closer symbol/wordmark relationship while reviewing a founder business-card concept.
+- Reduced shared editorial `.brand` gap from 12px to 4px. Preserved symbol SVG, responsive dimensions, wordmark typography, white canvas and all photography/provenance.
+- Updated DESIGN_SYSTEM.md as a DM-3.2 lockup addendum; existing 14-page HQ master is not claimed reissued.
+- `node scripts/check-lockup.mjs`, six-page/149-link static audit and `git diff --check` passed. Deployment and live DOM measurement pending; final evidence will be stored in HQ run 747171d0-a511-4f98-88eb-202609280401 and Knowledge 747171d0-a511-4f98-88eb-202609280402.
+- Business-card concept is a separate private image preview, not a press-ready file. Phone transcription requires confirmation; no contact data was added to the public repository.
+
 ## 2026-09-28 — Overnight QA pass 3
 
 - **Brand QA:** Unified auxiliary commerce/404 surfaces with the shared BIOTRIX favicon and master symbol asset; added the BIOTRIX theme color where missing.

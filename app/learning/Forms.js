@@ -1,6 +1,7 @@
 'use client';
 import {useActionState} from 'react';
-import {recordObservation,runEvaluation} from './actions';
+import {recordObservation,runEvaluation,runBrandAudit} from './actions';
 const init={ok:null,message:''};
 export function ObservationForm(){const [s,act,pending]=useActionState(recordObservation,init);return <form action={act} className="productCreateForm"><label>페이지 <input name="page" defaultValue="/" pattern="/[a-z0-9/-]*" required/></label><label>시안 ID <input name="variant" placeholder="hero_a" pattern="[a-z0-9_-]+" required/></label><label>노출 수 <input name="impressions" type="number" min="1" max="1000000" required/></label><label>목표 행동 수 <input name="actions" type="number" min="0" required/></label><label>출처 <input name="source" placeholder="분석 도구·기간·이벤트 정의" required/></label><label>비고 <textarea name="note" rows="2" placeholder="측정 기간, 중복 제거 기준"/></label><button className="hqButton" disabled={pending}>관측값 기록</button><p role="status">{s.message}</p></form>}
 export function EvaluationForm(){const [s,act,pending]=useActionState(runEvaluation,init);return <form action={act}><label>평가 페이지 <input name="page" defaultValue="/" required/></label> <button className="hqButton" disabled={pending}>관측값 평가</button><p role="status">{s.message}</p></form>}
+export function BrandAuditForm(){const [s,act,pending]=useActionState(runBrandAudit,init);return <form action={act}><button className="hqButton" disabled={pending}>브랜딩 파일 자체 점검</button><p role="status">{s.message}</p></form>}

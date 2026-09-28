@@ -41,3 +41,9 @@
 
 - A안 Negative B retained. Public site switches global ivory, header, hero fallback, slide controls, footer and mobile menu to white in commit ddba19b77196c5f4671fa562a51eac6671513d85. Static audit passed six pages/149 links.
 - HQ master 14 pages regenerated with White #FFFFFF token; board 04 rendered and visually inspected. Source ZIP contains updated production CSS.
+
+## 2026-09-28 — branding brain v2
+
+- Added deterministic asset integrity, public logo/favicons, white canvas and image reuse audit, with a scheduled GitHub Actions report and admin-triggered HQ review history.
+- Local `node --test tests/brandAudit.test.mjs tests/learning.test.mjs` passed 3 tests; local combined HQ/public audit passed with zero issues. Build and deployment verification recorded after promotion.
+- Existing beta-binomial evaluation still has no real visitor data. Scheduled static checks do not represent autonomous ML training or automatically alter deployed pages.

@@ -62,3 +62,7 @@
 ## 2026-09-28 — Logo redesign
 - Compared three vector directions at full, header 24px and favicon 16px. Chose negative-space B monogram for recognizable letter and one-color print/screen use.
 - Replaced public symbol and favicon SVG, adjusted wordmark weight and spacing. PNGs used only for optical QA; deployed assets remain resolution-independent SVG.
+
+## 2026-09-28 — white canvas update
+
+- User selected direction A and requested removing ivory background tone. Updated all global ivory, header, hero visual fallback, slide controls, footer and mobile navigation surfaces to white. Sage/Peach section accents remain.

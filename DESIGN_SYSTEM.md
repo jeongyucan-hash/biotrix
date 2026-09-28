@@ -13,3 +13,7 @@ Slideshow: 6.5s interval, 650ms transition; explicit pause and previous/next; st
 Pages: home, brand, business, products, partnership, contact. Existing commerce functions and legal content are preserved. Product and inquiry availability are shown accurately; no dummy prices or nonfunctional contact form.
 
 Logo review 2026-09-28: old overlaid B/Sage cut was hard to read at small sizes. Compared three vector directions (B with negative-space apertures, three-way botanical mark, open-arc B) at 24px and 16px. Chose A for recognizable letter form and clean single-ink production. Logo board and favicon are vector SVG; 16px/24px raster checks are QA previews, not deployed assets.
+
+## 2026-09-28 · White canvas
+
+A안 Negative B 심볼 유지. 전역 아이보리 배경을 흰색(#FFFFFF)으로 전환하고, 헤더·슬라이드 조작 영역·푸터·모바일 메뉴도 흰색으로 통일한다. Forest 로고와 문장은 유지하고 Sage/Peach는 구역을 구분하는 제한적 강조색으로 사용한다.

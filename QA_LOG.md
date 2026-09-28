@@ -58,3 +58,7 @@
 - HQ `hq-nextjs` release `3c8fc52cbe1f426b7a72b9cc817fb1be5ccd1d9d` succeeded. HQ `design.master` is v3.0 with 19 private assets (full master, source files, mood image, and 14 individual PDF boards). Admin-only learning page stores aggregate observations and model evaluation. No observations or trained recommendation yet.
 - Six public pages and 149 internal links passed static audit. Browser confirmed home at 320px has no horizontal overflow; image loading, manual slideshow and pause were checked. The authenticated HQ UI and all page interaction paths have not been fully exercised.
 - Remaining business inputs: real product details/purchase destinations and a verified inquiry receiving channel. Generated scenes are illustrative.
+
+## 2026-09-28 — Logo redesign
+- Compared three vector directions at full, header 24px and favicon 16px. Chose negative-space B monogram for recognizable letter and one-color print/screen use.
+- Replaced public symbol and favicon SVG, adjusted wordmark weight and spacing. PNGs used only for optical QA; deployed assets remain resolution-independent SVG.

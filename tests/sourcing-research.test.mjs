@@ -34,6 +34,10 @@ test('one bounded GPT search request, no paid automatic retry; safe error messag
     calls++;assert.equal(endpoint,'https://ai-gateway.vercel.sh/v1/responses');
     const body=JSON.parse(options.body);assert.equal(body.model,'openai/gpt-5.4-mini');assert.equal(body.max_tool_calls,3);
     assert.equal(body.max_output_tokens,5000);assert.equal(body.tools[0].type,'web_search');
+    assert.match(body.input[0].content,/한국 사업자가 거래/);
+    assert.match(body.input[0].content,/초기 투입 상한은 100만원/);
+    assert.match(body.input[0].content,/주문 불가·품절 상품은 후보에서 제외/);
+    assert.match(body.input[0].content,/특정 상품의 쿠팡 판매 허가가 아니다/);
     return {ok:true,json:async()=>fixture()};
   }});
   assert.equal(calls,1);assert.equal(parseResearch(response).candidates.length,1);

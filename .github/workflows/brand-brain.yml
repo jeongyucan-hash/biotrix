@@ -2,7 +2,7 @@ name: BIOTRIX brand self check
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 3 * * *'
+    - cron: '17 * * * *'
 jobs:
   audit:
     runs-on: ubuntu-latest
@@ -31,4 +31,4 @@ jobs:
         with:
           name: brand-audit-report
           path: brand-audit-report.json
-          retention-days: 30
+          retention-days: 7

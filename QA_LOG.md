@@ -70,3 +70,7 @@
 ## 2026-09-28 — scheduled branding check
 
 - Added default-branch GitHub Action to check public logo/favicons, white canvas, homepage image reuse and HQ master asset hashes daily at 03:17 UTC or manually. Report is stored in workflow artifacts for 30 days; deployment is not automatic.
+
+## 2026-09-28 — hourly branding check
+
+- Changed scheduled GitHub Actions audit from daily 03:17 UTC to hourly at minute 17 UTC (KST :17). Reduced individual report artifact retention from 30 to 7 days to bound storage. Manual dispatch remains available. First scheduled execution still requires remote verification.

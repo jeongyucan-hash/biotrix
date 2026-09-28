@@ -3,19 +3,11 @@ import { redirect } from "next/navigation";
 import { createClient } from "../../lib/supabase/server";
 
 const sections = [
-  ["운영 · 실행", [
-    ["대시보드","/"],["통합 업무함","/tasks"],["Work Queue","/work-queue"],["작업 기록","/activity"],
-    ["사이트 통합 관리","/sites"],["운영 콘솔","/admin"],
-  ]],
-  ["매출 · 공급망", [
-    ["첫 판매 준비","/launch"],["공급처 거래","/sourcing/outreach"],["Commerce","/commerce"],["Products","/products"],["Sourcing","/sourcing"],
-    ["Procurement","/procurement"],["Suppliers","/suppliers"],["Finance","/finance"],
-  ]],
-  ["성장 · 지식", [
-    ["Growth","/growth"],["R&D","/rd"],["Advisory","/advisory"],["Knowledge","/knowledge"],["Scribe","/scribe"],
-    ["홈페이지 디자인실","/design"],["디자인 학습","/learning"],["Founder Room","/founder-room"],["AI Agents","/agents"],
-  ]],
-  ["계정", [["설정","/admin/settings"],["비밀번호 설정","/account/security"]]],
+  ["실행", [["Work Queue","/work-queue"],["작업 기록","/activity"],["운영 콘솔","/admin"],["AI Agents","/agents"]]],
+  ["판매 · 공급", [["첫 판매 준비","/launch"],["Commerce","/commerce"],["Products","/products"],["Sourcing","/sourcing"],["공급처 거래","/sourcing/outreach"],["Procurement","/procurement"],["Suppliers","/suppliers"]]],
+  ["성장 · 재무", [["Growth","/growth"],["Finance","/finance"],["R&D","/rd"],["Advisory","/advisory"]]],
+  ["콘텐츠 · 지식", [["Scribe","/scribe"],["Knowledge","/knowledge"],["홈페이지 디자인실","/design"],["디자인 학습","/learning"]]],
+  ["시스템", [["사이트 통합 관리","/sites"],["Founder Room","/founder-room"],["설정","/admin/settings"],["비밀번호 설정","/account/security"]]],
 ];
 
 function MenuSections({ active, role }) {
@@ -25,7 +17,7 @@ function MenuSections({ active, role }) {
     const current = active === "Tasks" ? "통합 업무함" : active;
     const matches = (label) => current === label || (current === "Dashboard" && label === "대시보드");
     const hasActivePage = visible.some(([label]) => matches(label));
-    return <details className="hqMenuGroup" key={section} open={hasActivePage}>
+    return <details className={`hqMenuGroup${hasActivePage ? " current" : ""}`} key={section}>
       <summary className="hqMenuHeading">{section}<span aria-hidden="true">⌄</span></summary>
       <div className="hqMenuItems">
         {visible.map(([label, href]) => (
@@ -52,23 +44,21 @@ export default async function HQShell({ active, title, eyebrow="BIOTRIX HQ", chi
 
   return (
     <div className="hqShell">
-      <aside className="hqSide">
-        <div className="hqBrand">BIOTRIX ADMIN</div>
-        <div className="hqSub">Company Operating System</div>
-
-        <nav className="hqMenu" aria-label="어드민 메뉴">
+      <header className="hqSiteHeader">
+        <Link href="/" className="hqBrand" aria-label="BIOTRIX HQ 대시보드">BIOTRIX <span>HQ</span></Link>
+        <nav className="hqMenu" aria-label="HQ 주요 메뉴">
+          <Link href="/" className={`hqNavLink${active === "Dashboard" ? " active" : ""}`}>대시보드</Link>
+          <Link href="/tasks" className={`hqNavLink${active === "Tasks" ? " active" : ""}`}>통합 업무함</Link>
           <MenuSections active={active} role={admin.role} />
         </nav>
         <details className="hqMobileNav">
           <summary>메뉴 열기</summary>
-          <nav aria-label="어드민 모바일 메뉴"><MenuSections active={active} role={admin.role} /></nav>
+          <nav aria-label="HQ 모바일 메뉴">
+            <Link href="/">대시보드</Link><Link href="/tasks">통합 업무함</Link>
+            <MenuSections active={active} role={admin.role} />
+          </nav>
         </details>
-
-        <div className="hqSideFoot">
-          <span className="statusDot"></span>
-          {admin.role.toUpperCase()} · Supabase
-        </div>
-      </aside>
+      </header>
 
       <main className="hqMain">
         <header className="hqTop">

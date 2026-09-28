@@ -59,3 +59,10 @@
 - Five focused Node tests passed. Live Supabase rollback tests verified active admin success, duplicate prevention, atomic failure, error records and anonymous/nonadmin denial. Read-back confirmed zero fixtures. Next production build and diff check passed.
 - Limitations: user-triggered bounded run, not a scheduled worker. Live provider credentials/credit and authenticated browser completion not verified: review browser is at HQ magic-link login. Billing unknown, not falsely shown as zero. See docs/sourcing-execution.md.
 - Migration sourcing_execution applied and RLS read back enabled. Production commit ced582a54b9613ba7711bccd4562e4daceb7adc0 deployed READY in dpl_7krw1PGZKjYm2WR7LHhTRiHTJNQS with biotrix-hq.vercel.app alias verified (14:16:43 KST). Both execution flags enabled. HQ run 747171d0-a511-4f98-88eb-202609280301 and Knowledge document 747171d0-a511-4f98-88eb-202609280302 saved; live provider verification awaits HQ authentication.
+
+## 2026-09-28 — First-sale workspace
+- Session `biotrix-first-sale-20260928`; based on current origin/hq-nextjs 20481fc in an isolated worktree to preserve other design and login work.
+- Added /launch, full direct-cost calculator, shared prerequisite evidence, product checklist, comparison and feedback history. HQ design.department DM-3.2 palette retained; logo/master files untouched.
+- Three financial/readiness/validation tests passed; production build passed. RLS migration applied. Transactional database integration verified admin write/readback, stale update rejection, review insertion, completion evidence, nonadmin and anonymous denial; fixtures rolled back. Security advisors reported no new table findings (existing password-protection warning remains).
+- Live browser has no authenticated HQ session. Full authenticated UI save/edit verification is not yet confirmed. Deployment pending GitHub push and Vercel READY verification.
+- No external seller connection, listing, payment or paid AI execution. Final deployment and knowledge synchronization evidence will be stored in HQ agent_runs/documents.

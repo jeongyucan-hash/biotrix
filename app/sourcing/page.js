@@ -45,6 +45,7 @@ export default async function Sourcing(){
 
   return (
     <HQShell active="Sourcing" title="Sourcing">
+      <section className="hqPanel"><h2><a href="/launch">쿠팡 첫 판매 준비 →</a></h2><p>상품 링크·배송비·수수료를 반영한 손익과 등록 준비를 확인하세요.</p></section>
       {[missionsResult,candidatesResult,jobsResult,settingsResult].some(r=>r.error) && <p role="alert">일부 데이터를 불러오지 못했습니다. 결과가 없는 것으로 판단하지 말고 새로고침해 주세요.</p>}
       <section className="hqGrid2">
         <article className="hqPanel">

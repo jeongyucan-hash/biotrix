@@ -1,0 +1,50 @@
+name: Scribe smoke test
+
+on:
+  push:
+    branches:
+      - test/scribe-smoke
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build HQ
+        run: npm run build
+
+      - name: Fetch real YouTube transcript
+        run: |
+          node --input-type=module <<'NODE'
+          import { fetchTranscript } from 'youtube-transcript';
+
+          const url = 'https://www.youtube.com/watch?v=arj7oStGLkU';
+          const transcript = await fetchTranscript(url);
+
+          if (!Array.isArray(transcript) || transcript.length < 20) {
+            throw new Error(`Transcript too short: ${transcript?.length ?? 'null'}`);
+          }
+
+          const text = transcript.map(x => String(x.text || '')).join(' ').trim();
+          if (text.length < 500) {
+            throw new Error(`Transcript text too short: ${text.length}`);
+          }
+
+          console.log(JSON.stringify({
+            ok: true,
+            segments: transcript.length,
+            chars: text.length,
+            firstSegment: transcript[0]
+          }, null, 2));
+          NODE

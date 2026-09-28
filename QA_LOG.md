@@ -36,3 +36,11 @@
 ### Remaining business inputs
 - Sellable product details and verified purchase URLs.
 - Verified business/contact information and a receiving channel for inquiries.
+
+## 2026-09-28 — DM-3.0 editorial website redesign
+
+- Responded to the repeated-photo critique with four independent image scenes and one use of each source on the homepage.
+- Rebuilt six public pages: split hero, editorial typography, ruled category navigation, distinct inner-page layouts and honest availability states.
+- Replaced metallic header mark with the flat vector mark. Retained keyboard navigation, pause/manual slideshow and reduced-motion handling.
+- Provenance is recorded in assets/EDITORIAL_SOURCES.md and the contact FAQ.
+- Static links/assets/headings audit and JavaScript syntax checks run before preview. Responsive browser QA and production readback are recorded in HQ when complete.

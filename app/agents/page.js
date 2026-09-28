@@ -59,7 +59,7 @@ export default async function Agents(){
             <div className="agentStatus">{agent.status.toUpperCase()} · {agent.execution_mode.toUpperCase()}</div>
             <h2>{agent.name}</h2>
             <p>{agent.purpose}</p>
-            {agent.code === "inventory" ? (
+            {agent.code === "website_design" ? <a className="hqButton" href="/design">디자인실 열기</a> : agent.code === "inventory" ? (
               <form action={runInventoryAgent}>
                 <button type="submit">Run Inventory Agent</button>
               </form>

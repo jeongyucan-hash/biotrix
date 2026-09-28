@@ -25,7 +25,7 @@ export default async function Sites({ searchParams }) {
       <article className="hqPanel" id="request"><div className="panelHead"><h2>개선 업무 접수</h2><span>{selected.name}</span></div><RequestForm key={selected.id} selected={selected} /></article>
       <article className="hqPanel"><div className="panelHead"><h2>사이트 개선 현황</h2><Link href="/work-queue">전체 업무 →</Link></div>
         {error ? <p role="alert">업무 현황을 불러오지 못했습니다. 새로고침해주세요.</p> : items.length ? <div className="siteWorkList">{items.map(item => <Link href={`/work-queue#work-${item.id}`} key={item.id}><strong>{item.title}</strong><span>{statuses[item.status] || item.status} · {item.priority}</span><small>{formatKST(item.updated_at)}</small></Link>)}<p>최근 최대 100건 표시 · 채택은 운영 배포 완료를 의미하지 않습니다.</p></div> : <div className="hqEmpty"><strong>첫 개선 업무를 맡겨보세요.</strong><p>접수된 업무와 검수 상태가 이곳에 모입니다.</p></div>}
-        <hr /><h3>HQ 업무 원칙</h3><ol><li>요청과 완료 기준을 남깁니다.</li><li>담당 역할이 구현하고 검수 증거를 제출합니다.</li><li>결과를 검토하고 채택하면 지식에 저장합니다.</li><li>다음 개선안을 새 업무로 연결합니다.</li></ol><Link href="/activity">코드 변경·작업 기록 보기 →</Link>
+        <hr /><h3>HQ 업무 원칙</h3><p><Link href="/design">홈페이지 디자인 기준·마스터·수정 요청은 디자인실에서 →</Link></p><ol><li>요청과 완료 기준을 남깁니다.</li><li>담당 역할이 구현하고 검수 증거를 제출합니다.</li><li>결과를 검토하고 채택하면 지식에 저장합니다.</li><li>다음 개선안을 새 업무로 연결합니다.</li></ol><Link href="/activity">코드 변경·작업 기록 보기 →</Link>
       </article>
     </section>
   </HQShell>;

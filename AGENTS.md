@@ -10,3 +10,7 @@ For every meaningful work session on this repository:
 6. GitHub commit ingestion in HQ `/activity` runs when an authorized operator opens that page, at most once every 30 minutes. It does not capture conversations or run while the page is closed.
 
 The public website and the HQ Next.js app use separate branches and deployments. Verify each relevant target. Do not overwrite one with the other.
+
+## Website design authority
+
+All website visual changes must reference HQ /design and the active design.department setting plus design decisions. Update DM master version, source assets, photo provenance and implementation together. Do not invent autonomous agents or claim an AI native file when only a PDF-compatible exchange file is provided. Keep design assets behind HQ admin authorization.

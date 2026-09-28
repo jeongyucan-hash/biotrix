@@ -1,0 +1,113 @@
+{
+  "version": "2.0",
+  "department": "website_design",
+  "generated_photo": {
+    "file": "brand-triptych.jpg",
+    "source": "OpenAI built-in image generation",
+    "created": "2026-09-28",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "use": "brand mood only; not real products/facilities/suppliers",
+    "prompt": "Premium editorial triptych: pears, water/linen/botanical sprig, unlabeled frosted cosmetic bottle; warm ivory stone; consistent soft daylight; no text/brands.",
+    "panels": [
+      "food",
+      "daily wellness",
+      "beauty"
+    ]
+  },
+  "ai_format": "PDF-based Illustrator compatibility copy; NOT Adobe native AI export; Adobe app not tested",
+  "master_pages": [
+    {
+      "number": 1,
+      "title": "일상에 가까운 좋은 선택.",
+      "section": "MASTER"
+    },
+    {
+      "number": 2,
+      "title": "디자인은 HQ에서 결정합니다.",
+      "section": "GOVERNANCE"
+    },
+    {
+      "number": 3,
+      "title": "작게 보여도 선명한 브랜드.",
+      "section": "IDENTITY"
+    },
+    {
+      "number": 4,
+      "title": "색과 글자, 여백의 기본값.",
+      "section": "FOUNDATIONS"
+    },
+    {
+      "number": 5,
+      "title": "사진은 같은 장면의 언어로.",
+      "section": "ART DIRECTION"
+    },
+    {
+      "number": 6,
+      "title": "반복해서 쓰는 화면 요소.",
+      "section": "COMPONENTS"
+    },
+    {
+      "number": 7,
+      "title": "홈 / Desktop",
+      "section": "PAGE 01"
+    },
+    {
+      "number": 8,
+      "title": "홈 / Mobile",
+      "section": "PAGE 01 · RESPONSIVE"
+    },
+    {
+      "number": 9,
+      "title": "브랜드 소개",
+      "section": "PAGE 02"
+    },
+    {
+      "number": 10,
+      "title": "사업 분야",
+      "section": "PAGE 03"
+    },
+    {
+      "number": 11,
+      "title": "제품 / 출시 전과 판매 중",
+      "section": "PAGE 04"
+    },
+    {
+      "number": 12,
+      "title": "파트너십과 문의",
+      "section": "PAGES 05–06"
+    },
+    {
+      "number": 13,
+      "title": "커머스 / 구매 흐름의 공통 기준",
+      "section": "COMMERCE"
+    },
+    {
+      "number": 14,
+      "title": "HQ / 홈페이지 디자인실",
+      "section": "OPERATIONS UI"
+    },
+    {
+      "number": 15,
+      "title": "반응형과 동작도 디자인입니다.",
+      "section": "INTERACTION"
+    },
+    {
+      "number": 16,
+      "title": "문구는 고객의 말에 가깝게.",
+      "section": "CONTENT"
+    },
+    {
+      "number": 17,
+      "title": "파일과 자산을 잃지 않는 구조.",
+      "section": "HANDOFF"
+    },
+    {
+      "number": 18,
+      "title": "완성의 기준은 일관성입니다.",
+      "section": "ACCEPTANCE"
+    }
+  ]
+}

@@ -1,4 +1,10 @@
 
+## 2026-09-28 15:08:33 KST — One-sentence sourcing intake
+- Added top-level plain-language request -> persist mission -> existing bounded research action. No extra model call for intake. Existing requests have top-of-page execution controls; optional detailed setup is collapsed.
+- Explicit defaults: Coupang, initial cash cap KRW 1,000,000. No invented prices or margin; defaults visible before submission. No external messages, purchases or listings.
+- Active-admin authorization retained. Request UUID plus primary-key conflict/read-back checks prevent duplicate mission creation for the same submission; existing jobs stop automatic resubmission. Existing SQL research lock/cooldown/limits remain authoritative. Pending controls prevent repeated clicks; errors preserve request text and saved-mission link.
+- DM-3.2 / Lockup L1 confirmed from design.department, reused HQ components with no brand changes. 21 tests passed and production build exited 0. Actual owner-authenticated UI and paid research end-to-end remain unverified; deployment outcome saved in HQ session 747171d0-a511-4f98-88eb-202609280601 and document 747171d0-a511-4f98-88eb-202609280602 after verification.
+
 ## 2026-09-28 14:54:45 KST — Password access
 - Added default email/password login, first-password/reset email flow, and authenticated /account/security. HQShell retains active-admin authorization; no role grants, auth-policy relaxation, passwords in application storage, or new dependencies.
 - Recovery uses the existing /auth/callback redirect and Supabase PKCE recovery redirectType; email links must be opened in the requesting browser. Magic-link fallback no longer creates unsolicited accounts.

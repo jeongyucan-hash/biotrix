@@ -2,6 +2,7 @@ import HQShell from "../components/HQShell";
 import { createClient } from "../../lib/supabase/server";
 import { addCandidate, createMission, promoteCandidate, updateCandidateStatus } from "./actions";
 import ResearchControl from './ResearchControl';
+import QuickResearch from './QuickResearch';
 import {researchConfiguration} from '../../lib/sourcing/research.mjs';
 import {safeUrl} from '../../lib/ai/responses.mjs';
 
@@ -45,9 +46,13 @@ export default async function Sourcing(){
 
   return (
     <HQShell active="Sourcing" title="Sourcing">
+      <QuickResearch enabled={automatedResearchEnabled} configured={configured}/>
+      {missions.filter(m=>!['completed','cancelled'].includes(m.status)).slice(0,3).length>0 && <section className="hqPanel"><h2>이미 맡긴 요청 — 다시 입력하지 마세요</h2>
+        {missions.filter(m=>!['completed','cancelled'].includes(m.status)).slice(0,3).map(m=><div key={m.id}><h3>{m.title}</h3><ResearchControl missionId={m.id} enabled={automatedResearchEnabled} configured={configured} closed={false} job={jobs.find(j=>j.mission_id===m.id) || null} compact/><a href={`#mission-${m.id}`}>결과 확인 ↓</a></div>)}
+      </section>}
       <section className="hqPanel"><h2><a href="/launch">쿠팡 첫 판매 준비 →</a></h2><p>상품 링크·배송비·수수료를 반영한 손익과 등록 준비를 확인하세요.</p></section>
       {[missionsResult,candidatesResult,jobsResult,settingsResult].some(r=>r.error) && <p role="alert">일부 데이터를 불러오지 못했습니다. 결과가 없는 것으로 판단하지 말고 새로고침해 주세요.</p>}
-      <section className="hqGrid2">
+      <details><summary>상세 조건을 직접 설정하고 싶다면 (선택)</summary><section className="hqGrid2">
         <article className="hqPanel">
           <div className="panelHead">
             <h2>New Sourcing Mission</h2>
@@ -93,7 +98,7 @@ export default async function Sourcing(){
             )}
           </div>
         </article>
-      </section>
+      </section></details>
 
       {missions.map((mission)=>{
         const rows=candidates.filter((c)=>c.mission_id===mission.id);
@@ -101,7 +106,7 @@ export default async function Sourcing(){
         const latestJob=missionJobs[0];
 
         return (
-          <section className="hqPanel" key={mission.id}>
+          <section className="hqPanel" key={mission.id} id={`mission-${mission.id}`}>
             <div className="panelHead">
               <div>
                 <h2>{mission.title}</h2>

@@ -3,6 +3,31 @@
 import { revalidatePath } from "next/cache";
 import { createClient } from "../../lib/supabase/server";
 import { requestResearch, parseResearch, researchConfiguration, researchError } from '../../lib/sourcing/research.mjs';
+import {quickMission} from '../../lib/sourcing/intake.mjs';
+
+export async function quickResearch(previousState,formData){
+  let missionId;
+  try {
+    const {supabase,user}=await getAdmin();
+    let mission;
+    try { mission=quickMission(formData.get('request')); }
+    catch(error) { return {error:error.message}; }
+    if(!researchConfiguration().configured) return {error:'AI 연결 설정이 필요합니다. 요청을 다시 입력하지 말고 관리자에게 알려 주세요.'};
+    missionId=String(formData.get('request_id') || '');
+    if(!/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(missionId)) return {error:'화면을 새로고침한 후 다시 시도해 주세요.'};
+    const inserted=await supabase.from('sourcing_missions').insert({...mission,id:missionId,created_by:user.id});
+    if(inserted.error && inserted.error.code!=='23505') return {error:'요청 저장에 실패했습니다. 입력 내용은 그대로 두고 다시 시도해 주세요.'};
+    const saved=await supabase.from('sourcing_missions').select('id,brief,created_by').eq('id',missionId).single();
+    if(saved.error || saved.data.created_by!==user.id || saved.data.brief!==mission.brief) return {error:'이 요청은 이미 저장됐습니다. 새 요청을 시작하거나 아래 기존 요청을 확인해 주세요.'};
+    const existing=await supabase.from('sourcing_research_jobs').select('id').eq('mission_id',missionId).limit(1);
+    if(existing.error) return {error:'실행 기록을 확인하지 못해 중복 호출을 중단했습니다.',missionId};
+    if(existing.data.length) return {message:'이미 실행한 요청입니다. 아래 결과를 확인해 주세요. 재실행은 해당 요청에서 선택할 수 있습니다.',missionId};
+    const runForm=new FormData(); runForm.set('mission_id',missionId); runForm.set('instruction','');
+    const result=await runResearch({},runForm);
+    revalidatePath('/sourcing');
+    return {...result,missionId};
+  } catch { return {error:'요청 처리에 실패했습니다. 아래 저장된 요청을 확인해 주세요.',missionId}; }
+}
 
 async function getAdmin(){
   const supabase=await createClient();

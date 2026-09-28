@@ -91,7 +91,7 @@ export default async function WorkQueue(){
               const latest=itemResults[0];
 
               return (
-                <article className="workCard" key={item.id}>
+                <article className="workCard" id={`work-${item.id}`} key={item.id}>
                   <div className="workCardHead">
                     <div>
                       <div className="approvalMeta">
@@ -122,7 +122,7 @@ export default async function WorkQueue(){
                     <div className="workResult">
                       <div className="workResultHead">
                         <strong>{latest.accepted ? "Accepted result" : "Result ready"}</strong>
-                        <span>{new Date(latest.created_at).toLocaleString("ko-KR")}</span>
+                        <span>{new Date(latest.created_at).toLocaleString("ko-KR", { timeZone: "Asia/Seoul", hour12: false }) + " KST"}</span>
                       </div>
                       <p>{latest.result_text}</p>
                       {!latest.accepted && (

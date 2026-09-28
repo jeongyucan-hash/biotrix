@@ -43,6 +43,7 @@ export default async function Dashboard() {
 
   return (
     <HQShell active="Dashboard" title="Dashboard">
+      <section className="hqPanel"><h2>사이트와 개선 업무를 한눈에</h2><a className="hqButton" href="/sites">사이트 통합 관리 열기 →</a></section>
       <section className="hqCards">
         {cards.map(([label,value,sub]) => (
           <article className="hqMetric" key={label}>

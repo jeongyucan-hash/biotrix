@@ -69,6 +69,7 @@ export default async function AdminConsole() {
 
   return (
     <HQShell active="운영 콘솔" title="운영 콘솔" eyebrow="BIOTRIX ADMIN">
+      <section className="hqPanel"><h2>모든 사이트를 한곳에서</h2><p>브랜드·커머스·HQ를 열고 각 사이트의 개선 업무를 맡기세요.</p><Link className="hqButton" href="/sites">사이트 통합 관리 →</Link></section>
       <section className="consoleMetrics" aria-label="현재 작업 현황">
         {metrics.map(([label, count, href]) => (
           <Link href={href} className="consoleMetric" key={label}>

@@ -4,7 +4,7 @@ import { createClient } from "../../lib/supabase/server";
 
 const sections = [
   ["운영", [
-    ["운영 콘솔","/admin"],["작업 기록","/activity"],["Dashboard","/"],["Tasks","/tasks"],
+    ["사이트 통합 관리","/sites"],["운영 콘솔","/admin"],["작업 기록","/activity"],["Dashboard","/"],["Tasks","/tasks"],
     ["Work Queue","/work-queue"],["Founder Room","/founder-room"],["AI Agents","/agents"],
   ]],
   ["커머스", [

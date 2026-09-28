@@ -1,4 +1,13 @@
 
+## 2026-09-28 14:54:45 KST — Password access
+- Added default email/password login, first-password/reset email flow, and authenticated /account/security. HQShell retains active-admin authorization; no role grants, auth-policy relaxation, passwords in application storage, or new dependencies.
+- Recovery uses the existing /auth/callback redirect and Supabase PKCE recovery redirectType; email links must be opened in the requesting browser. Magic-link fallback no longer creates unsolicited accounts.
+- Safe internal post-login redirect, accessible labels/status messages, pending-state controls, generic authentication errors, password confirmation and 12–128 character policy.
+- Design: reuses current HQ components and DM-3.2 authority; no brand master changes.
+- Validation: 16 Node tests passed including 2 new auth helper tests. Production build exited 0. Deployment verification pending at this entry. Actual owner password creation and authenticated login require user action and are not claimed tested.
+- Contact correction supplied by user: business-card mobile 010-8431-8842; no customer messaging performed.
+- Final deployment and persistence outcomes are recorded under agent_runs 747171d0-a511-4f98-88eb-202609280501 and documents 747171d0-a511-4f98-88eb-202609280502; pending until read-back verified.
+
 ## 2026-09-28 11:36:27 KST — Site management hub
 - Added /sites: three site launch cards, responsible teams, improvement intake and recent status list.
 - Intake uses existing authenticated prepare_chatgpt_work_item RPC; checked live function signature and allowed departments. Server validates active admin, fields and priorities; failed saves are surfaced. No automatic AI execution is claimed.

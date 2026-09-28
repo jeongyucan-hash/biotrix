@@ -1,0 +1,7 @@
+/* Existing HQ design system; no master-brand changes. */
+.authOptions{display:grid;gap:8px;margin-top:20px}
+.loginCard .authOptions button{background:transparent;color:inherit;border:1px solid #8f9cae;font-size:13px;font-weight:500;margin:0}
+.authOptions a{font-size:13px;line-height:1.6;text-align:center;color:inherit;margin-top:8px}
+.passwordForm{max-width:460px;display:grid;gap:12px}
+.passwordForm input{padding:12px;border:1px solid #8f9cae;border-radius:8px}
+.authOptions button:focus-visible,.authOptions a:focus-visible,.passwordForm input:focus-visible{outline:2px solid #668a79;outline-offset:3px}

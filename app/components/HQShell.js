@@ -14,7 +14,7 @@ const sections = [
   ["기획 · 지식", [
     ["R&D","/rd"],["Growth","/growth"],["Advisory","/advisory"],["Knowledge","/knowledge"],
   ]],
-  ["설정", [["설정","/admin/settings"]]],
+  ["설정", [["설정","/admin/settings"],["비밀번호 설정","/account/security"]]],
 ];
 
 function MenuSections({ active, role }) {

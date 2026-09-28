@@ -10,11 +10,11 @@ export async function GET(request) {
   }
 
   const supabase = await createClient();
-  const { error } = await supabase.auth.exchangeCodeForSession(code);
+  const { data, error } = await supabase.auth.exchangeCodeForSession(code);
 
   if (error) {
     return NextResponse.redirect(new URL("/login?error=auth_failed", url.origin));
   }
 
-  return NextResponse.redirect(new URL("/", url.origin));
+  return NextResponse.redirect(new URL(data?.redirectType === "recovery" ? "/account/security" : "/", url.origin));
 }

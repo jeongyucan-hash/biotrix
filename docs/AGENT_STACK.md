@@ -54,3 +54,23 @@ Installation is not considered complete until each layer is callable:
 - OpenViking requires Python 3.10+ plus model/embedding configuration.
 - Impeccable has had recent installer regressions; use the latest installer and verify generated skill/hook files rather than trusting exit code alone.
 - Account connectors cannot be installed by a repository bootstrap script.
+
+
+## NVIDIA NIM runtime
+
+HQ includes a server-only NVIDIA client at `lib/nvidia.js`. It uses NVIDIA's OpenAI-compatible API endpoint and reads only server environment variables:
+
+- `NVIDIA_API_KEY`
+- `NVIDIA_NIM_MODEL` (default example: `openai/gpt-oss-20b`)
+
+Do not expose the key through a `NEXT_PUBLIC_` variable. A public API route must not be enabled until HQ authentication, rate limits and request authorization are applied.
+
+## Health check
+
+After the bootstrap:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\verify-agent-stack.ps1
+```
+
+This verifies the local runtimes, Codex MCP registration, Browser Use, OpenViking, AgentMemory and whether an NVIDIA key is present without printing its value.

@@ -146,3 +146,5 @@
 - AgentMemory native Windows may require pinned iii-engine setup; OpenViking requires provider/model initialization.
 - Impeccable currently has recent upstream installer reports; verify generated files and hook approval after execution.
 - HQ Supabase `agent_runs` / `documents` sync not confirmed in this session.
+
+- 2026-09-30 follow-up: bootstrap corrected against current upstream instructions. Emil repo corrected to `emilkowalski/skills`; Browser Use now uses `uv tool install --python 3.12 --upgrade --force browser-use` plus browser/skill health setup; OpenViking now uses `uv tool install openviking --upgrade`; native Windows AgentMemory bootstrap downloads pinned iii-engine v0.22.1 before runtime/demo. Codex uses the current official Windows installer when absent.

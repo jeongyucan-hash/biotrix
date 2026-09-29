@@ -134,3 +134,15 @@
 - Moved navigation to a sticky top bar. Dashboard and Tasks are direct links; the remaining existing routes are grouped under Execution, Sales/Supply, Growth/Finance, Content/Knowledge, and System. Owner-only Settings remains role filtered. Compact screens show the same routes in a two-column expandable menu.
 - Verification: `git diff --check` and `npm run build` passed. `npm ci` could not run because the existing lockfile lacks the already declared `youtube-transcript@1.3.1`; installed without modifying the lockfile to verify this change. Authenticated visual browser QA and production deployment remain unverified.
 - HQ `agent_runs` and `documents` synchronization pending; no database write is claimed.
+
+
+## 2026-09-30 — Agent stack bootstrap
+
+- Branch: `feat/agent-stack-bootstrap-v1`
+- Added Windows bootstrap for Emil Kowalski Skills, Taste Skill, Impeccable, Playwright MCP, AgentMemory, Diagram Design, Scientific Agent Skills, Cybersecurity Agent Skills, Awesome Harness Engineering, Browser Use and OpenViking.
+- Added `NVIDIA_API_KEY` placeholder to `.env.example`; no secret value was committed.
+- Canva connection is external to the repository. Figma and Runway remain connector-level setup, not package installs.
+- Verification limitation: GitHub changes prepare installation but do not prove packages are installed on the operator's Windows machine. The PowerShell bootstrap must be executed locally and warnings reviewed.
+- AgentMemory native Windows may require pinned iii-engine setup; OpenViking requires provider/model initialization.
+- Impeccable currently has recent upstream installer reports; verify generated files and hook approval after execution.
+- HQ Supabase `agent_runs` / `documents` sync not confirmed in this session.

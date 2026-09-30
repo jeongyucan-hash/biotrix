@@ -134,3 +134,23 @@
 - Moved navigation to a sticky top bar. Dashboard and Tasks are direct links; the remaining existing routes are grouped under Execution, Sales/Supply, Growth/Finance, Content/Knowledge, and System. Owner-only Settings remains role filtered. Compact screens show the same routes in a two-column expandable menu.
 - Verification: `git diff --check` and `npm run build` passed. `npm ci` could not run because the existing lockfile lacks the already declared `youtube-transcript@1.3.1`; installed without modifying the lockfile to verify this change. Authenticated visual browser QA and production deployment remain unverified.
 - HQ `agent_runs` and `documents` synchronization pending; no database write is claimed.
+
+
+## 2026-09-30 — Agent stack bootstrap
+
+- Branch: `feat/agent-stack-bootstrap-v1`
+- Added Windows bootstrap for Emil Kowalski Skills, Taste Skill, Impeccable, Playwright MCP, AgentMemory, Diagram Design, Scientific Agent Skills, Cybersecurity Agent Skills, Awesome Harness Engineering, Browser Use and OpenViking.
+- Added `NVIDIA_API_KEY` placeholder to `.env.example`; no secret value was committed.
+- Canva connection is external to the repository. Figma and Runway remain connector-level setup, not package installs.
+- Verification limitation: GitHub changes prepare installation but do not prove packages are installed on the operator's Windows machine. The PowerShell bootstrap must be executed locally and warnings reviewed.
+- AgentMemory native Windows may require pinned iii-engine setup; OpenViking requires provider/model initialization.
+- Impeccable currently has recent upstream installer reports; verify generated files and hook approval after execution.
+- HQ Supabase `agent_runs` / `documents` sync not confirmed in this session.
+
+- 2026-09-30 follow-up: bootstrap corrected against current upstream instructions. Emil repo corrected to `emilkowalski/skills`; Browser Use now uses `uv tool install --python 3.12 --upgrade --force browser-use` plus browser/skill health setup; OpenViking now uses `uv tool install openviking --upgrade`; native Windows AgentMemory bootstrap downloads pinned iii-engine v0.22.1 before runtime/demo. Codex uses the current official Windows installer when absent.
+
+- Added BIOTRIX node-fleet bootstrap: separate work/home node identities, Git-based shared configuration, one-command update script, health-check chaining, and optional Windows scheduled daily updates. Secrets, OAuth sessions and local memory DBs intentionally remain outside Git. Cross-device memory is documented as a cloud-context integration target rather than falsely claiming local AgentMemory DB synchronization.
+
+- 2026-09-30 PR #9 merge gate: Vercel's two project deployments were Ignored/Skipped at `0c8c0b8`, although their combined commit statuses were success. The branch has a root Next.js `package.json` and `package-lock.json`, 11 Node test files, and no PR-triggered Actions workflow; the existing `brand-brain.yml` on `main` is scheduled/manual and checks brand assets, not this PR build. Added `HQ PR build` for PRs targeting `hq-nextjs`: root `npm ci`, `node --test tests/*.test.mjs`, `npm run build` on Node 22. Local clean install, 30 tests and production build passed at the original head; GitHub Actions run on the new commit must be checked before merge. Vercel's project-level reason for skipping is not confirmed by the PR comment; deployment settings remain unchanged. HQ `agent_runs`/`documents` sync pending connector availability.
+
+- GitHub Actions `HQ PR build` run 36657818832 completed successfully on `c00342e`: `npm ci`, all Node tests and `npm run build` succeeded. Run: https://github.com/jeongyucan-hash/biotrix/actions/runs/36657818832. This QA-only follow-up creates a new head; its own check must also pass before merge.

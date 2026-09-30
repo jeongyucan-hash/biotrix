@@ -1,0 +1,29 @@
+name: HQ PR build
+
+on:
+  pull_request:
+    branches: [hq-nextjs]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    name: Install, test and build HQ
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Run Node tests
+        run: node --test tests/*.test.mjs
+      - name: Build Next.js production app
+        env:
+          NEXT_TELEMETRY_DISABLED: '1'
+        run: npm run build

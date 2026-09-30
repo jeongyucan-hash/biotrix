@@ -148,3 +148,5 @@
 - HQ Supabase `agent_runs` / `documents` sync not confirmed in this session.
 
 - 2026-09-30 follow-up: bootstrap corrected against current upstream instructions. Emil repo corrected to `emilkowalski/skills`; Browser Use now uses `uv tool install --python 3.12 --upgrade --force browser-use` plus browser/skill health setup; OpenViking now uses `uv tool install openviking --upgrade`; native Windows AgentMemory bootstrap downloads pinned iii-engine v0.22.1 before runtime/demo. Codex uses the current official Windows installer when absent.
+
+- Added BIOTRIX node-fleet bootstrap: separate work/home node identities, Git-based shared configuration, one-command update script, health-check chaining, and optional Windows scheduled daily updates. Secrets, OAuth sessions and local memory DBs intentionally remain outside Git. Cross-device memory is documented as a cloud-context integration target rather than falsely claiming local AgentMemory DB synchronization.

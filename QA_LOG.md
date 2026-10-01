@@ -138,3 +138,15 @@
 - Generic Vercel deploy connector rejected by automatic approval review because target/promotion behavior is unspecified. Do not use it or promote production; use explicit non-main Git preview branch.
 - User approval required for production. No production deployment/promotion performed.
 - HQ agent_runs/documents sync pending final commit/PR/preview values; not yet claimed successful.
+
+### Preview delivery and final readback
+
+- GitHub implementation commit: 5038ed3584baee05eb15ba0d9c6819b46a4ab117. Draft PR: https://github.com/jeongyucan-hash/biotrix/pull/10.
+- Vercel preview: https://biotrix-vercel-ready-73wyalwls-jeongyucan-8678.vercel.app — deployment dpl_2D91m4K6VoAhtHdfBBxDZRPig1BU READY, 1.3 seconds from buildingAt to ready. No production alias attached. Vercel GitHub status success.
+- HQ build for this branch CANCELED by the existing ignore command, as intended. No HQ application changes.
+- Production HTTP readback still shows the previous homepage title. Production alias remains unchanged.
+- Hosted browser QA remains unverified: public preview redirects to Vercel Login; authenticated connector fetch and temporary-share tools return access denied. User authorized access, but retry did not refresh OAuth scope. Requires actual Vercel connection/team authorization or account login. Do not weaken project-wide protection.
+- Local preview running at http://127.0.0.1:4173; five primary routes fully QA checked before delivery. Build logs connector unavailable (tool not found); READY and GitHub deployment status verified, no log-success claim.
+- HQ sync CONFIRMED by readback: agent_runs id 01a0f726-0dc3-7980-9342-ecc0c6375f50, status needs_attention; documents id 01a0f726-0dc3-7980-9342-ecc0c6375f51, category website-development. Usage metrics unavailable and not fabricated.
+- Production approval still pending; draft PR must not be merged or promoted automatically.
+

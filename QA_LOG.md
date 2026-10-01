@@ -149,3 +149,10 @@
 - Local preview running at http://127.0.0.1:4173; five primary routes fully QA checked before delivery. Build logs connector unavailable (tool not found); READY and GitHub deployment status verified, no log-success claim.
 - HQ sync CONFIRMED by readback: agent_runs id 01a0f726-0dc3-7980-9342-ecc0c6375f50, status needs_attention; documents id 01a0f726-0dc3-7980-9342-ecc0c6375f51, category website-development. Usage metrics unavailable and not fabricated.
 - Production approval still pending; draft PR must not be merged or promoted automatically.
+
+## 2026-10-01 — Approved homepage message update
+
+- Updated hero to Advancing biomedicine. Expanding access. and the exact approved Korean headline/body. Removed Connected Biology eyebrow and AI-led hero explanation.
+- Updated homepage title/description/Open Graph text and five biotech-page footer taglines consistently. Canonical/verification/JSON-LD/robots/sitemap/social image preserved. Other section copy unchanged for incremental review.
+- PASS: 20 local Chrome route/viewport checks at 1440/768/390/320px, menu/Escape, no overflow/runtime errors; 11-page link/asset audit; git diff --check.
+- Preview branch only; same draft PR #10. New hosted preview status pending; production not authorized. HQ writeback pending final deployment.

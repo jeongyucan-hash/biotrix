@@ -170,3 +170,5 @@
 - Responsive WebP assets, seven-second crossfade, previous/next/pause, keyboard arrows/focus pause, hover and hidden-tab pause, reduced-motion default pause, no-JavaScript first-image fallback. Replaced redundant hero process strip with BIOTRIX 알아보기 link.
 - PASS: 20 Chrome route/viewport checks (1440/768/390/320px), 222 file references and SEO preservation; 11-page audit of 186 links; brand lockup check; slideshow navigation/wrap/pause/autoplay/keyboard/reduced-motion/no-JS checks; git diff --check.
 - Preview branch only, draft PR #10. Hosted deployment and authenticated screen QA pending at commit time. Production deployment is not authorized. HQ record update pending final preview status.
+
+- Final verification: implementation commit bdd9b6c1f537f1c6206cd58bbaf4590642ade1c0 deployed READY at https://biotrix-vercel-ready-3an0adtgf-jeongyucan-8678.vercel.app/. Hosted browser confirmed slide navigation and 390px image loading/no overflow. Production remains main e42994fd7b9ca1267533728371fd7b3ea07e07cc. HQ agent_runs and Knowledge document updated and verified. Production approval remains pending.

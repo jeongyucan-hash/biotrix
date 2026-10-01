@@ -5,6 +5,8 @@ document.querySelectorAll('.hero-gallery').forEach(gallery=>{
   const toolbar=gallery.querySelector('.slide-toolbar');
   const pauseButton=gallery.querySelector('[data-slide="pause"]');
   const indexLabel=gallery.querySelector('.slide-index');
+  const caption=gallery.querySelector('.image-note');
+  const meanings=['더 많은 사람의 일상으로','세대를 이어가는 삶의 가능성','가능성을 탐구하는 과학'];
   const motion=matchMedia('(prefers-reduced-motion: reduce)');
   let current=0,paused=motion.matches,hovered=false,timer,request=0;
   const updatePause=()=>{pauseButton.textContent=paused?'▷':'Ⅱ';pauseButton.setAttribute('aria-label',paused?'자동 전환 시작':'자동 전환 일시정지');};
@@ -18,6 +20,7 @@ document.querySelectorAll('.hero-gallery').forEach(gallery=>{
     current=target;
     slides.forEach((slide,i)=>{slide.classList.toggle('is-active',i===current);slide.setAttribute('aria-hidden',String(i!==current));});
     indexLabel.textContent=String(current+1).padStart(2,'0')+' / 03';
+    caption.textContent=meanings[current];
     schedule();
   }
   gallery.querySelector('[data-slide="prev"]').addEventListener('click',()=>show(current-1));

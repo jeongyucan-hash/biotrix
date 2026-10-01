@@ -12,3 +12,4 @@
 @media(max-width:700px){.hero-human .hero-inner{padding-top:44px;padding-bottom:24px;gap:32px}.hero-human h1{font-size:clamp(31px,9.2vw,42px)}.hero-human .hero-ko{font-size:19px;margin-top:26px}.hero-human .hero-copy>p:last-of-type{font-size:13px;margin-top:18px}.hero-human .textlink{margin-top:22px}.hero-human .hero-slides{aspect-ratio:5/4}.hero-human .hero-bottom{justify-content:flex-start}.slide-toolbar{margin-top:8px}.image-note{margin-top:4px}}
 
 @media(max-width:700px){.hero-human .hero-title-word{display:block}}
+.hero-human .image-note{font-size:12px;color:var(--green)}

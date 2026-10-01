@@ -172,3 +172,8 @@
 - Preview branch only, draft PR #10. Hosted deployment and authenticated screen QA pending at commit time. Production deployment is not authorized. HQ record update pending final preview status.
 
 - Final verification: implementation commit bdd9b6c1f537f1c6206cd58bbaf4590642ade1c0 deployed READY at https://biotrix-vercel-ready-3an0adtgf-jeongyucan-8678.vercel.app/. Hosted browser confirmed slide navigation and 390px image loading/no overflow. Production remains main e42994fd7b9ca1267533728371fd7b3ea07e07cc. HQ agent_runs and Knowledge document updated and verified. Production approval remains pending.
+
+## 2026-10-01 — Scene meanings instead of generic image caption
+
+- Removed visible 브랜드 콘셉트 이미지. Captions now follow the active slide: 더 많은 사람의 일상으로 / 세대를 이어가는 삶의 가능성 / 가능성을 탐구하는 과학. Enlarged caption to 12px deep green. Accessible image descriptions and internal generated-image provenance retained.
+- Updated six Figma caption layers to the same scene meanings. Caption navigation verification and existing slideshow checks PASS. Preview-only; production approval still required.

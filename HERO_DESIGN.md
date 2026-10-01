@@ -5,7 +5,7 @@ Desktop nodes: 5:77 / 5:119 / 5:160. Mobile: 5:106 / 5:147 / 5:188.
 Six editable cover frames; captured photos transferred as image fills; temporary capture removed. Navigation uses imported Simple Design System instances. Korean type: Noto Sans KR; English Inter is the Figma substitute for the site's Arial. The site retains its existing italic serif emphasis, logo, navigation and approved copy.
 
 ## Photo assets and prompt set
-Built-in image_gen generated all three conceptual assets. Optimized WebP copies at 1440 and 720px are in assets/hero-{family,generations,research}-{1440,720}.webp. These portray fictional people and a conceptual laboratory, not BIOTRIX staff, patients, or facilities. Visible caption: 브랜드 콘셉트 이미지.
+Built-in image_gen generated all three conceptual assets. Optimized WebP copies at 1440 and 720px are in assets/hero-{family,generations,research}-{1440,720}.webp. These portray fictional people and a conceptual laboratory, not BIOTRIX staff, patients, or facilities. Visible captions follow the active scene: 더 많은 사람의 일상으로 / 세대를 이어가는 삶의 가능성 / 가능성을 탐구하는 과학.
 
 Shared prompt: photorealistic-natural premium biotechnology website hero, wide landscape 3:2, soft morning/window daylight, warm ivory and muted sage green, upscale authentic editorial photography, central subjects with breathing room, natural skin and anatomically realistic hands, no words/logos/medical claims/borders/collage; photographic asset only.
 Family: Korean mother, father and two children around 6 and 9 walking in a sunlit park, candid smiles, neutral linen and sage clothing, all four faces visible.

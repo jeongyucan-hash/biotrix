@@ -1,0 +1,1 @@
+document.querySelectorAll('.mobile').forEach(menu=>{menu.addEventListener('keydown',event=>{if(event.key==='Escape'){menu.open=false;menu.querySelector('summary').focus();}});menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.open=false));});

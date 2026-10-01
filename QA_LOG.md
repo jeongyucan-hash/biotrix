@@ -125,3 +125,16 @@
 - Added a 1200x630 PNG social card using the existing BIOTRIX symbol, white canvas and forest-green brand colors; retained editable SVG source.
 - Added absolute og:image, dimensions, MIME, alt text, locale/site name and Twitter large-image metadata to all eight public pages; preserved existing titles, descriptions, canonical and verification tags.
 - SVG rendering visually inspected; git diff --check passed. Production asset/metadata verification and Kakao cache status are recorded in HQ after deployment.
+
+## 2026-10-01 — Biotech research preview
+
+- Session: biotrix-science-preview-20261001. Repository jeongyucan-hash/biotrix; baseline e42994fd7b9ca1267533728371fd7b3ea07e07cc; isolated branch preview/biotrix-science-20261001.
+- Production biotrix.co.kr responded 200. Vercel confirmed READY production dpl_6WCtEgxTwjjuCyEivoe9aQfcpem8, project biotrix-vercel-ready, main. HQ project remains separate and its ignore guard unchanged.
+- Rebuilt Home, Company, Science, Programs, Contact with deep green/silver/warm ivory/graphite, connected-biology SVG, five research areas and MITO/NEXUS/IMMU/RESET/BIOACT research directions. No clinical, proprietary AI or lab-result claims. Contact channel remains honestly pending.
+- Existing public routes retained. Legacy main menus now use Company/Science/Programs/Contact; orchard excluded from the biotech navigation. Existing verification, canonical, Organization JSON-LD and social-image metadata retained. robots.txt unchanged; sitemap extends existing URLs with /science and /programs. Fixed pre-existing shop /#about destination.
+- PASS: headless Chrome, five primary routes at 1440/768/390/320px (20 cases), no horizontal overflow, no runtime/asset errors, mobile menu/Escape. Desktop/mobile screenshots visually reviewed.
+- PASS: audit-site.py: 11 public pages, 186 internal links, assets and anchors; check-lockup.mjs passed. SEO comparison passed; local cross-page scan checked 220 references. git diff --check passed.
+- Build: static HTML project, framework null, no package/build step required; deployable assets served successfully. Hosted preview validation pending GitHub push/Vercel result.
+- Generic Vercel deploy connector rejected by automatic approval review because target/promotion behavior is unspecified. Do not use it or promote production; use explicit non-main Git preview branch.
+- User approval required for production. No production deployment/promotion performed.
+- HQ agent_runs/documents sync pending final commit/PR/preview values; not yet claimed successful.

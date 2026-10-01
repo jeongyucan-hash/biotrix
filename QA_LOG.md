@@ -162,3 +162,11 @@
 - Replaced Home science links with Our research approach; destination /science retained. Replaced THE BIOLOGY MATRIX / CONCEPTUAL VISUAL with BIO + MATRIX. Artwork alt now describes deep green/silver abstract graphics without biological evidence claims.
 - Confirmed top desktop/mobile navigation exactly Company / Science / Programs / Contact, matching initial requested IA; clarification requested about the user's perceived discrepancy. No unapproved IA change.
 - Local link audit PASS: 11 public pages, 186 internal links; Chrome route/viewport QA PASS, no overflow/runtime errors; canonical/verification/JSON-LD/robots/social metadata checks PASS. Production unchanged; preview deploy pending.
+
+## 2026-10-01 — Figma human-centered hero slideshow
+
+- Created Figma design https://www.figma.com/design/2eBqBWppDIA96qumCT87NK with six editable desktop/mobile cover frames for Family / Generations / Research; photo capture used for image fills then removed. Structural checks: editable text, 12 navigation instances, six image fills, no child overflow.
+- Applied bright warm ivory/deep green hero with fixed founder-approved copy. Replaced the abstract matrix cover with three generated conceptual photos; retained original SVG asset. Caption identifies conceptual imagery; no staff/facility or clinical claims. Image provenance and prompt set: HERO_DESIGN.md.
+- Responsive WebP assets, seven-second crossfade, previous/next/pause, keyboard arrows/focus pause, hover and hidden-tab pause, reduced-motion default pause, no-JavaScript first-image fallback. Replaced redundant hero process strip with BIOTRIX 알아보기 link.
+- PASS: 20 Chrome route/viewport checks (1440/768/390/320px), 222 file references and SEO preservation; 11-page audit of 186 links; brand lockup check; slideshow navigation/wrap/pause/autoplay/keyboard/reduced-motion/no-JS checks; git diff --check.
+- Preview branch only, draft PR #10. Hosted deployment and authenticated screen QA pending at commit time. Production deployment is not authorized. HQ record update pending final preview status.

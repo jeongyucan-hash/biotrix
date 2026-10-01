@@ -156,3 +156,9 @@
 - Updated homepage title/description/Open Graph text and five biotech-page footer taglines consistently. Canonical/verification/JSON-LD/robots/sitemap/social image preserved. Other section copy unchanged for incremental review.
 - PASS: 20 local Chrome route/viewport checks at 1440/768/390/320px, menu/Escape, no overflow/runtime errors; 11-page link/asset audit; git diff --check.
 - Preview branch only; same draft PR #10. New hosted preview status pending; production not authorized. HQ writeback pending final deployment.
+
+## 2026-10-01 — Hero research CTA and artwork labels
+
+- Replaced Home science links with Our research approach; destination /science retained. Replaced THE BIOLOGY MATRIX / CONCEPTUAL VISUAL with BIO + MATRIX. Artwork alt now describes deep green/silver abstract graphics without biological evidence claims.
+- Confirmed top desktop/mobile navigation exactly Company / Science / Programs / Contact, matching initial requested IA; clarification requested about the user's perceived discrepancy. No unapproved IA change.
+- Local link audit PASS: 11 public pages, 186 internal links; Chrome route/viewport QA PASS, no overflow/runtime errors; canonical/verification/JSON-LD/robots/social metadata checks PASS. Production unchanged; preview deploy pending.

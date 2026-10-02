@@ -178,6 +178,7 @@
 - Removed visible 브랜드 콘셉트 이미지. Captions now follow the active slide: 더 많은 사람의 일상으로 / 세대를 이어가는 삶의 가능성 / 가능성을 탐구하는 과학. Enlarged caption to 12px deep green. Accessible image descriptions and internal generated-image provenance retained.
 - Updated six Figma caption layers to the same scene meanings. Caption navigation verification and existing slideshow checks PASS. Preview-only; production approval still required.
 
+
 ## 2026-10-02 — Product/design baseline and visual audit
 
 - Session: biotrix-design-audit-20261002 / 01a0fadf-2e40-7121-9116-6d15465254ec.

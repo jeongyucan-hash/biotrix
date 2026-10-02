@@ -243,3 +243,4 @@
 - Preview only; production approval required. Detailed design self-assessment and scientific limits in DESIGN_REVIEW.md.
 
 - Preserved concurrently released approved brand tagline from PR #15; merged current main into preview.
+- Hosted d47b03e preview READY at https://biotrix-vercel-ready-jv92zngul-jeongyucan-8678.vercel.app/ . Home/Science/Programs at1440/390: six checks passed, no overflow/broken images; selected panel interaction and two current logo taglines verified. HQ records saved/readback confirmed. Production unchanged for redesign.

@@ -262,3 +262,9 @@
 - User requested a smaller homepage logo. Shared header logo reduced from 205 to 175px desktop and 165 to 145px mobile; Korean subtitle now 13/12px. Footer retained its existing size.
 - Existing visible-left-edge alignment remains proportional (25/590). Targeted CSS selectors and responsive ordering checked; original SVG unchanged. Browser visual readback remains unverified.
 - Implementation commit 28793839e2be7ce989e097632b127b2c3b2b202f; preview deployment pending status check. Production unchanged.
+
+
+## 2026-10-02 23:11 KST — Further header logo reduction
+- User still found the header logo large. Reduced desktop 175→150px and mobile 145→125px; subtitle retains readable 13/12px size and proportional visible-edge alignment.
+- Verified targeted selector replacement, responsive rule ordering, 100% image width and retained subtitle inset. Original SVG/footer unchanged. Browser visual QA unverified.
+- Implementation 0c718a8352616d48cd71aa6bd6c8d29d8dec165b; preview CI status follows. Production unchanged.

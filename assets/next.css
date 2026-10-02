@@ -11,3 +11,9 @@
 
 /* Align subtitle with the visible logo edge: SVG inset 25 / 590. */
 .brand>span{margin-inline-start:4.2372881356%;text-align:left}
+
+/* Compact header logo; retain visible-edge subtitle alignment. */
+.site-header .brand{width:175px}
+.site-header .brand img{width:100%}
+.site-header .brand>span{font-size:.8125rem}
+@media(max-width:760px){.site-header .brand{width:145px}.site-header .brand>span{font-size:.75rem}}

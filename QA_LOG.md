@@ -268,3 +268,9 @@
 - User still found the header logo large. Reduced desktop 175→150px and mobile 145→125px; subtitle retains readable 13/12px size and proportional visible-edge alignment.
 - Verified targeted selector replacement, responsive rule ordering, 100% image width and retained subtitle inset. Original SVG/footer unchanged. Browser visual QA unverified.
 - Implementation 0c718a8352616d48cd71aa6bd6c8d29d8dec165b; preview CI status follows. Production unchanged.
+
+
+## 2026-10-02 23:13 KST — Approved production release
+- User approved applying the reviewed redesign and final header logo (150px desktop / 125px mobile) to the live website.
+- Removed preview noindex from five core pages and restored existing site verification, Open Graph, Twitter and Organization metadata from current main. Existing routes/assets/configuration retained.
+- Static route/asset audit previously passed; targeted responsive logo selectors confirmed. Browser visual verification remains unavailable. Production deployment and HTTP readback pending.

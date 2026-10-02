@@ -279,3 +279,8 @@
 - PR #17 merged as f762d8a362693047877ff9ce3d6722da662a9e15; Vercel public project Git status success (GxiMP1sX1xWpQ2UT5zqSfMgWno5d).
 - Live www domain redirects normally to apex. All five core routes and next.css return HTTP 200. Core pages load next.css, contain no noindex; homepage verification tags restored. Live CSS contains 150px desktop / 125px mobile header widths.
 - HTTP/content readback verified; browser screenshot/interaction QA and deployment log scan remain unverified. HQ app is separate and not modified.
+
+
+## 2026-10-02 23:18 KST — English single-line navigation
+- User selected English-only navigation. Removed Korean secondary labels from desktop/mobile header menus across five core pages; retained Company / Science / Programs / Contact destinations and current-page markers.
+- Checked eight secondary labels removed per page and no other page content changed. Browser visual QA unavailable. Live deployment/content readback pending.

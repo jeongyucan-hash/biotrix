@@ -226,3 +226,4 @@
 ## 2026-10-02 — bilingual BioSolutions content
 - 20 route/viewport checks passed; 247 references and SEO preservation verified. Five solution diagrams, email and carousel passed at 3 widths. Mobile diagrams vertical.
 - Preserved released CI v1.1 weight refinement. Preview deployment and hosted checks follow; production not authorized.
+- Hosted preview READY: https://biotrix-vercel-ready-8micjhfie-jeongyucan-8678.vercel.app/ (e3aa5d0). Five routes at 1440/390px: ten checks passed, no overflow/broken images; bilingual content and five solutions confirmed. Draft PR #13; HQ records updated and readback confirmed. Production approval pending.

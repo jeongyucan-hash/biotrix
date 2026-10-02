@@ -250,3 +250,9 @@
 ## 2026-10-02 — Korean subtitle alignment
 - User requested left alignment for 한국바이오트릭스 below the logo. Changed shared brand flex alignment to flex-start for header/footer at desktop/mobile widths.
 - Confirmed a single targeted alignment change; no other layout or content change. Browser visual readback remains unverified. Production unchanged.
+
+
+## 2026-10-02 — Align subtitle to visible logo edge
+- Clarification: align the first Korean character with the visible original logo's left edge, excluding the SVG canvas inset.
+- SVG viewBox width 590, visible left edge 25. Applied subtitle inset 25/590 = 4.2372881356% of the lockup width (8.69px desktop, 6.99px mobile); header and footer share the rule. Original logo paths unchanged.
+- Geometry verified from both primary and reverse SVG source. Browser visual QA remains unverified. Production unchanged.

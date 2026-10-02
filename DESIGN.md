@@ -1,9 +1,9 @@
-# BIOTRIX Brand System 1.0
+# BIOTRIX Brand System 1.1
 
 2026-10-02. User-directed replacement of the former green / ivory system. This file supersedes the color and logo guidance in DESIGN_SYSTEM.md and HERO_DESIGN.md. Preserve those files as history and image provenance.
 
 ## Identity
-Use the curved-fold BIO master: original ribbon B, 22-unit I and O sidewalls, and curved folds based on B's left stem. X retains its 82 × 100 envelope and has a 3-unit crossing separation. Do not add dots, enclosing shapes, glow, arbitrary shadows or a second B emblem.
+Use the curved-fold BIO master: original ribbon B, 20-unit I, O sidewalls and TRIX vertical stems, and curved folds based on B's left stem. X retains its 82 × 100 envelope and has a 2.4-unit crossing separation and a 20-unit perpendicular diagonal thickness. Do not add dots, enclosing shapes, glow, arbitrary shadows or a second B emblem.
 
 Assets: assets/biotrix-wordmark-{primary,reverse,mono,white}.svg. The wordmark is an outlined drawing, not a typeface. Preserve the 590:152 canvas ratio and its built-in clear space. Primary is for light surfaces; reverse is for navy surfaces.
 

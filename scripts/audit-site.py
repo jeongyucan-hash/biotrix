@@ -33,7 +33,7 @@ for name in PAGES:
         count+=1
     assets=page.assets+re.findall(r'url\([\"\']?(/assets/[^\)\"\']+)',text)
     for asset in assets:
-        if asset.startswith('/') and not (ROOT/asset.lstrip('/')).exists():errors.append(f'{name}: missing asset {asset}')
+        if asset.startswith('/') and not (ROOT/urlsplit(asset).path.lstrip('/')).exists():errors.append(f'{name}: missing asset {asset}')
     for placeholder in ['가상의 연락처','임의로 연결','프로토타입 단계']:
         if placeholder in text:errors.append(f'{name}: internal placeholder copy: {placeholder}')
 if errors:raise SystemExit('\n'.join(errors))

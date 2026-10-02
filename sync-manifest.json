@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-10-02",
+  "repository": "jeongyucan-hash/biotrix",
+  "purpose": "Cross-device cloud workspace map. Existing deployment branches are unchanged.",
+  "source_branches": {
+    "commerce-nextjs": "faf42c0040b74d6cee54d92a646b4f837645da5e",
+    "design/real-photography": "243b0962cc4eb4d9eea25baa6f8294af576286d1",
+    "feat/agent-stack-bootstrap-v1": "914b70f086562fc0adf37f398cb14a8eabd37dc3",
+    "feat/content-studio-foundation": "1754d84d6141c64a07999d66637224372f142618",
+    "feat/hq-navigation-groups": "00cad404a1c04cc5e4dd6ecd3bcb94e8a7122311",
+    "feat/hq-scribe-mvp": "a78c438b052785d614d6db84d740224db0799fd7",
+    "feat/scribe-mvp": "10605664b666ac21bec0af2780f43a55eede74bb",
+    "fix/scribe-default-language": "545677e62c86e4acb78ee023e412655a0fcb6377",
+    "fix/scribe-transcript-provider": "8cee314429699a18d61c6c89182a3fe5e332e9a6",
+    "hq-ai-runtime-control-v1": "8e235ce812f50173177235bb8551da911b8e957b",
+    "hq-chatgpt-rd-growth-v1": "e0cc4d5f0ba5e66c5a396922ac8fbc0027ff1b28",
+    "hq-founder-room-v1": "e2a923377cdd5d8558013ecd9ccb3ce6a5331446",
+    "hq-nextjs": "ee1b7ff8669a6d96d3cd897897d3c5fa39f93324",
+    "hq-products-v1": "f23473052ee48ce0433fca711709c683ddf799d9",
+    "hq-roundtable-engine-v1": "acdcf3d3a3b091c5354ca28b4214aef13e47213d",
+    "hq-sourcing-research-prep-v1": "bf05a74480dbb7895ba736551644d92ea33e385f",
+    "hq-sourcing-v1": "71171774da18e233122cf6e35f12dbafd98a5c0b",
+    "hq-vnext": "84a252cd3585b7c9d441e867a39150fd8533714f",
+    "main": "e42994fd7b9ca1267533728371fd7b3ea07e07cc",
+    "preview/biotrix-science-20261001": "c3940aa9a7b4076fb069679b9eacb12816e2a35d",
+    "prototype/biotrix-brand-v1": "be43e44c365a2f1fcf92f453ba2d2bd11ce8fd8f",
+    "test/scribe-smoke": "21562f0a7431492476e849aff22229bd9635d97f"
+  },
+  "primary_working_branches": {
+    "public_site": "preview/biotrix-science-20261001",
+    "hq": "hq-nextjs",
+    "commerce": "commerce-nextjs"
+  },
+  "supabase": {
+    "project_ref": "qmhqdjxmpatncobkozkr",
+    "region": "ap-northeast-2",
+    "url": "https://qmhqdjxmpatncobkozkr.supabase.co",
+    "status": "ACTIVE_HEALTHY"
+  },
+  "known_vercel_projects": [
+    "biotrix-vercel-ready",
+    "biotrix-hq",
+    "biotrix-commerce",
+    "biotrix-k28g",
+    "biotrix"
+  ],
+  "notes": [
+    "Vercel project access is currently not authorized in this ChatGPT connection; deployment mappings were recovered from GitHub commit statuses.",
+    "Secrets are intentionally excluded. Use .env.local locally and Vercel environment variables in cloud.",
+    "Any uncommitted files that exist only on the current PC are not represented here until pushed."
+  ]
+}

@@ -213,3 +213,12 @@
 - Preview Ready at https://biotrix-vercel-ready-git-brand-navy-silv-7a9831-jeongyucan-8678.vercel.app; direct preview browser inspection was blocked by login protection. Production https://biotrix.co.kr verified directly: five core routes at 1440/390px, zero overflow/broken images/page errors, menu/Escape and slide-next passed. CSS, wordmark, favicon and social image matched local file bytes.
 - www.biotrix.co.kr initially had no project domain registration and failed TLS verification. Added it to the existing public project through its authenticated dashboard, issued SSL, and configured 308 to the existing apex. The apex remains connected to Production. Repeated ten route/viewport checks and four asset byte comparisons through https://www.biotrix.co.kr all passed with normal TLS validation. DNS update recommendations shown by Vercel do not prevent current resolution.
 - HQ readback confirmed agent_runs 5b7a91d2-4d38-4b71-9510-202610020001 (completed) and documents 5b7a91d2-4d38-4b71-9510-202610020002 (website-development). Usage/cost metrics unavailable, not inferred from default database values.
+
+
+## 2026-10-02 — Lettering weight correction / Brand System 1.1
+
+- User observed the 22-unit BIO versus 17.5-unit TRIX stroke difference on the public site and requested the proposed correction. Existing website publication authorization applies.
+- Both I stems, T/R verticals and O sidewalls now measure 20 units. O/T horizontal strokes measure 18. X diagonal normal width is 19.9989, with its 82 × 100 envelope preserved; crossing separation 2.4. Original ribbon B retained (left stem approximately 21.66); curved sections remain optically variable. Ink width 540 with the same 590 × 152 canvas.
+- Replaced all four outlined logo modes, geometry master and social card. Added v=1.1 to public logo/social URLs to refresh previously viewed assets. The asset audit now parses URL paths independently of cache-version queries.
+- PASS: monochrome before/after and actual header sizes visually reviewed; 15 core route/viewport combinations (390/1440/1920) without overflow, broken images or JS/HTTP errors; menu/Escape and slide-next; 11-page/186-link audit; wordmark checks and whitespace checks. Updated 15-page guide rendered and visually inspected.
+- Production deployment verification follows the implementation commit. Final result is stored in HQ agent_runs 5b7a91d2-4d38-4b71-9510-202610020011 and documents 5b7a91d2-4d38-4b71-9510-202610020012. No physical print proof or fully uniform curved-stroke thickness is claimed.

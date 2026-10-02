@@ -187,3 +187,9 @@
 - Priority: P1 palette mismatch and repeated programs/area descriptions (mobile Programs section 2000px); P2 spacing rhythm, type/readability and contact action; P3 slideshow/image contribution. No centered hero, excessive rounded section containers, gradient/glow or continuous decorative animation found in current Home.
 - Static audit PASS: 11 public pages, 186 internal links, assets and anchors. No HTML/CSS/JS/SEO/robots/sitemap changes. No public-site build step applies. Documentation whitespace check passed.
 - Git shell network access unavailable in sandbox; GitHub connector read used for source verification. GitHub push and HQ record readback pending below. No production deployment/merge/promotion; hosted preview not audited in this session. Token/cost metrics unavailable.
+
+### Delivery limitation
+
+- GitHub push rejected by automatic approval review: external publication destination was not explicitly authorized by the user. No workaround attempted; local documentation commit retained. Remote writes require user approval.
+- HQ connector read confirmed project and table structure; agent_runs/documents writes were held with external publication pending. HQ storage is NOT confirmed. Stable session id and document id: 01a0fadf-2e40-7121-9116-6d15465254ec / 01a0fadf-2e40-7121-9116-6d15465254ed.
+- Original preview checkout remains untouched and clean. Documentation checkout is separate. Screenshot evidence remains in sibling outputs. No production deployment.

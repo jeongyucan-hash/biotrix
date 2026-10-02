@@ -222,3 +222,8 @@
 - Replaced all four outlined logo modes, geometry master and social card. Added v=1.1 to public logo/social URLs to refresh previously viewed assets. The asset audit now parses URL paths independently of cache-version queries.
 - PASS: monochrome before/after and actual header sizes visually reviewed; 15 core route/viewport combinations (390/1440/1920) without overflow, broken images or JS/HTTP errors; menu/Escape and slide-next; 11-page/186-link audit; wordmark checks and whitespace checks. Updated 15-page guide rendered and visually inspected.
 - Production deployment verification follows the implementation commit. Final result is stored in HQ agent_runs 5b7a91d2-4d38-4b71-9510-202610020011 and documents 5b7a91d2-4d38-4b71-9510-202610020012. No physical print proof or fully uniform curved-stroke thickness is claimed.
+
+## 2026-10-02 — bilingual BioSolutions content
+- 20 route/viewport checks passed; 247 references and SEO preservation verified. Five solution diagrams, email and carousel passed at 3 widths. Mobile diagrams vertical.
+- Preserved released CI v1.1 weight refinement. Preview deployment and hosted checks follow; production not authorized.
+- Hosted preview READY: https://biotrix-vercel-ready-8micjhfie-jeongyucan-8678.vercel.app/ (e3aa5d0). Five routes at 1440/390px: ten checks passed, no overflow/broken images; bilingual content and five solutions confirmed. Draft PR #13; HQ records updated and readback confirmed. Production approval pending.

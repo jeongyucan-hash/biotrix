@@ -227,3 +227,9 @@
 - 20 route/viewport checks passed; 247 references and SEO preservation verified. Five solution diagrams, email and carousel passed at 3 widths. Mobile diagrams vertical.
 - Preserved released CI v1.1 weight refinement. Preview deployment and hosted checks follow; production not authorized.
 - Hosted preview READY: https://biotrix-vercel-ready-8micjhfie-jeongyucan-8678.vercel.app/ (e3aa5d0). Five routes at 1440/390px: ten checks passed, no overflow/broken images; bilingual content and five solutions confirmed. Draft PR #13; HQ records updated and readback confirmed. Production approval pending.
+
+## 2026-10-02 — Approved short tagline / lockup 1.2
+
+- User selected “Advancing biomedicine” without punctuation and authorized implementation. Added the exact text below the 1.1 wordmark, left aligned to the visible B, in silver regular Arial (14px desktop / 12px mobile).
+- Based on current origin/main 9ff80e2; preserve newly released bilingual BioSolutions/ingredient content and all other work. Header/footer lockups updated across root pages. Versioned CSS URL prevents stale layout. Standalone light/dark/mono/white SVG and PNG exports created outside the web checkout.
+- PASS: 20 core route/viewport combinations at 320/390/768/1440px; tagline visible and fully inside each header, no horizontal overflow; mobile menu/Escape works. Actual 390/1440 header captures visually reviewed. Static 11-page audit verified 194 links. Production confirmation follows this commit and will be recorded in HQ under session tagline-20261002.

@@ -11,3 +11,9 @@ html{scroll-padding-top:100px}body{background:var(--brand-white);color:var(--ink
 /* Shared legacy route surfaces */
 .footerTop p,.footerBottom{color:var(--brand-silver)}.collectionNumber{font-family:inherit;font-style:normal;font-size:22px;white-space:nowrap}.categoryTabs a{border-radius:0}
 .header,.top{background:var(--brand-navy);color:var(--brand-white)}.header .desktopNav,.top .links{color:var(--brand-silver)}.header .nav{height:94px}.header .mobileMenu summary{color:var(--brand-white)}.header .mobilePanel{background:var(--brand-navy);color:var(--brand-white)}.header .desktopNav a[aria-current=page]{border-color:var(--brand-silver)}.button,.btn,.statusPill,.navAction{border-radius:0}.footer{background:var(--brand-depth);color:var(--brand-silver)}@media(max-width:700px){.header .nav{height:78px}.header .mobilePanel{top:78px}.top .links{gap:8px;font-size:12px}.top .links .pill{padding:6px}}
+
+/* Brand lockup 1.2: approved short tagline, aligned with the outlined B. */
+.brand{display:inline-flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:0;line-height:1}
+.brand .brand-tagline{display:block;margin:-3px 0 0 10px;font-family:Arial,sans-serif;font-size:14px;font-weight:400;line-height:1.2;letter-spacing:.015em;white-space:nowrap;color:var(--brand-silver)}
+@media(max-width:1000px){.brand .brand-tagline{margin-left:8.8px;font-size:13px}}
+@media(max-width:700px){.brand .brand-tagline{margin-top:-2px;margin-left:8.2px;font-size:12px}}

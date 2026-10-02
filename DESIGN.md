@@ -33,3 +33,7 @@ Existing conceptual images retain provenance and truthful alt text. Neutral mono
 
 ## Verification
 Verify five primary routes at 390, 1440 and 1920px, menu/Escape, carousel, anchors, assets, canonical, verification meta tags and legal routes. Re-check any changed component after an observed defect. Keep HQ app source and deployment separate.
+
+
+## Logo lockup 1.2
+Use the unchanged 1.1 wordmark with the exact tagline “Advancing biomedicine” (no punctuation), left aligned to its visible B. Silver, regular Arial 14px desktop / 12px mobile. The tagline remains readable at actual header sizes; do not stretch it to the full wordmark width.

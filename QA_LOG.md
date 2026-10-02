@@ -243,4 +243,5 @@
 - New program selection supports direct hashes and legacy aliases; without JavaScript all program content stays readable. Added mobile menu, Escape dismissal and reduced-motion handling.
 - Preserved existing production routes/assets/configuration in a separate preview branch. Production domain unchanged. Preview HTML uses noindex.
 - Static seven-page asset/route audit, unique IDs and JavaScript syntax passed. Browser QA unverified: local Chromium absent and supported download failed. Vercel project access returned 403; deployment/access readback remains pending.
-- HQ agent_runs and documents storage not yet confirmed; pending connector verification.
+- HQ agent_runs and documents writes confirmed and read back: session 7832fbf3-5af3-4c78-832f-bf3500000001 and document 7832fbf3-5af3-4c78-832f-bf3500000002.
+- Vercel bot reports Ready deployment at https://biotrix-vercel-ready-git-preview-cloud-r-6cd59a-jeongyucan-8678.vercel.app . Direct HEAD returns 302 to Vercel SSO: owner login required; public access is not claimed. Draft PR #17 retains the reviewable changes.

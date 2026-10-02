@@ -177,3 +177,13 @@
 
 - Removed visible 브랜드 콘셉트 이미지. Captions now follow the active slide: 더 많은 사람의 일상으로 / 세대를 이어가는 삶의 가능성 / 가능성을 탐구하는 과학. Enlarged caption to 12px deep green. Accessible image descriptions and internal generated-image provenance retained.
 - Updated six Figma caption layers to the same scene meanings. Caption navigation verification and existing slideshow checks PASS. Preview-only; production approval still required.
+
+## 2026-10-02 — Product/design baseline and visual audit
+
+- Session: biotrix-design-audit-20261002 / 01a0fadf-2e40-7121-9116-6d15465254ec.
+- Source preview/biotrix-science-20261001 at c3940aa9a7b4076fb069679b9eacb12816e2a35d was clean. GitHub branch read confirmed the same remote HEAD. Original read-only checkout preserved; independent checkout under this session outputs/biotrix; documentation branch docs/biotrix-design-audit-20261002.
+- Added PRODUCT.md, DESIGN.md, VISUAL_QA_CHECKLIST.md. Fixed target: Bio/Science/AI/Commerce, Clinical/Institutional/Technology, Deep Green/Silver/Pure White, variance 6/motion 3/density 5. Existing design/provenance documents retained with precedence clarified.
+- Actual local Chrome renders 1440x900 and 390x900: no horizontal overflow, no runtime/HTTP asset errors; mobile menu open/Escape close passed. Full-page and hero screenshots plus render-audit.json are sibling outputs; not deployed website assets.
+- Priority: P1 palette mismatch and repeated programs/area descriptions (mobile Programs section 2000px); P2 spacing rhythm, type/readability and contact action; P3 slideshow/image contribution. No centered hero, excessive rounded section containers, gradient/glow or continuous decorative animation found in current Home.
+- Static audit PASS: 11 public pages, 186 internal links, assets and anchors. No HTML/CSS/JS/SEO/robots/sitemap changes. No public-site build step applies. Documentation whitespace check passed.
+- Git shell network access unavailable in sandbox; GitHub connector read used for source verification. GitHub push and HQ record readback pending below. No production deployment/merge/promotion; hosted preview not audited in this session. Token/cost metrics unavailable.

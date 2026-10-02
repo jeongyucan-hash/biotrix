@@ -1,0 +1,54 @@
+{
+  "static": [
+    {
+      "page": "science.html",
+      "h1": 1,
+      "duplicateIds": false,
+      "missing": []
+    },
+    {
+      "page": "company.html",
+      "h1": 1,
+      "duplicateIds": false,
+      "missing": []
+    },
+    {
+      "page": "contact.html",
+      "h1": 1,
+      "duplicateIds": false,
+      "missing": []
+    },
+    {
+      "page": "index.html",
+      "h1": 1,
+      "duplicateIds": false,
+      "missing": []
+    },
+    {
+      "page": "privacy.html",
+      "h1": 1,
+      "duplicateIds": false,
+      "missing": []
+    },
+    {
+      "page": "terms.html",
+      "h1": 1,
+      "duplicateIds": false,
+      "missing": []
+    },
+    {
+      "page": "programs.html",
+      "h1": 1,
+      "duplicateIds": false,
+      "missing": []
+    }
+  ],
+  "javascriptSyntax": "passed",
+  "browser": "not run: Chromium unavailable; download failed",
+  "viewportsDesigned": [
+    1440,
+    390,
+    320
+  ],
+  "viewportsVerified": []
+}

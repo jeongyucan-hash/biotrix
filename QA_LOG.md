@@ -233,3 +233,44 @@
 - User selected “Advancing biomedicine” without punctuation and authorized implementation. Added the exact text below the 1.1 wordmark, left aligned to the visible B, in silver regular Arial (14px desktop / 12px mobile).
 - Based on current origin/main 9ff80e2; preserve newly released bilingual BioSolutions/ingredient content and all other work. Header/footer lockups updated across root pages. Versioned CSS URL prevents stale layout. Standalone light/dark/mono/white SVG and PNG exports created outside the web checkout.
 - PASS: 20 core route/viewport combinations at 320/390/768/1440px; tagline visible and fully inside each header, no horizontal overflow; mobile menu/Escape works. Actual 390/1440 header captures visually reviewed. Static 11-page audit verified 194 links. Production confirmation follows this commit and will be recorded in HQ under session tagline-20261002.
+
+
+## 2026-10-02 — Cloud redesign continuation
+
+- Restored the five-part authorized handoff; all 838 manifest entries matched SHA256.
+- Read original Company / Science / Programs / Contact pages, founder interview, correction notes and all exported user messages.
+- Rebuilt home with navy/silver visual hierarchy, restored the ribbon logo and 한국바이오트릭스 subtitle. Preserved ENERA / FLORA / IMMERA / RENOVA / ACTIVA, bilingual technology descriptions and evaluation priorities.
+- New program selection supports direct hashes and legacy aliases; without JavaScript all program content stays readable. Added mobile menu, Escape dismissal and reduced-motion handling.
+- Preserved existing production routes/assets/configuration in a separate preview branch. Production domain unchanged. Preview HTML uses noindex.
+- Static seven-page asset/route audit, unique IDs and JavaScript syntax passed. Browser QA unverified: local Chromium absent and supported download failed. Vercel project access returned 403; deployment/access readback remains pending.
+- HQ agent_runs and documents writes confirmed and read back: session 7832fbf3-5af3-4c78-832f-bf3500000001 and document 7832fbf3-5af3-4c78-832f-bf3500000002.
+- Vercel bot reports Ready deployment at https://biotrix-vercel-ready-git-preview-cloud-r-6cd59a-jeongyucan-8678.vercel.app . Direct HEAD returns 302 to Vercel SSO: owner login required; public access is not claimed. Draft PR #17 retains the reviewable changes.
+
+
+## 2026-10-02 — Korean subtitle alignment
+- User requested left alignment for 한국바이오트릭스 below the logo. Changed shared brand flex alignment to flex-start for header/footer at desktop/mobile widths.
+- Confirmed a single targeted alignment change; no other layout or content change. Browser visual readback remains unverified. Production unchanged.
+
+
+## 2026-10-02 — Align subtitle to visible logo edge
+- Clarification: align the first Korean character with the visible original logo's left edge, excluding the SVG canvas inset.
+- SVG viewBox width 590, visible left edge 25. Applied subtitle inset 25/590 = 4.2372881356% of the lockup width (8.69px desktop, 6.99px mobile); header and footer share the rule. Original logo paths unchanged.
+- Geometry verified from both primary and reverse SVG source. Browser visual QA remains unverified. Production unchanged.
+
+
+## 2026-10-02 — Compact header logo
+- User requested a smaller homepage logo. Shared header logo reduced from 205 to 175px desktop and 165 to 145px mobile; Korean subtitle now 13/12px. Footer retained its existing size.
+- Existing visible-left-edge alignment remains proportional (25/590). Targeted CSS selectors and responsive ordering checked; original SVG unchanged. Browser visual readback remains unverified.
+- Implementation commit 28793839e2be7ce989e097632b127b2c3b2b202f; preview deployment pending status check. Production unchanged.
+
+
+## 2026-10-02 23:11 KST — Further header logo reduction
+- User still found the header logo large. Reduced desktop 175→150px and mobile 145→125px; subtitle retains readable 13/12px size and proportional visible-edge alignment.
+- Verified targeted selector replacement, responsive rule ordering, 100% image width and retained subtitle inset. Original SVG/footer unchanged. Browser visual QA unverified.
+- Implementation 0c718a8352616d48cd71aa6bd6c8d29d8dec165b; preview CI status follows. Production unchanged.
+
+
+## 2026-10-02 23:13 KST — Approved production release
+- User approved applying the reviewed redesign and final header logo (150px desktop / 125px mobile) to the live website.
+- Removed preview noindex from five core pages and restored existing site verification, Open Graph, Twitter and Organization metadata from current main. Existing routes/assets/configuration retained.
+- Static route/asset audit previously passed; targeted responsive logo selectors confirmed. Browser visual verification remains unavailable. Production deployment and HTTP readback pending.

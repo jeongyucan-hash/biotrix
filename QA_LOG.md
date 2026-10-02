@@ -293,3 +293,8 @@
 - Added EN / 한국어 buttons across five core pages and two legal pages. English is server-rendered by default; an explicit saved choice persists across pages. Localized navigation, copy, calls to action, diagrams, page titles and accessible descriptions. Original Korean legal wording retained with English translation.
 - PASS: seven-page routes/assets/unique IDs/H1/default locale/locale controls; JavaScript syntax; DOM execution tests of EN/KO changes, saved preference, menu/Escape and program links/legacy aliases. Very narrow mobile widths retain the language controls with a symbol-only menu button.
 - Browser screenshots/layout interaction checks remain unverified: Chromium download failed with a truncated ZIP. No viewport pass claimed. Production deployment/HTTP readback follows commit. HQ app unchanged.
+
+### Live release readback
+- Implementation b295911a81a062cd7b2e9367b696586c60876cbf deployed successfully by the public Vercel project (9prZpM5d34uiSBxE5DmNQinR8LjR).
+- Seven live routes return HTTP 200 with data-language=en and both locale controls. Diagram/icon placements match the reviewed source. Live icon, JavaScript and CSS SHA256 match the locally checked files.
+- DOM behavior and static/HTTP checks passed. Browser screenshot/viewport rendering and interaction checks remain unverified; no visual pass claimed.

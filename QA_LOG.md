@@ -125,3 +125,84 @@
 - Added a 1200x630 PNG social card using the existing BIOTRIX symbol, white canvas and forest-green brand colors; retained editable SVG source.
 - Added absolute og:image, dimensions, MIME, alt text, locale/site name and Twitter large-image metadata to all eight public pages; preserved existing titles, descriptions, canonical and verification tags.
 - SVG rendering visually inspected; git diff --check passed. Production asset/metadata verification and Kakao cache status are recorded in HQ after deployment.
+
+## 2026-10-01 — Biotech research preview
+
+- Session: biotrix-science-preview-20261001. Repository jeongyucan-hash/biotrix; baseline e42994fd7b9ca1267533728371fd7b3ea07e07cc; isolated branch preview/biotrix-science-20261001.
+- Production biotrix.co.kr responded 200. Vercel confirmed READY production dpl_6WCtEgxTwjjuCyEivoe9aQfcpem8, project biotrix-vercel-ready, main. HQ project remains separate and its ignore guard unchanged.
+- Rebuilt Home, Company, Science, Programs, Contact with deep green/silver/warm ivory/graphite, connected-biology SVG, five research areas and MITO/NEXUS/IMMU/RESET/BIOACT research directions. No clinical, proprietary AI or lab-result claims. Contact channel remains honestly pending.
+- Existing public routes retained. Legacy main menus now use Company/Science/Programs/Contact; orchard excluded from the biotech navigation. Existing verification, canonical, Organization JSON-LD and social-image metadata retained. robots.txt unchanged; sitemap extends existing URLs with /science and /programs. Fixed pre-existing shop /#about destination.
+- PASS: headless Chrome, five primary routes at 1440/768/390/320px (20 cases), no horizontal overflow, no runtime/asset errors, mobile menu/Escape. Desktop/mobile screenshots visually reviewed.
+- PASS: audit-site.py: 11 public pages, 186 internal links, assets and anchors; check-lockup.mjs passed. SEO comparison passed; local cross-page scan checked 220 references. git diff --check passed.
+- Build: static HTML project, framework null, no package/build step required; deployable assets served successfully. Hosted preview validation pending GitHub push/Vercel result.
+- Generic Vercel deploy connector rejected by automatic approval review because target/promotion behavior is unspecified. Do not use it or promote production; use explicit non-main Git preview branch.
+- User approval required for production. No production deployment/promotion performed.
+- HQ agent_runs/documents sync pending final commit/PR/preview values; not yet claimed successful.
+
+### Preview delivery and final readback
+
+- GitHub implementation commit: 5038ed3584baee05eb15ba0d9c6819b46a4ab117. Draft PR: https://github.com/jeongyucan-hash/biotrix/pull/10.
+- Vercel preview: https://biotrix-vercel-ready-73wyalwls-jeongyucan-8678.vercel.app — deployment dpl_2D91m4K6VoAhtHdfBBxDZRPig1BU READY, 1.3 seconds from buildingAt to ready. No production alias attached. Vercel GitHub status success.
+- HQ build for this branch CANCELED by the existing ignore command, as intended. No HQ application changes.
+- Production HTTP readback still shows the previous homepage title. Production alias remains unchanged.
+- Hosted browser QA remains unverified: public preview redirects to Vercel Login; authenticated connector fetch and temporary-share tools return access denied. User authorized access, but retry did not refresh OAuth scope. Requires actual Vercel connection/team authorization or account login. Do not weaken project-wide protection.
+- Local preview running at http://127.0.0.1:4173; five primary routes fully QA checked before delivery. Build logs connector unavailable (tool not found); READY and GitHub deployment status verified, no log-success claim.
+- HQ sync CONFIRMED by readback: agent_runs id 01a0f726-0dc3-7980-9342-ecc0c6375f50, status needs_attention; documents id 01a0f726-0dc3-7980-9342-ecc0c6375f51, category website-development. Usage metrics unavailable and not fabricated.
+- Production approval still pending; draft PR must not be merged or promoted automatically.
+
+## 2026-10-01 — Approved homepage message update
+
+- Updated hero to Advancing biomedicine. Expanding access. and the exact approved Korean headline/body. Removed Connected Biology eyebrow and AI-led hero explanation.
+- Updated homepage title/description/Open Graph text and five biotech-page footer taglines consistently. Canonical/verification/JSON-LD/robots/sitemap/social image preserved. Other section copy unchanged for incremental review.
+- PASS: 20 local Chrome route/viewport checks at 1440/768/390/320px, menu/Escape, no overflow/runtime errors; 11-page link/asset audit; git diff --check.
+- Preview branch only; same draft PR #10. New hosted preview status pending; production not authorized. HQ writeback pending final deployment.
+
+## 2026-10-01 — Hero research CTA and artwork labels
+
+- Replaced Home science links with Our research approach; destination /science retained. Replaced THE BIOLOGY MATRIX / CONCEPTUAL VISUAL with BIO + MATRIX. Artwork alt now describes deep green/silver abstract graphics without biological evidence claims.
+- Confirmed top desktop/mobile navigation exactly Company / Science / Programs / Contact, matching initial requested IA; clarification requested about the user's perceived discrepancy. No unapproved IA change.
+- Local link audit PASS: 11 public pages, 186 internal links; Chrome route/viewport QA PASS, no overflow/runtime errors; canonical/verification/JSON-LD/robots/social metadata checks PASS. Production unchanged; preview deploy pending.
+
+## 2026-10-01 — Figma human-centered hero slideshow
+
+- Created Figma design https://www.figma.com/design/2eBqBWppDIA96qumCT87NK with six editable desktop/mobile cover frames for Family / Generations / Research; photo capture used for image fills then removed. Structural checks: editable text, 12 navigation instances, six image fills, no child overflow.
+- Applied bright warm ivory/deep green hero with fixed founder-approved copy. Replaced the abstract matrix cover with three generated conceptual photos; retained original SVG asset. Caption identifies conceptual imagery; no staff/facility or clinical claims. Image provenance and prompt set: HERO_DESIGN.md.
+- Responsive WebP assets, seven-second crossfade, previous/next/pause, keyboard arrows/focus pause, hover and hidden-tab pause, reduced-motion default pause, no-JavaScript first-image fallback. Replaced redundant hero process strip with BIOTRIX 알아보기 link.
+- PASS: 20 Chrome route/viewport checks (1440/768/390/320px), 222 file references and SEO preservation; 11-page audit of 186 links; brand lockup check; slideshow navigation/wrap/pause/autoplay/keyboard/reduced-motion/no-JS checks; git diff --check.
+- Preview branch only, draft PR #10. Hosted deployment and authenticated screen QA pending at commit time. Production deployment is not authorized. HQ record update pending final preview status.
+
+- Final verification: implementation commit bdd9b6c1f537f1c6206cd58bbaf4590642ade1c0 deployed READY at https://biotrix-vercel-ready-3an0adtgf-jeongyucan-8678.vercel.app/. Hosted browser confirmed slide navigation and 390px image loading/no overflow. Production remains main e42994fd7b9ca1267533728371fd7b3ea07e07cc. HQ agent_runs and Knowledge document updated and verified. Production approval remains pending.
+
+## 2026-10-01 — Scene meanings instead of generic image caption
+
+- Removed visible 브랜드 콘셉트 이미지. Captions now follow the active slide: 더 많은 사람의 일상으로 / 세대를 이어가는 삶의 가능성 / 가능성을 탐구하는 과학. Enlarged caption to 12px deep green. Accessible image descriptions and internal generated-image provenance retained.
+- Updated six Figma caption layers to the same scene meanings. Caption navigation verification and existing slideshow checks PASS. Preview-only; production approval still required.
+
+
+## 2026-10-02 — Product/design baseline and visual audit
+
+- Session: biotrix-design-audit-20261002 / 01a0fadf-2e40-7121-9116-6d15465254ec.
+- Source preview/biotrix-science-20261001 at c3940aa9a7b4076fb069679b9eacb12816e2a35d was clean. GitHub branch read confirmed the same remote HEAD. Original read-only checkout preserved; independent checkout under this session outputs/biotrix; documentation branch docs/biotrix-design-audit-20261002.
+- Added PRODUCT.md, DESIGN.md, VISUAL_QA_CHECKLIST.md. Fixed target: Bio/Science/AI/Commerce, Clinical/Institutional/Technology, Deep Green/Silver/Pure White, variance 6/motion 3/density 5. Existing design/provenance documents retained with precedence clarified.
+- Actual local Chrome renders 1440x900 and 390x900: no horizontal overflow, no runtime/HTTP asset errors; mobile menu open/Escape close passed. Full-page and hero screenshots plus render-audit.json are sibling outputs; not deployed website assets.
+- Priority: P1 palette mismatch and repeated programs/area descriptions (mobile Programs section 2000px); P2 spacing rhythm, type/readability and contact action; P3 slideshow/image contribution. No centered hero, excessive rounded section containers, gradient/glow or continuous decorative animation found in current Home.
+- Static audit PASS: 11 public pages, 186 internal links, assets and anchors. No HTML/CSS/JS/SEO/robots/sitemap changes. No public-site build step applies. Documentation whitespace check passed.
+- Git shell network access unavailable in sandbox; GitHub connector read used for source verification. GitHub push and HQ record readback pending below. No production deployment/merge/promotion; hosted preview not audited in this session. Token/cost metrics unavailable.
+
+### Delivery limitation
+
+- GitHub push rejected by automatic approval review: external publication destination was not explicitly authorized by the user. No workaround attempted; local documentation commit retained. Remote writes require user approval.
+- HQ connector read confirmed project and table structure; agent_runs/documents writes were held with external publication pending. HQ storage is NOT confirmed. Stable session id and document id: 01a0fadf-2e40-7121-9116-6d15465254ec / 01a0fadf-2e40-7121-9116-6d15465254ed.
+- Original preview checkout remains untouched and clean. Documentation checkout is separate. Screenshot evidence remains in sibling outputs. No production deployment.
+
+
+## 2026-10-02 — Navy / Silver Brand System 1.0
+
+- User explicitly authorized a new CI, replacement of the green website theme, and immediate application to www.biotrix.co.kr. This supersedes earlier preview-only restrictions for this public website work.
+- Session: biotrix-brand-system-20261002. Isolated branch brand/navy-silver-20261002 preserves the earlier preview and documentation checkouts. origin/main is an ancestor; the pending science website content is included in this release. The HQ app branch/project is not modified.
+- Curved-ribbon BIO: I width and O side wall 22; corresponding fold direction. X retains 82 × 100 bounds and uses crossing-plane separation. Full outlined wordmarks replace the symbol-plus-typed-name lockup. New favicon and 1200 × 630 social card.
+- Deep Navy #0B1830, Titanium Silver #BEC7D2, Platinum #F1F4F7, Steel #66768B. Shared brand stylesheet across root pages, navy hero/header, grayscale concept photography, compact home program list, manual-first slideshow, legacy route and legal-page color cleanup. Existing content, domain metadata, verification and site paths preserved.
+- PASS: 5 main routes × 3 widths (390/1440/1920), no horizontal overflow, broken images, HTTP/JS errors; mobile menu/Escape and slide-next. 11 legacy routes × 2 widths (390/1440), no overflow or broken images. 11-page static audit / 186 internal links and lockup check passed. Logo/typography/whole-page screenshots visually reviewed. Five text/background pairs measured 5.49:1–16.02:1.
+- The scheduled workflow now validates the public wordmark/links independently from HQ's older design master; HQ asset integrity checks remain enabled. Comparing the public site to HQ's superseded green master is no longer the public brand requirement.
+- Deliverables outside the deployment checkout: 15-page vector PDF, four SVG/PNG logo modes, geometry and token JSON, CSS, social card, brand overview and website screenshots. All PDF pages rendered and visually inspected.
+- Remaining limits: no physical print proof, actual device test or full WCAG certification; contact channels and commerce placeholders remain as previously disclosed. Production verification and HQ record readback follow the implementation commit; no deployment success is claimed in this entry.

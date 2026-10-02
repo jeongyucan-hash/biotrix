@@ -1,0 +1,33 @@
+{
+  "color": {
+    "navy": "#0B1830",
+    "depth": "#07101F",
+    "panel": "#142640",
+    "silver": "#BEC7D2",
+    "platinum": "#F1F4F7",
+    "steel": "#66768B",
+    "ice": "#A9C5FA",
+    "ink": "#17243A",
+    "muted": "#52647A",
+    "line": "#CFD8E4"
+  },
+  "type": {
+    "display": "64px",
+    "h2": "48px",
+    "h3": "30px",
+    "body": "16px",
+    "small": "13px"
+  },
+  "spacing": [
+    8,
+    16,
+    24,
+    32,
+    48,
+    64,
+    80,
+    96
+  ],
+  "maxWidth": 1280,
+  "radius": 0
+}

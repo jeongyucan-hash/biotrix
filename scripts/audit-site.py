@@ -5,7 +5,7 @@ from urllib.parse import urlsplit
 import re
 
 ROOT=Path(__file__).resolve().parents[1]
-PAGES=['index','company','business','products','partnership','contact']
+PAGES=['index','company','science','programs','business','products','partnership','contact','privacy','terms','shop']
 class Page(HTMLParser):
     def __init__(self,text):
         super().__init__();self.links=[];self.ids=[];self.assets=[];self.h1=0;self.feed(text)

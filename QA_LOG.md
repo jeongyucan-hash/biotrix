@@ -236,3 +236,8 @@
 - Removed grayscale and reduced opacity from all hero photos; natural original colour restored.
 - Updated favicon to high-contrast navy/slate B on ivory, with v2 cache refresh across pages; brand CSS v1.2.
 - 20 viewport/route checks and 11-page static audit passed. Canonical, verification, JSON-LD and robots preserved.
+
+## Mechanism design — 2026-10-02
+- Replaced people-photo carousel with original cell/material scientific concept hero; added five-field interactive mechanism explorer and five biological diagrams on Science/Programs.
+- PASS: 20 local route/viewport cases, 274 internal references, SEO preservation, 11-page / 198-link static audit; explorer and diagram checks at 3 widths; no-JS fallback.
+- Preview only; production approval required. Detailed design self-assessment and scientific limits in DESIGN_REVIEW.md.

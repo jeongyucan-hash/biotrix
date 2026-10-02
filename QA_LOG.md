@@ -284,3 +284,12 @@
 ## 2026-10-02 23:18 KST — English single-line navigation
 - User selected English-only navigation. Removed Korean secondary labels from desktop/mobile header menus across five core pages; retained Company / Science / Programs / Contact destinations and current-page markers.
 - Checked eight secondary labels removed per page and no other page content changed. Browser visual QA unavailable. Live deployment/content readback pending.
+
+
+## 2026-10-03 KST — Diagrams and English-first language switching
+- User requested a full diagram placement review and EN / 한국어 controls with English as the default.
+- Applied the approved five-icon artwork to Home research rows and Science/Programs figures. Original approved art retained as one WebP source; responsive CSS displays individual icons. These represent research areas, not verified company mechanisms.
+- Added Company BIO + MATRIX relationship diagram; Science research approach and evaluation diagrams; Programs development flow; Home development-principle and Contact topic icons. Diagram labels change with the language.
+- Added EN / 한국어 buttons across five core pages and two legal pages. English is server-rendered by default; an explicit saved choice persists across pages. Localized navigation, copy, calls to action, diagrams, page titles and accessible descriptions. Original Korean legal wording retained with English translation.
+- PASS: seven-page routes/assets/unique IDs/H1/default locale/locale controls; JavaScript syntax; DOM execution tests of EN/KO changes, saved preference, menu/Escape and program links/legacy aliases. Very narrow mobile widths retain the language controls with a symbol-only menu button.
+- Browser screenshots/layout interaction checks remain unverified: Chromium download failed with a truncated ZIP. No viewport pass claimed. Production deployment/HTTP readback follows commit. HQ app unchanged.

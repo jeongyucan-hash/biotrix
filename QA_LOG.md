@@ -233,3 +233,14 @@
 - User selected “Advancing biomedicine” without punctuation and authorized implementation. Added the exact text below the 1.1 wordmark, left aligned to the visible B, in silver regular Arial (14px desktop / 12px mobile).
 - Based on current origin/main 9ff80e2; preserve newly released bilingual BioSolutions/ingredient content and all other work. Header/footer lockups updated across root pages. Versioned CSS URL prevents stale layout. Standalone light/dark/mono/white SVG and PNG exports created outside the web checkout.
 - PASS: 20 core route/viewport combinations at 320/390/768/1440px; tagline visible and fully inside each header, no horizontal overflow; mobile menu/Escape works. Actual 390/1440 header captures visually reviewed. Static 11-page audit verified 194 links. Production confirmation follows this commit and will be recorded in HQ under session tagline-20261002.
+
+
+## 2026-10-02 — Cloud redesign continuation
+
+- Restored the five-part authorized handoff; all 838 manifest entries matched SHA256.
+- Read original Company / Science / Programs / Contact pages, founder interview, correction notes and all exported user messages.
+- Rebuilt home with navy/silver visual hierarchy, restored the ribbon logo and 한국바이오트릭스 subtitle. Preserved ENERA / FLORA / IMMERA / RENOVA / ACTIVA, bilingual technology descriptions and evaluation priorities.
+- New program selection supports direct hashes and legacy aliases; without JavaScript all program content stays readable. Added mobile menu, Escape dismissal and reduced-motion handling.
+- Preserved existing production routes/assets/configuration in a separate preview branch. Production domain unchanged. Preview HTML uses noindex.
+- Static seven-page asset/route audit, unique IDs and JavaScript syntax passed. Browser QA unverified: local Chromium absent and supported download failed. Vercel project access returned 403; deployment/access readback remains pending.
+- HQ agent_runs and documents storage not yet confirmed; pending connector verification.

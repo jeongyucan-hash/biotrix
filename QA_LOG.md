@@ -228,8 +228,19 @@
 - Preserved released CI v1.1 weight refinement. Preview deployment and hosted checks follow; production not authorized.
 - Hosted preview READY: https://biotrix-vercel-ready-8micjhfie-jeongyucan-8678.vercel.app/ (e3aa5d0). Five routes at 1440/390px: ten checks passed, no overflow/broken images; bilingual content and five solutions confirmed. Draft PR #13; HQ records updated and readback confirmed. Production approval pending.
 
-## 2026-10-02 — Approved short tagline / lockup 1.2
+## Production release — 2026-10-02
+- User approved production. PR #13 merged as 9ff80e256bfc4c052b35755ab16f41424085c7c6; deployment dpl_E9GubGTbNqHcMUaw1DS2cHbPvCeu READY.
+- https://biotrix.co.kr verified across five routes at 1440/390px: ten checks passed, no overflow/broken images, canonical URLs preserved. www redirects to apex. HQ completed/readback verified.
 
-- User selected “Advancing biomedicine” without punctuation and authorized implementation. Added the exact text below the 1.1 wordmark, left aligned to the visible B, in silver regular Arial (14px desktop / 12px mobile).
-- Based on current origin/main 9ff80e2; preserve newly released bilingual BioSolutions/ingredient content and all other work. Header/footer lockups updated across root pages. Versioned CSS URL prevents stale layout. Standalone light/dark/mono/white SVG and PNG exports created outside the web checkout.
-- PASS: 20 core route/viewport combinations at 320/390/768/1440px; tagline visible and fully inside each header, no horizontal overflow; mobile menu/Escape works. Actual 390/1440 header captures visually reviewed. Static 11-page audit verified 194 links. Production confirmation follows this commit and will be recorded in HQ under session tagline-20261002.
+## Colour hero and icon — 2026-10-02
+- Removed grayscale and reduced opacity from all hero photos; natural original colour restored.
+- Updated favicon to high-contrast navy/slate B on ivory, with v2 cache refresh across pages; brand CSS v1.2.
+- 20 viewport/route checks and 11-page static audit passed. Canonical, verification, JSON-LD and robots preserved.
+
+## Mechanism design — 2026-10-02
+- Replaced people-photo carousel with original cell/material scientific concept hero; added five-field interactive mechanism explorer and five biological diagrams on Science/Programs.
+- PASS: 20 local route/viewport cases, 274 internal references, SEO preservation, 11-page / 198-link static audit; explorer and diagram checks at 3 widths; no-JS fallback.
+- Preview only; production approval required. Detailed design self-assessment and scientific limits in DESIGN_REVIEW.md.
+
+- Preserved concurrently released approved brand tagline from PR #15; merged current main into preview.
+- Hosted d47b03e preview READY at https://biotrix-vercel-ready-jv92zngul-jeongyucan-8678.vercel.app/ . Home/Science/Programs at1440/390: six checks passed, no overflow/broken images; selected panel interaction and two current logo taglines verified. HQ records saved/readback confirmed. Production unchanged for redesign.

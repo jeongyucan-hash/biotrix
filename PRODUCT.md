@@ -1,6 +1,6 @@
 # BIOTRIX Product Context v1
 
-기준일: 2026-10-02 KST. 이번 세션은 진단과 문서화만 수행한다.
+기준일: 2026-10-02 KST. 2026-10-02 사용자 지시에 따라 새 CI와 홈페이지를 적용한다.
 
 ## 목적과 포지셔닝
 
@@ -39,7 +39,7 @@ Discover → Validate → Translate는 연구 원칙이며 실제 수행·성과
 공개 사이트는 루트의 정적 HTML, assets/biotech.css, assets/biotech.js로 구성된다. scribe-nextjs는 별도의 HQ 앱이며 이번 변경 대상이 아니다. root package.json이나 공개 사이트 build 명령이 없다.
 기존 URL, canonical, 검색엔진 인증, robots.txt, sitemap.xml, JSON-LD와 법적 페이지를 보존한다. 공개 운영 주소는 https://biotrix.co.kr/이며 로컬 preview를 production과 동일하다고 주장하지 않는다.
 
-이번 디자인 방향: Clinical + Institutional + Technology; Deep Green + Silver + Pure White. 이전 warm ivory/graphite 요청과 최근 네이비 로고 탐색은 역사적 맥락으로 보존하되 이번 홈페이지 기준은 DESIGN.md를 따른다. 로고 형태나 기존 카피는 이번 진단에서 변경하지 않는다.
+이번 디자인 방향: 미래지향적인 Deep Navy + Silver + Platinum. 최신 곡면 BIO와 교차 틈 X 로고를 적용한다. 이전 초록색·아이보리 기준은 역사적 참고이며 새 DESIGN.md를 우선한다. 사업 내용과 과학적 주장 범위는 유지한다.
 
 ## 성공 기준과 남은 결정
 

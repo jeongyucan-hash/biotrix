@@ -6,19 +6,19 @@ html{scroll-padding-top:100px}body{word-break:keep-all;overflow-wrap:anywhere}
 .header .brand{display:flex}.header .links,.header .navlinks{gap:26px}
 .mobilePanel a{display:block}.mobileMenu summary{padding:10px 4px}
 .hero h1{overflow-wrap:normal}.hero h2,.lead{max-width:34em}
-.card{transition:box-shadow .2s ease,transform .2s ease}.card:hover{box-shadow:0 10px 28px #123f3614;transform:translateY(-3px)}
-.card:focus-visible{outline:3px solid #123f36;outline-offset:4px}
+.card{transition:box-shadow .2s ease,transform .2s ease}.card:hover{box-shadow:0 10px 28px #0B183014;transform:translateY(-3px)}
+.card:focus-visible{outline:3px solid #0B1830;outline-offset:4px}
 .cardbody p{padding-right:42px}.cardbody .arrow{width:36px;height:36px}
-.hero-controls{gap:8px}.hero-arrow{width:44px;height:44px}.hero-toggle{min-width:66px;min-height:44px;border:0;background:transparent;color:#123f36;font:inherit;font-size:12px;font-weight:700;cursor:pointer}
-.hero-toggle:hover{background:#e9f0ec;border-radius:24px}.hero-dots{gap:0}.hero-dots button{width:28px;height:44px;border-radius:0;background:transparent;position:relative}
-.hero-dots button:after{content:'';position:absolute;left:10px;top:18px;width:8px;height:8px;border-radius:8px;background:#9eaaa5}
-.hero-dots button.is-active{width:32px;background:transparent}.hero-dots button.is-active:after{left:5px;width:22px;background:#123f36}
-.faq-item{border-bottom:1px solid #e6ebe8}.faq-item summary{cursor:pointer;list-style:none;padding:22px 30px 22px 0;position:relative;font-size:15px;font-weight:650}
-.faq-item summary::-webkit-details-marker{display:none}.faq-item summary:after{content:'＋';position:absolute;right:0;color:#123f36}.faq-item[open] summary:after{content:'−'}
-.faq-item p{margin:0;padding:0 24px 22px 0;font-size:14px;color:#52615a;line-height:1.75}
-.submit{display:inline-flex;min-height:48px;align-items:center;justify-content:center;padding:14px 22px;text-decoration:none}.text-link{display:inline-block;padding:12px 0;font-weight:700;color:#123f36}
-.legal,.mini{color:#a6b8ae}.footer .tag,.foot .tag{color:#a6b8ae}.footer a:hover,.foot a:hover{text-decoration:underline}
-:focus-visible{outline:3px solid #668e7d;outline-offset:4px}
+.hero-controls{gap:8px}.hero-arrow{width:44px;height:44px}.hero-toggle{min-width:66px;min-height:44px;border:0;background:transparent;color:#0B1830;font:inherit;font-size:12px;font-weight:700;cursor:pointer}
+.hero-toggle:hover{background:#F1F4F7;border-radius:24px}.hero-dots{gap:0}.hero-dots button{width:28px;height:44px;border-radius:0;background:transparent;position:relative}
+.hero-dots button:after{content:'';position:absolute;left:10px;top:18px;width:8px;height:8px;border-radius:8px;background:#BEC7D2}
+.hero-dots button.is-active{width:32px;background:transparent}.hero-dots button.is-active:after{left:5px;width:22px;background:#0B1830}
+.faq-item{border-bottom:1px solid #F1F4F7}.faq-item summary{cursor:pointer;list-style:none;padding:22px 30px 22px 0;position:relative;font-size:15px;font-weight:650}
+.faq-item summary::-webkit-details-marker{display:none}.faq-item summary:after{content:'＋';position:absolute;right:0;color:#0B1830}.faq-item[open] summary:after{content:'−'}
+.faq-item p{margin:0;padding:0 24px 22px 0;font-size:14px;color:#52647A;line-height:1.75}
+.submit{display:inline-flex;min-height:48px;align-items:center;justify-content:center;padding:14px 22px;text-decoration:none}.text-link{display:inline-block;padding:12px 0;font-weight:700;color:#0B1830}
+.legal,.mini{color:#BEC7D2}.footer .tag,.foot .tag{color:#BEC7D2}.footer a:hover,.foot a:hover{text-decoration:underline}
+:focus-visible{outline:3px solid #52647A;outline-offset:4px}
 @media(max-width:1050px){.header .links,.header .navlinks{display:none!important}.mobileMenu{display:block}.header .nav{width:calc(100% - 40px)}}
 @media(max-width:620px){html{scroll-padding-top:84px}.header .nav{width:calc(100% - 32px)}.hero h1{font-size:clamp(40px,11.8vw,56px)}.hero h2{font-size:21px}.herocopy{padding:50px 0 80px}.hero-controls{gap:2px;bottom:18px;padding:4px 6px}.hero-dots button{width:24px}.hero-dots button:after{left:8px}.hero-toggle{min-width:60px}.cardbody{min-height:190px}.cardbody p{padding-right:35px}.flinks{flex-wrap:wrap;gap:14px 20px}.formula article{min-width:0}.statement article{padding:26px}}
 @media(prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}

@@ -8,7 +8,7 @@ document.querySelectorAll('.hero-gallery').forEach(gallery=>{
   const caption=gallery.querySelector('.image-note');
   const meanings=['더 많은 사람의 일상으로','세대를 이어가는 삶의 가능성','가능성을 탐구하는 과학'];
   const motion=matchMedia('(prefers-reduced-motion: reduce)');
-  let current=0,paused=motion.matches,hovered=false,timer,request=0;
+  let current=0,paused=true,hovered=false,timer,request=0;
   const updatePause=()=>{pauseButton.textContent=paused?'▷':'Ⅱ';pauseButton.setAttribute('aria-label',paused?'자동 전환 시작':'자동 전환 일시정지');};
   const schedule=()=>{clearTimeout(timer);if(!paused&&!hovered&&!document.hidden)timer=setTimeout(()=>show(current+1),7000);};
   async function show(next){

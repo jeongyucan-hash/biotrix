@@ -194,3 +194,15 @@
 - GitHub push rejected by automatic approval review: external publication destination was not explicitly authorized by the user. No workaround attempted; local documentation commit retained. Remote writes require user approval.
 - HQ connector read confirmed project and table structure; agent_runs/documents writes were held with external publication pending. HQ storage is NOT confirmed. Stable session id and document id: 01a0fadf-2e40-7121-9116-6d15465254ec / 01a0fadf-2e40-7121-9116-6d15465254ed.
 - Original preview checkout remains untouched and clean. Documentation checkout is separate. Screenshot evidence remains in sibling outputs. No production deployment.
+
+
+## 2026-10-02 — Navy / Silver Brand System 1.0
+
+- User explicitly authorized a new CI, replacement of the green website theme, and immediate application to www.biotrix.co.kr. This supersedes earlier preview-only restrictions for this public website work.
+- Session: biotrix-brand-system-20261002. Isolated branch brand/navy-silver-20261002 preserves the earlier preview and documentation checkouts. origin/main is an ancestor; the pending science website content is included in this release. The HQ app branch/project is not modified.
+- Curved-ribbon BIO: I width and O side wall 22; corresponding fold direction. X retains 82 × 100 bounds and uses crossing-plane separation. Full outlined wordmarks replace the symbol-plus-typed-name lockup. New favicon and 1200 × 630 social card.
+- Deep Navy #0B1830, Titanium Silver #BEC7D2, Platinum #F1F4F7, Steel #66768B. Shared brand stylesheet across root pages, navy hero/header, grayscale concept photography, compact home program list, manual-first slideshow, legacy route and legal-page color cleanup. Existing content, domain metadata, verification and site paths preserved.
+- PASS: 5 main routes × 3 widths (390/1440/1920), no horizontal overflow, broken images, HTTP/JS errors; mobile menu/Escape and slide-next. 11 legacy routes × 2 widths (390/1440), no overflow or broken images. 11-page static audit / 186 internal links and lockup check passed. Logo/typography/whole-page screenshots visually reviewed. Five text/background pairs measured 5.49:1–16.02:1.
+- The scheduled workflow now validates the public wordmark/links independently from HQ's older design master; HQ asset integrity checks remain enabled. Comparing the public site to HQ's superseded green master is no longer the public brand requirement.
+- Deliverables outside the deployment checkout: 15-page vector PDF, four SVG/PNG logo modes, geometry and token JSON, CSS, social card, brand overview and website screenshots. All PDF pages rendered and visually inspected.
+- Remaining limits: no physical print proof, actual device test or full WCAG certification; contact channels and commerce placeholders remain as previously disclosed. Production verification and HQ record readback follow the implementation commit; no deployment success is claimed in this entry.

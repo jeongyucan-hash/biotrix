@@ -77,3 +77,8 @@ P1: 다음 디자인 수정에서 먼저 처리. P2: 구조 조정 이후 polish
 ## 전달 상태
 
 문서는 로컬 docs/biotrix-design-audit-20261002 브랜치에 보존했다. GitHub 업로드는 자동 승인 검토가 외부 게시에 대한 명시적 승인 부족으로 거절했다. 우회하지 않았고 원격 변경은 없다. HQ connector에서 테이블 구조는 확인했으나 외부 기록 저장은 보류했으며 agent_runs/documents 저장 완료로 보고하지 않는다. 사용자 승인 후 문서 브랜치 업로드와 동일 세션 ID의 HQ 기록을 수행한다.
+
+
+## Superseding implementation / 2026-10-02
+
+The preceding document is the preserved baseline audit. Brand System 1.0 now supersedes the green palette and preview-only scope by explicit user instruction. Current design: DESIGN.md. Implementation checks and deployment evidence: QA_LOG.md. Five core routes passed 390/1440/1920px rendering, 11 legacy routes passed 390/1440px layout/image checks. No full accessibility certification or physical device coverage is claimed.

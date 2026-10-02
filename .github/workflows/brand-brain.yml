@@ -20,10 +20,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Check brand assets and public design
+      - name: Check public wordmark and links
+        run: |
+          node site/scripts/check-lockup.mjs
+          python3 site/scripts/audit-site.py
+      - name: Check independent HQ brand assets
         env:
           HQ_ROOT: ${{ github.workspace }}/hq
-          PUBLIC_ROOT: ${{ github.workspace }}/site
           REPORT_PATH: ${{ github.workspace }}/brand-audit-report.json
         run: node hq/scripts/brand-audit.mjs
       - uses: actions/upload-artifact@v4

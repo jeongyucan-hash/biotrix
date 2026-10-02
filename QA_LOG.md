@@ -256,3 +256,9 @@
 - Clarification: align the first Korean character with the visible original logo's left edge, excluding the SVG canvas inset.
 - SVG viewBox width 590, visible left edge 25. Applied subtitle inset 25/590 = 4.2372881356% of the lockup width (8.69px desktop, 6.99px mobile); header and footer share the rule. Original logo paths unchanged.
 - Geometry verified from both primary and reverse SVG source. Browser visual QA remains unverified. Production unchanged.
+
+
+## 2026-10-02 — Compact header logo
+- User requested a smaller homepage logo. Shared header logo reduced from 205 to 175px desktop and 165 to 145px mobile; Korean subtitle now 13/12px. Footer retained its existing size.
+- Existing visible-left-edge alignment remains proportional (25/590). Targeted CSS selectors and responsive ordering checked; original SVG unchanged. Browser visual readback remains unverified.
+- Implementation commit 28793839e2be7ce989e097632b127b2c3b2b202f; preview deployment pending status check. Production unchanged.

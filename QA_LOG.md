@@ -274,3 +274,8 @@
 - User approved applying the reviewed redesign and final header logo (150px desktop / 125px mobile) to the live website.
 - Removed preview noindex from five core pages and restored existing site verification, Open Graph, Twitter and Organization metadata from current main. Existing routes/assets/configuration retained.
 - Static route/asset audit previously passed; targeted responsive logo selectors confirmed. Browser visual verification remains unavailable. Production deployment and HTTP readback pending.
+
+### Verified production release
+- PR #17 merged as f762d8a362693047877ff9ce3d6722da662a9e15; Vercel public project Git status success (GxiMP1sX1xWpQ2UT5zqSfMgWno5d).
+- Live www domain redirects normally to apex. All five core routes and next.css return HTTP 200. Core pages load next.css, contain no noindex; homepage verification tags restored. Live CSS contains 150px desktop / 125px mobile header widths.
+- HTTP/content readback verified; browser screenshot/interaction QA and deployment log scan remain unverified. HQ app is separate and not modified.

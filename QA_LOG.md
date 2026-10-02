@@ -245,3 +245,8 @@
 - Static seven-page asset/route audit, unique IDs and JavaScript syntax passed. Browser QA unverified: local Chromium absent and supported download failed. Vercel project access returned 403; deployment/access readback remains pending.
 - HQ agent_runs and documents writes confirmed and read back: session 7832fbf3-5af3-4c78-832f-bf3500000001 and document 7832fbf3-5af3-4c78-832f-bf3500000002.
 - Vercel bot reports Ready deployment at https://biotrix-vercel-ready-git-preview-cloud-r-6cd59a-jeongyucan-8678.vercel.app . Direct HEAD returns 302 to Vercel SSO: owner login required; public access is not claimed. Draft PR #17 retains the reviewable changes.
+
+
+## 2026-10-02 — Korean subtitle alignment
+- User requested left alignment for 한국바이오트릭스 below the logo. Changed shared brand flex alignment to flex-start for header/footer at desktop/mobile widths.
+- Confirmed a single targeted alignment change; no other layout or content change. Browser visual readback remains unverified. Production unchanged.

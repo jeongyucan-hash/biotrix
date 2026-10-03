@@ -340,3 +340,13 @@
 - Follow-up: exact Korean footer punctuation revised to 바이오트릭스코리아 · 대표이사: 정유찬
 
 - Final user revision: 바이오트릭스코리아 · 대표 정유찬; removed colon and CEO title; shared script footer07
+
+
+## 2026-10-04 — Approved focused bilingual copy update
+- Session: biotrix-copy08-20261004; user approved production publication
+- Three homepage replacements and two additions on Research and Contact, with English counterparts
+- Hero slogan/body, Company content, logo, typography, footer and other copy preserved; shared contact band changes scoped to homepage
+- Main source checked at ad6827b; no unrelated changes
+- PASS: JavaScript syntax and EN/KO render-string comparisons; hero and Company exact preservation
+- Browser viewport verification unavailable in the replacement cloud environment; direct production HTTP request timed out
+- Git deployment and HQ record verification pending; no completed deployment claimed at commit time

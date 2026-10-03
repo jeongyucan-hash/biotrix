@@ -320,3 +320,9 @@
 Separate preview branch; production unchanged. Concrete bilingual homepage, company direction, five research areas, development criteria and B2B contact. Concept image caption, noindex metadata. No confirmed assets or experimental milestones claimed. 56 viewport/language checks passed; 5 project selectors, menu and persistence passed. Final science wording adjusted after full checks; preview readback pending.
 
 Preview deployment Ready: https://biotrix-vercel-ready-git-preview-researc-b19b72-jeongyucan-8678.vercel.app (PR20, aad755c). Anonymous access redirects to Vercel login; connector cannot issue share link because team scope returns403. User can review while signed into authorized Vercel account. HQ agent_runs/documents written and document readback confirmed. Production not merged.
+
+## 2026-10-03 Korean-first green editorial preview
+- Rebuilt Home, Company, Science, Programs and Contact around approved biotechnology direction. Preserved original brand, five research names, two technology directions and protein/enzyme first focus. Correct contact: antreu@biotrix.co.kr.
+- Korean default, English toggle; white, deep green and silver palette; concept molecular imagery; patient burden and sustainable production language; no established research results claimed.
+- PASS: 56 route/viewport/language checks across 7 routes, 320/390/768/1440 widths, image loading, H1, overflow, forbidden wording, JS errors, menu/Escape and language persistence. Reviewed desktop/mobile captures. Fixed actual desktop section nesting and narrow legal layout. Playwright/Edge used because agent-browser executable unavailable. Safari/iOS and email delivery unverified.
+- Preview branch only; deployment verification follows commit. Existing Vercel authentication protection retained; share-link API returned 403. HQ synchronization pending until deployment record is available.

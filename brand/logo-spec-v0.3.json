@@ -1,0 +1,43 @@
+{
+  "version": "0.3",
+  "base": "reference-recovery-v0.2",
+  "viewBox": [
+    30,
+    55,
+    837,
+    210
+  ],
+  "rClosure": {
+    "sourceCoordinates": [
+      147,
+      2,
+      8,
+      23
+    ],
+    "radius": 1.2
+  },
+  "korean": {
+    "scale": 2.2,
+    "translation": [
+      -354,
+      -262.6
+    ],
+    "outlineStroke": 0.32,
+    "alignment": "left aligned with B",
+    "gapFromWordmark": 16
+  },
+  "colors": {
+    "green": "#073E35",
+    "reverse": "#FFFFFF"
+  },
+  "webWidths": {
+    "desktop": 205,
+    "mobile": 174
+  },
+  "preserved": [
+    "emblem",
+    "B I O T I X outlines",
+    "wordmark spacing",
+    "website copy"
+  ]
+}

@@ -315,3 +315,13 @@
 - PASS: 56 page/viewport/language checks, actual custom font loading, no AI token in visible text, no horizontal overflow/broken images/H1 errors/JS exceptions; five project selectors, language persistence, menu/Escape and configured redirects. Inspected full desktop home, mobile Korean home, desktop Korean project essay screenshots.
 - Changed legal pages only for shared typography, navigation/footer continuity. No policy wording change. Safari/iOS and email receipt remain unverified.
 - Production and HQ readback follow release. Reproducible project copy: scripts/portfolio-content.cjs; page builder: scripts/build-portfolio.cjs.
+
+
+## 2026-10-03 Approved Sites design production integration
+- Session: biotrix-brand-v04-20261003
+- Restores the user-approved bilingual copy from Sites commit b866d01, including original slogan and andrew email
+- Imports deterministic CI v0.3 and self-hosted Manrope / Pretendard typography v04
+- Scopes new assets to assets/brand-v04; retains other public pages, legal pages, SEO verification, and HQ sources
+- CLI authentication restored; correct project prj_GCfypDQ5tH3O7DF7hoEU3fPaidrK and production domain confirmed
+- Local verification and deployment pending
+- HQ record sync pending, storage not yet confirmed

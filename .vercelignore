@@ -1,0 +1,8 @@
+.git
+.github
+.env*
+scribe-nextjs
+scripts
+qa
+brand
+*.md

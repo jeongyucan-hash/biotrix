@@ -319,3 +319,4 @@
 ## 2026-10-03 research direction review preview
 Separate preview branch; production unchanged. Concrete bilingual homepage, company direction, five research areas, development criteria and B2B contact. Concept image caption, noindex metadata. No confirmed assets or experimental milestones claimed. 56 viewport/language checks passed; 5 project selectors, menu and persistence passed. Final science wording adjusted after full checks; preview readback pending.
 
+Preview deployment Ready: https://biotrix-vercel-ready-git-preview-researc-b19b72-jeongyucan-8678.vercel.app (PR20, aad755c). Anonymous access redirects to Vercel login; connector cannot issue share link because team scope returns403. User can review while signed into authorized Vercel account. HQ agent_runs/documents written and document readback confirmed. Production not merged.

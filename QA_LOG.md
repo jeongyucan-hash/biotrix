@@ -338,3 +338,5 @@
 - HQ agent_runs d1f34f05-5050-4010-8200-100323400001 and documents d1f34f05-5050-4010-8200-100323400002 saved
 
 - Follow-up: exact Korean footer punctuation revised to 바이오트릭스코리아 · 대표이사: 정유찬
+
+- Final user revision: 바이오트릭스코리아 · 대표 정유찬; removed colon and CEO title; shared script footer07

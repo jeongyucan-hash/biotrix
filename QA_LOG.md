@@ -323,5 +323,8 @@
 - Imports deterministic CI v0.3 and self-hosted Manrope / Pretendard typography v04
 - Scopes new assets to assets/brand-v04; retains other public pages, legal pages, SEO verification, and HQ sources
 - CLI authentication restored; correct project prj_GCfypDQ5tH3O7DF7hoEU3fPaidrK and production domain confirmed
-- Local verification and deployment pending
-- HQ record sync pending, storage not yet confirmed
+- Verified 16 local and 16 production route/language/viewport combinations; no page errors, missing fonts or overflow
+- Production https://biotrix.co.kr: deployment dpl_5ATFwyJLfLpEsmCwVtbjrSiL8AFK READY; source commit e0c716e
+- Preview https://biotrix-vercel-ready-ih66ton6g-jeongyucan-8678.vercel.app
+- Existing auxiliary pages retained; Vercel connector itself remains unresolved, authenticated CLI works
+- HQ agent_runs 0a6434bb-dcc8-4daa-8b04-7c3156d46404 and documents 5f9476b9-5b64-493c-93d4-b6e2b3464404 saved

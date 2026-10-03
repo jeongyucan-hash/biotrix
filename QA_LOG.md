@@ -315,3 +315,8 @@
 - PASS: 56 page/viewport/language checks, actual custom font loading, no AI token in visible text, no horizontal overflow/broken images/H1 errors/JS exceptions; five project selectors, language persistence, menu/Escape and configured redirects. Inspected full desktop home, mobile Korean home, desktop Korean project essay screenshots.
 - Changed legal pages only for shared typography, navigation/footer continuity. No policy wording change. Safari/iOS and email receipt remain unverified.
 - Production and HQ readback follow release. Reproducible project copy: scripts/portfolio-content.cjs; page builder: scripts/build-portfolio.cjs.
+
+### Portfolio production readback
+- PR #19 merged as f99f65e987c6903aa21a0c37282d9a193f056665; public Vercel deployment CjJZWmeoXawsaXb3AumQq3mEjFJR reports success.
+- Seven live routes return 200 with portfolio.css; no visible AI token. CSS, primary/reverse SVG, Home/Projects HTML and both font binaries match the checked source (text newline normalization only).
+- Live mobile Korean H1 uses loaded Pretendard and no document overflow. HQ agent_runs 20261003-1031-4000-8000-000000000019 and documents 20261003-1031-4000-8000-000000000020 saved; document readback confirmed.

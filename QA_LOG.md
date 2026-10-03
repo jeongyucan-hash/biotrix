@@ -334,4 +334,5 @@
 - User requested exact Korean footer: 바이오트릭스코리아 대표이사 정유찬
 - English counterpart: BIOTRIX KOREA · CEO Yuchan Jeong
 - Versioned script requests on all four primary pages
-- Production verification and HQ sync pending
+- Production dpl_HQ8PwAyzokxao2rrwp8SXTxAXiv9 READY; live Korean footer text verified
+- HQ agent_runs d1f34f05-5050-4010-8200-100323400001 and documents d1f34f05-5050-4010-8200-100323400002 saved

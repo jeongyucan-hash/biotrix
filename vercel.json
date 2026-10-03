@@ -24,5 +24,22 @@
       ]
     }
   ],
-  "ignoreCommand": "if [ \"$VERCEL_PROJECT_ID\" = \"prj_7sBWLb4FXMFK3JBnyalkIgLnEbEQ\" ]; then exit 0; else exit 1; fi"
+  "ignoreCommand": "if [ \"$VERCEL_PROJECT_ID\" = \"prj_7sBWLb4FXMFK3JBnyalkIgLnEbEQ\" ]; then exit 0; else exit 1; fi",
+  "redirects": [
+    {
+      "source": "/business",
+      "destination": "/company",
+      "permanent": true
+    },
+    {
+      "source": "/products",
+      "destination": "/programs",
+      "permanent": true
+    },
+    {
+      "source": "/partnership",
+      "destination": "/contact",
+      "permanent": true
+    }
+  ]
 }

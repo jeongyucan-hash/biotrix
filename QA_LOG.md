@@ -298,3 +298,10 @@
 - Implementation b295911a81a062cd7b2e9367b696586c60876cbf deployed successfully by the public Vercel project (9prZpM5d34uiSBxE5DmNQinR8LjR).
 - Seven live routes return HTTP 200 with data-language=en and both locale controls. Diagram/icon placements match the reviewed source. Live icon, JavaScript and CSS SHA256 match the locally checked files.
 - DOM behavior and static/HTTP checks passed. Browser screenshot/viewport rendering and interaction checks remain unverified; no visual pass claimed.
+
+## 2026-10-03 — Live website audit and vision alignment
+- Inspected ten live routes in Edge, including three obsolete lifestyle pages. Preserved current main ca77ff4 and worked on improve/vision-and-visual-audit-20261003.
+- Fixed overlapping home research rows, narrow Science heading overflow, program spacing and menu Escape focus. Revised company/founder language to the biomedical vision, introduced intended AI approach, distinguished exploratory programs, and added external scientific background reading.
+- Corrected English-first sharing metadata; configured three legacy redirects and cleaned sitemap.
+- PASS: 56 viewport/language checks (7 pages, 320/390/768/1440, EN/KO), decoded images, H1, horizontal overflow, research-row collision, JS errors; 5 program panels, menu/Escape, locale persistence, redirects; JS syntax. Visually reviewed desktop/mobile captures.
+- Detail: qa/2026-10-03-website-audit.md. Safari/iOS, email receipt and independent user testing unverified. Production deployment and HQ synchronization pending at this commit.

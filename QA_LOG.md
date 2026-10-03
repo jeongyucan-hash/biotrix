@@ -305,3 +305,13 @@
 - Corrected English-first sharing metadata; configured three legacy redirects and cleaned sitemap.
 - PASS: 56 viewport/language checks (7 pages, 320/390/768/1440, EN/KO), decoded images, H1, horizontal overflow, research-row collision, JS errors; 5 program panels, menu/Escape, locale persistence, redirects; JS syntax. Visually reviewed desktop/mobile captures.
 - Detail: qa/2026-10-03-website-audit.md. Safari/iOS, email receipt and independent user testing unverified. Production deployment and HQ synchronization pending at this commit.
+
+## 2026-10-03 — Founder portfolio redesign
+- User rejected the prior visual and content quality and explicitly requested removing AI wording, improving typography, unifying BIO/X logo tones and presenting substantive project problems and solutions.
+- Rebuilt Home, Company, Science, Projects and Contact as an editorial founder portfolio; retained domain, original logo geometry, approved hero/icon imagery, locale behavior and legacy redirects.
+- Added self-hosted Manrope and Pretendard with their original OFL license files. Increased reading type and rebuilt heading weight, spacing, card layout, long-form project structure and mobile navigation layout.
+- Unified primary/reverse wordmarks to one ink each. Existing BIO/X hex values were identical, but differing color distribution made them look inconsistent.
+- Five projects now contain introduction, problem, proposed direction, importance, evaluation questions and next question. Research directions remain framed as intentions without prominent disclaimer blocks; no invented results added. Public AI language removed.
+- PASS: 56 page/viewport/language checks, actual custom font loading, no AI token in visible text, no horizontal overflow/broken images/H1 errors/JS exceptions; five project selectors, language persistence, menu/Escape and configured redirects. Inspected full desktop home, mobile Korean home, desktop Korean project essay screenshots.
+- Changed legal pages only for shared typography, navigation/footer continuity. No policy wording change. Safari/iOS and email receipt remain unverified.
+- Production and HQ readback follow release. Reproducible project copy: scripts/portfolio-content.cjs; page builder: scripts/build-portfolio.cjs.

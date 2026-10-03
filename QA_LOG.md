@@ -328,3 +328,10 @@
 - Preview https://biotrix-vercel-ready-ih66ton6g-jeongyucan-8678.vercel.app
 - Existing auxiliary pages retained; Vercel connector itself remains unresolved, authenticated CLI works
 - HQ agent_runs 0a6434bb-dcc8-4daa-8b04-7c3156d46404 and documents 5f9476b9-5b64-493c-93d4-b6e2b3464404 saved
+
+
+## 2026-10-03 Footer identity update
+- User requested exact Korean footer: 바이오트릭스코리아 대표이사 정유찬
+- English counterpart: BIOTRIX KOREA · CEO Yuchan Jeong
+- Versioned script requests on all four primary pages
+- Production verification and HQ sync pending

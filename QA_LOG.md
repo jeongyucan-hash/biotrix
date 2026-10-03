@@ -305,3 +305,9 @@
 - Corrected English-first sharing metadata; configured three legacy redirects and cleaned sitemap.
 - PASS: 56 viewport/language checks (7 pages, 320/390/768/1440, EN/KO), decoded images, H1, horizontal overflow, research-row collision, JS errors; 5 program panels, menu/Escape, locale persistence, redirects; JS syntax. Visually reviewed desktop/mobile captures.
 - Detail: qa/2026-10-03-website-audit.md. Safari/iOS, email receipt and independent user testing unverified. Production deployment and HQ synchronization pending at this commit.
+
+### Production verification and HQ record
+- PR #18 merged as c0965a628d43cc69012e51e0728212b17f4da0ab; public Vercel deployment 5qyjD6GTDoBE2tMYDUnpVx51FLYw reports success.
+- Seven live pages return 200 with 20261003-audit assets; /business, /products and /partnership resolve to /company, /programs and /contact.
+- Live CSS, JS and Home/Company/Science/Programs HTML match the checked local files after CRLF/LF normalization. Live Korean mobile home has no horizontal overflow.
+- HQ agent_runs 20261003-0920-4000-8000-000000000018 and documents 20261003-0920-4000-8000-000000000019 saved. Document readback confirmed. No HQ application code changed.

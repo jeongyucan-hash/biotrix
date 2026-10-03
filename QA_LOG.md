@@ -315,3 +315,7 @@
 - PASS: 56 page/viewport/language checks, actual custom font loading, no AI token in visible text, no horizontal overflow/broken images/H1 errors/JS exceptions; five project selectors, language persistence, menu/Escape and configured redirects. Inspected full desktop home, mobile Korean home, desktop Korean project essay screenshots.
 - Changed legal pages only for shared typography, navigation/footer continuity. No policy wording change. Safari/iOS and email receipt remain unverified.
 - Production and HQ readback follow release. Reproducible project copy: scripts/portfolio-content.cjs; page builder: scripts/build-portfolio.cjs.
+
+## 2026-10-03 research direction review preview
+Separate preview branch; production unchanged. Concrete bilingual homepage, company direction, five research areas, development criteria and B2B contact. Concept image caption, noindex metadata. No confirmed assets or experimental milestones claimed. 56 viewport/language checks passed; 5 project selectors, menu and persistence passed. Final science wording adjusted after full checks; preview readback pending.
+

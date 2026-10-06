@@ -365,3 +365,10 @@
 - PASS: six lockups, 12 public pages / 257 internal links; sequential workflow commands reached independent HQ audit at hq-nextjs ee1b7ff8669a6d96d3cd897897d3c5fa39f93324. Report generated with status pass, 20 assets checked and zero issues.
 - PASS: negative checks reject obsolete stylesheet, wrong wordmark, missing generated H1 and broken generated route; source restored afterward. git diff --check passed.
 - Remote Actions rerun, artifact upload and HQ database readback pending at this implementation commit. No production visual/deployment claim.
+
+### Remote verification confirmed
+- Implementation abb61760a8977731c96e46341a1d1902ead12708 published to main. Re-ran failed run 37413997166; audit job 112138091822 succeeded at 2026-10-06 06:24 UTC.
+- Checkout logs confirm public main abb61760a8977731c96e46341a1d1902ead12708 and independent HQ ee1b7ff8669a6d96d3cd897897d3c5fa39f93324. The rerun metadata retains the original head SHA because this unchanged workflow explicitly checks out current main.
+- Public lockup/links step, HQ audit step and artifact upload all SUCCESS. HQ log: status pass, issues []. Artifact 11393813469 (brand-audit-report, 291-byte ZIP) uploaded; contains generated brand-audit-report.json. Run: https://github.com/jeongyucan-hash/biotrix/actions/runs/37413997166
+- Supabase readback confirmed completed agent_runs cc260006-1006-4010-8200-100600000001 and website-development documents cc260006-1006-4010-8200-100600000002. Token/cost metrics unavailable.
+- No public visual assets/pages or HQ branch changes. Browser visual QA and deployment verification were outside this audit-script repair.

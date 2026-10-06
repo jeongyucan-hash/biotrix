@@ -3,9 +3,12 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
 import re
+import json
+import subprocess
 
 ROOT=Path(__file__).resolve().parents[1]
-PAGES=['index','company','science','programs','business','products','partnership','contact','privacy','terms','shop']
+PAGES=['index','company','research','science','programs','business','products','partnership','contact','privacy','terms','shop']
+RENDERED=json.loads(subprocess.check_output(['node',str(ROOT/'scripts/render-audit-pages.mjs')],text=True))
 class Page(HTMLParser):
     def __init__(self,text):
         super().__init__();self.links=[];self.ids=[];self.assets=[];self.h1=0;self.feed(text)
@@ -18,8 +21,8 @@ class Page(HTMLParser):
         if tag=='h1':self.h1+=1
 
 errors=[];count=0
-for name in PAGES:
-    file=ROOT/(name+'.html');text=file.read_text();page=Page(text)
+for name,language in [(name,language) for name in PAGES for language in (['en','ko'] if name in RENDERED else ['en'])]:
+    file=ROOT/(name+'.html');text=RENDERED.get(name,{}).get(language,file.read_text());page=Page(text)
     if page.h1!=1:errors.append(f'{name}: expected one h1')
     if len(page.ids)!=len(set(page.ids)):errors.append(f'{name}: duplicate id')
     if 'data:image/' in text:errors.append(f'{name}: embedded image remains')
@@ -29,7 +32,7 @@ for name in PAGES:
         target=ROOT/(url.path.lstrip('/') or 'index') if url.path else file
         if not target.suffix:target=target.with_suffix('.html')
         if not target.exists():errors.append(f'{name}: missing route {link}')
-        elif url.fragment and url.fragment not in Page(target.read_text()).ids:errors.append(f'{name}: missing anchor {link}')
+        elif url.fragment and url.fragment not in Page(RENDERED.get(target.stem,{}).get(language,target.read_text())).ids:errors.append(f'{name}: missing anchor {link}')
         count+=1
     assets=page.assets+re.findall(r'url\([\"\']?(/assets/[^\)\"\']+)',text)
     for asset in assets:
@@ -37,4 +40,4 @@ for name in PAGES:
     for placeholder in ['가상의 연락처','임의로 연결','프로토타입 단계']:
         if placeholder in text:errors.append(f'{name}: internal placeholder copy: {placeholder}')
 if errors:raise SystemExit('\n'.join(errors))
-print(f'PASS: {len(PAGES)} public pages, {count} internal links, assets, anchors, heading structure and placeholder copy')
+print(f'PASS: {len(PAGES)} public pages (v04 rendered in EN/KO), {count} internal links, assets, anchors, heading structure and placeholder copy')

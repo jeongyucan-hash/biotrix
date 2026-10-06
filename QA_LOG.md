@@ -355,3 +355,13 @@
 - Implementation 0c3501ebafaef139776a3dbbc3ce07ec652ce1ce: Vercel public project status SUCCESS, deployment BCLcoesAfaMp2ATwmkN38WnJvYNV
 - No live viewport/visual pass claimed; production readback limited by environment connectivity
 - HQ session cc080004-1004-4010-8200-100400000001 and document cc080004-1004-4010-8200-100400000002 recorded
+
+
+## 2026-10-06 — Restore brand self check for approved v04 / CI v0.3
+- Session: biotrix-brand-check-20261006; baseline main 0378ee6602230ae781d5a43ea46c9ad165901a0c.
+- Authority: 2026-10-03 approved Sites design integration and 2026-10-04 copy08 release recorded above; brand/logo-spec-v0.3.json and master match deployed v04 geometry. DESIGN.md and DESIGN_SYSTEM.md describe earlier releases.
+- Current Home/Company/Research/Contact use assets/brand-v04; retained Science/Programs use assets/portfolio.css and the primary outlined wordmark. Corrected the checker to enforce each exact system, preserve outlined lettering/canvas, and verify v04 reverse geometry against its CI master. No public page, copy, logo, CSS or HQ source changed.
+- The next public audit also failed because three v04 shells have no static H1. Added a dependency-free Node VM markup renderer using the actual deployed app script, and audited all four current routes in EN/KO without skipping H1/link/asset/anchor validation. This verifies generated markup, not browser layout or interaction.
+- PASS: six lockups, 12 public pages / 257 internal links; sequential workflow commands reached independent HQ audit at hq-nextjs ee1b7ff8669a6d96d3cd897897d3c5fa39f93324. Report generated with status pass, 20 assets checked and zero issues.
+- PASS: negative checks reject obsolete stylesheet, wrong wordmark, missing generated H1 and broken generated route; source restored afterward. git diff --check passed.
+- Remote Actions rerun, artifact upload and HQ database readback pending at this implementation commit. No production visual/deployment claim.

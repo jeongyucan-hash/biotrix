@@ -32,13 +32,33 @@
       "permanent": true
     },
     {
-      "source": "/products",
-      "destination": "/programs",
+      "source": "/partnership",
+      "destination": "/contact",
       "permanent": true
     },
     {
-      "source": "/partnership",
-      "destination": "/contact",
+      "source": "/products",
+      "destination": "/research",
+      "permanent": true
+    },
+    {
+      "source": "/science",
+      "destination": "/research",
+      "permanent": true
+    },
+    {
+      "source": "/programs",
+      "destination": "/research",
+      "permanent": true
+    },
+    {
+      "source": "/science.html",
+      "destination": "/research",
+      "permanent": true
+    },
+    {
+      "source": "/programs.html",
+      "destination": "/research",
       "permanent": true
     }
   ]

@@ -1,0 +1,39 @@
+{
+  "release": "v0.5-contour-cleanup",
+  "baseline": "baseline/BIOTRIX_BASELINE_v0.5.svg",
+  "baseline_sha256": "3f45e0bb610d8a293d212ddb74d922ff585dddd8f93778e0b4a94449aed61783",
+  "source_of_truth": "The baseline SVG paths define the design; this specification defines permitted cleanup",
+  "brand_color": "#073E35",
+  "viewBox": [30,80,837,195],
+  "locked": {
+    "group_transforms": true,
+    "korean_paths": true,
+    "r_stem_closure": true,
+    "wordmark_design": true,
+    "emblem_design": true,
+    "text_left": 240,
+    "text_top": 90,
+    "text_bottom": 260.63366,
+    "emblem_center_y": 175.31683,
+    "emblem_height": 160,
+    "korean_scale_vs_v03": 1.18,
+    "interglyph_gap_multiplier_vs_v03": 0.8
+  },
+  "cleanup_limits": {
+    "allowed_changes": ["emblem path d: removal of tracing micro-steps", "wordmark path d: removal of tracing micro-steps"],
+    "forbidden_changes": ["letter reconstruction", "new fonts", "glyph spacing", "layout", "new emblem", "R or X redesign", "stroke weight redesign"],
+    "max_boundary_deviation_units": 1.0,
+    "min_silhouette_iou": 0.985,
+    "comparison_render_width": 3348,
+    "comparison_pixels_per_unit": 4
+  },
+  "delivery": {
+    "authoritative_editable_format": "SVG",
+    "illustrator_compatible_format": "vector PDF",
+    "native_ai_status": "Not created; requires actual Illustrator save and verification",
+    "export_only": ["PNG", "PDF"],
+    "digital_minimum_width_recommendation_px": 320,
+    "clear_space_recommendation_units": 25,
+    "website_deployed": false
+  }
+}

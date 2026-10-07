@@ -372,3 +372,18 @@
 - Public lockup/links step, HQ audit step and artifact upload all SUCCESS. HQ log: status pass, issues []. Artifact 11393813469 (brand-audit-report, 291-byte ZIP) uploaded; contains generated brand-audit-report.json. Run: https://github.com/jeongyucan-hash/biotrix/actions/runs/37413997166
 - Supabase readback confirmed completed agent_runs cc260006-1006-4010-8200-100600000001 and website-development documents cc260006-1006-4010-8200-100600000002. Token/cost metrics unavailable.
 - No public visual assets/pages or HQ branch changes. Browser visual QA and deployment verification were outside this audit-script repair.
+
+## 2026-10-07 · Apply full website audit · session biotrix-audit-20261007-v05
+- User authorized implementing the complete audit on the public website
+- Base public production and main: db2df827a2f59fde784893f32e992f2c59d250fc; project prj_GCfypDQ5tH3O7DF7hoEU3fPaidrK, team_RnevkH8Bx5tflkRHrBmeBmPB
+- Apply unchanged outlined v0.5 vector master from the existing CI system; header 224px, mobile 172–200px, footer mobile 190px
+- Preserve approved headline, body and representative wording; add research relationship overview, semantic section headings and top contact actions
+- Six static pages share branding and andrew email; registered business name and other legal business details preserved pending independent confirmation
+- Legacy Science/Programs redirects to Research; sitemap contains the six current pages; retain fallback redirect documents
+- Correct canonical/OG/title/description on navigation; add page-specific static metadata and 1200×630 brand share image
+- Korean default for new visits, existing language choice preserved; localStorage unavailable fallback works
+- Subset existing licensed fonts without redesign: Pretendard 89,240B + Manrope 28,820B; original full fonts remain as sources
+- Short mobile hero now content-driven with 100svh minimum; no fixed 790px minimum; header fits narrow widths by source calculation
+- PASS local: JS syntax, six static pages, immutable approved phrases, unchanged vector master, twelve page asset/anchor audit (250 internal links), metadata canonical in both languages
+- Responsive QA harness: qa/responsive-v05.html, noindex/nofollow, iframe viewports 320/390; physical-device and delivery/performance checks remain distinct from responsive visual checks
+- Production deployment and browser readback pending at implementation commit; HQ record will be finalized after release

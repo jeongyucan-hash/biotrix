@@ -413,3 +413,11 @@
 - PASS JS syntax, brand checker, 12-page/250-link existing static audit and git diff --check. Static VM checker renders approved base script; actual enhanced layouts tested in browser separately.
 - Scoped Vercel project inspection returned 403; Vercel CLI unavailable. Preview delivery proceeds through authorized Git branch integration; no credentials changed.
 - Deployment readback, clipboard end-to-end result and HQ records follow the implementation commit. Physical iOS/Safari, real mailbox receipt and measured production CWV remain unverified.
+
+### Preview delivery and interaction confirmation
+- Implementation 9c36f7788b26e4ce1f4ee05c3d489700ed4c3a37 pushed only to preview/design-20261007. Vercel deployment dpl_2DX7RuaXTmKPRstQgaBjQ9gCyZ4n READY, correct public project, preview target (target null), exact source commit verified.
+- Preview https://biotrix-vercel-ready-imnj7pjtc-jeongyucan-8678.vercel.app; stable branch alias https://biotrix-vercel-ready-git-preview-design-4572e1-jeongyucan-8678.vercel.app. Production domain absent from preview aliases.
+- Local additional PASS: both actual font faces loaded, original Korean headline preserved, clipboard contains andrew@biotrix.co.kr with success message; rejected clipboard permission shows copy fallback; proposal subject/body prefilled; research #flora navigation, 44px tab height, one illustration after language rerender, history and English legal page/noindex.
+- Removed enhancement script from standalone 404 template because it has no app render function.
+- Protected preview readback/share helper returned scope-related 403; web reader also could not access preview. Browser tab opening queued successfully. Deployment READY is confirmed by API; hosted visual/HTTP readback is not claimed. User may need existing Vercel account login to view the preview.
+- HQ final session cc260007-1007-4010-8200-100700000031 and website-development document cc260007-1007-4010-8200-100700000032 recorded after final source push; final readback logged in the session handoff.

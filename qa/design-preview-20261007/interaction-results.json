@@ -1,0 +1,44 @@
+{
+  "baseline": "58abed2778ccd610cfda7d1766c181fcb23bf370",
+  "environment": "local chromium, Vercel clean URL/redirect emulation",
+  "results": [
+    {
+      "fonts": [
+        {
+          "family": "Manrope",
+          "status": "loaded"
+        },
+        {
+          "family": "Pretendard",
+          "status": "loaded"
+        }
+      ],
+      "approvedHeadline": "생명공학의 가능성을\n새로운 치료의 기준으로"
+    },
+    {
+      "clipboard": "andrew@biotrix.co.kr",
+      "feedback": "복사했습니다",
+      "proposalLink": "mailto:andrew@biotrix.co.kr?subject=%5BBIOTRIX%5D%20%ED%98%91%EB%A0%A5%20%EC%A0%9C%EC%95%88&body=%EC%86%8C%EC%86%8D%20%2F%20%EB%8B%B4%EB%8B%B9%EC%9E%90%3A%0A%ED%9A%8C%EC%8B%A0%20%EC%97%B0%EB%9D%BD%EC%B2%98%3A%0A%EA%B8%B0%EC%88%A0%20%EB%98%90%EB%8A%94%20%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%20%EA%B0%9C%EC%9A%94%3A%0A%ED%98%84%EC%9E%AC%20%EB%8B%A8%EA%B3%84%3A%0A%ED%9D%AC%EB%A7%9D%20%ED%98%91%EB%A0%A5%20%EB%B0%A9%EC%8B%9D%3A%0A"
+    },
+    {
+      "fallback": "andrew@biotrix.co.kr 주소를 선택해 복사해 주세요"
+    },
+    {
+      "hash": "#flora",
+      "tabHeight": 44
+    },
+    {
+      "english": "en",
+      "singleArt": 1
+    },
+    {
+      "backPath": "/research",
+      "errors": []
+    },
+    {
+      "legal": "Privacy Policy",
+      "noindex": "noindex,nofollow"
+    }
+  ],
+  "errors": []
+}

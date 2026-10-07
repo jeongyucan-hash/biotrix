@@ -411,3 +411,10 @@
 - Expand Korean font subset from original licensed font to cover restored characters; new font URL prevents stale cached subset
 - New proposed content is not included in this release; no new achievement, pipeline stage or partnership claims
 - Production and responsive browser readback pending at implementation commit; physical-phone behavior and Core Web Vitals unmeasured
+### Restoration production verification
+- Implementation 4d591deb5e7da37198ad6e8ba739197f5cbee963, deployment dpl_FNvJchn4L5X44GWizkDSGwmC4eNV READY at biotrix.co.kr
+- Browser PASS: five restored sections open by default; native disclosure closes/reopens; English renders all five original questions and Korean returns correctly
+- Desktop client/scroll widths 1348/1348, no broken images; responsive iframe client/scroll widths 305/305 and 375/375 at 320/390 viewport sizes, all five details present, no overflowing detail paragraphs
+- Console scan shows extension-owned metadata errors only; no site-owned errors observed in returned entries
+- Screenshot biotrix-research-restored-20261007.jpg saved; no physical-device or Core Web Vitals measurement claimed
+- HQ synchronization finalized with this session record; additional copy proposals remain unpublished

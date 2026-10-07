@@ -387,3 +387,16 @@
 - PASS local: JS syntax, six static pages, immutable approved phrases, unchanged vector master, twelve page asset/anchor audit (250 internal links), metadata canonical in both languages
 - Responsive QA harness: qa/responsive-v05.html, noindex/nofollow, iframe viewports 320/390; physical-device and delivery/performance checks remain distinct from responsive visual checks
 - Production deployment and browser readback pending at implementation commit; HQ record will be finalized after release
+
+### Production readback and final verification
+- Implementation commit 98fdbe535c530f4f6ddfab2dc7500d65df17779d production READY: dpl_EMJH9Ce9PYQyH1dG8uUFFb4FWA2R, aliases biotrix.co.kr/www.biotrix.co.kr; GitHub Vercel status SUCCESS
+- Responsive fixture follow-up d2198e9c7474f908addbed6f20034b032c5cfdff; served from assets/brand-v04/responsive-check.html because qa is deployment-excluded
+- Browser PASS: original Korean main copy, v0.5 header at 224px, no desktop overflow or broken images, menu navigation updates canonical and og:url to /research, heading structure corrected
+- Browser PASS: top contact mailto and privacy footer navigation render correctly; privacy shows andrew and new CI
+- Responsive iframe PASS: 320px and 390px frames (client areas 305px and 375px after scrollbar), no horizontal overflow; mobile menu opens, research link navigates and closes menu; contact upper email link valid; English contact and legal page at narrow width fit; language persists across direct navigation
+- Physical phone touch/browser-specific behavior and measured Core Web Vitals remain untested; no claims added about research achievements or project maturity
+- Error scan: no site-owned console errors observed; no email sent
+- Public and HQ apps are independent; no HQ source changes made
+- Vercel scoped deployment-list endpoint returned 403 and CLI absent; canonical-domain get_deployment and Git integration confirmed successful production release without credential changes
+- Screenshot evidence: biotrix-home-v05-20261007.jpg and biotrix-research-v05-20261007.jpg
+- HQ agent_runs/documents synchronization recorded through the authorized connector; final readback follows this documentation commit

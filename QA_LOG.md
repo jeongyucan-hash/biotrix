@@ -400,3 +400,14 @@
 - Vercel scoped deployment-list endpoint returned 403 and CLI absent; canonical-domain get_deployment and Git integration confirmed successful production release without credential changes
 - Screenshot evidence: biotrix-home-v05-20261007.jpg and biotrix-research-v05-20261007.jpg
 - HQ agent_runs/documents synchronization recorded through the authorized connector; final readback follows this documentation commit
+## 2026-10-07 — Research depth restoration
+- Session biotrix-restoration-20261007; base 58abed2778ccd610cfda7d1766c181fcb23bf370
+- Restore original question, introduction, problem, approach, significance, evaluation criteria and next question for ENERA/FLORA/IMMERA/RENOVA/ACTIVA in Korean and English
+- Keep current IMMERA immune-modulation definition; original immunometabolism text presented as a supporting perspective
+- Original paragraphs preserved apart from removing Korean sentence periods to match approved editorial style; original editorial slogans are not reintroduced as competing headings
+- Details open by default and can be collapsed with native keyboard-accessible summary controls
+- PASS check-restoration.cjs: all original paragraphs restored; approved home/company/contact/footer and research summaries byte-identical in KO/EN
+- PASS audit-site.py: 12 public pages, 250 internal links, assets, anchors and headings; PASS check-lockup.mjs: unchanged vector CI
+- Expand Korean font subset from original licensed font to cover restored characters; new font URL prevents stale cached subset
+- New proposed content is not included in this release; no new achievement, pipeline stage or partnership claims
+- Production and responsive browser readback pending at implementation commit; physical-phone behavior and Core Web Vitals unmeasured

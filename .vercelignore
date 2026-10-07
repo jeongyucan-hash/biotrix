@@ -6,3 +6,12 @@ scripts
 qa
 brand
 *.md
+
+shop.html
+product.html
+account.html
+cart.html
+admin.html
+business.html
+products.html
+partnership.html

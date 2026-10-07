@@ -400,3 +400,16 @@
 - Vercel scoped deployment-list endpoint returned 403 and CLI absent; canonical-domain get_deployment and Git integration confirmed successful production release without credential changes
 - Screenshot evidence: biotrix-home-v05-20261007.jpg and biotrix-research-v05-20261007.jpg
 - HQ agent_runs/documents synchronization recorded through the authorized connector; final readback follows this documentation commit
+
+## 2026-10-07 · Design improvement preview · biotrix-design-preview-20261007
+- User requested an improved preview, particularly stronger visual design. Isolated branch preview/design-20261007; public main and HQ source unchanged.
+- Baseline main 58abed2778ccd610cfda7d1766c181fcb23bf370 confirmed through remote ls-remote using authorized network execution. Canonical production deployment dpl_3u4Njvb8gTwSWFu5pqAaPLnnMDw9 READY at this baseline.
+- New editorial composition: light paper canvas, dark green typography, split hero with independent biological visual, four distinct conceptual research illustrations, stronger filled CTAs and consistent interior pages.
+- Approved logo geometry and hero/source copy retained. No unverified pipeline stages, research achievements, team credentials or partners introduced. Science illustrations are decorative conceptual diagrams, not experimental data.
+- Preview-only noindex meta/headers and robots disallow. Legacy commerce/admin prototypes excluded in preview packaging. No production publication or promotion authorized or performed.
+- Added bilingual email copy with success/failure feedback and populated proposal mailto. Research tabs have >=44px target height.
+- Pretendard preview subset 93,184 bytes contains source pages and preview-script copy; OFL license retained. Existing licensed biology image and Manrope reused.
+- PASS local Chromium: 48 primary page/width/language combinations at 320/390/768/1440, KO/EN; no overflow, broken images or pageerrors. Language switching/persistence, mobile menu closure and metadata verified. Screenshot evidence stored locally in /workspace/biotrix-preview-checks.
+- PASS JS syntax, brand checker, 12-page/250-link existing static audit and git diff --check. Static VM checker renders approved base script; actual enhanced layouts tested in browser separately.
+- Scoped Vercel project inspection returned 403; Vercel CLI unavailable. Preview delivery proceeds through authorized Git branch integration; no credentials changed.
+- Deployment readback, clipboard end-to-end result and HQ records follow the implementation commit. Physical iOS/Safari, real mailbox receipt and measured production CWV remain unverified.

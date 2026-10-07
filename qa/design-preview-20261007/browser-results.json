@@ -1,0 +1,1008 @@
+{
+  "baseline": "58abed2778ccd610cfda7d1766c181fcb23bf370",
+  "environment": "local chromium, Vercel clean URL/redirect emulation",
+  "results": [
+    {
+      "width": 320,
+      "route": "/",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/",
+      "hero": 806.34375,
+      "smallTargets": [],
+      "researchHeadings": [
+        "우리가 발전시키려는 기술",
+        "생명현상을 이해하는네 가지 연구 분야",
+        "함께 발전시킬 기술과 아이디어를 기다립니다"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/company",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/company",
+      "smallTargets": [],
+      "researchHeadings": [
+        "자체 제품과플랫폼 기술",
+        "개발 원칙",
+        "정유찬",
+        "함께 발전시킬 가능성을 기다립니다"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/research",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/research",
+      "smallTargets": [],
+      "researchHeadings": [
+        "기술과 연구 분야를 연결하는 구조",
+        "주요 기술 방향",
+        "연구 분야",
+        "ENERA",
+        "FLORA",
+        "IMMERA",
+        "RENOVA",
+        "ACTIVA",
+        "연구 성과의 적용 분야",
+        "함께 발전시킬 가능성을 기다립니다"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/contact",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/contact",
+      "smallTargets": [],
+      "researchHeadings": [
+        "협력 유형",
+        "협력 제안 보내기"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/privacy",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/privacy",
+      "smallTargets": [],
+      "researchHeadings": [
+        "1. Collection and use of personal information1. 개인정보의 수집 및 이용",
+        "2. Cookies and analytics2. 쿠키 및 분석 도구",
+        "3. External services3. 외부 서비스",
+        "4. Future changes4. 향후 변경",
+        "5. Business and contact information5. 사업자 및 문의 정보"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/terms",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/terms",
+      "smallTargets": [],
+      "researchHeadings": [
+        "1. Purpose of the website1. 사이트의 목적",
+        "2. Information provided2. 제공 정보",
+        "3. Intellectual property3. 지식재산권",
+        "4. External links and services4. 외부 링크 및 서비스",
+        "5. Changes to the terms5. 약관의 변경",
+        "6. Business information6. 사업자 정보",
+        "7. Future e-commerce functions7. 전자상거래 기능 추가 시"
+      ]
+    },
+    {
+      "width": 320,
+      "lang": "ko",
+      "menuClosed": "false",
+      "menuPath": "/research"
+    },
+    {
+      "width": 320,
+      "lang": "ko",
+      "toggleTo": "en"
+    },
+    {
+      "width": 320,
+      "lang": "ko",
+      "persist": "en",
+      "mail": "mailto:andrew@biotrix.co.kr?subject=%5BBIOTRIX%5D%20Collaboration%20proposal&body=Organization%20%2F%20name%3A%0AContact%20details%3A%0ATechnology%20or%20idea%3A%0ACurrent%20stage%3A%0AProposed%20collaboration%3A%0A"
+    },
+    {
+      "width": 320,
+      "route": "/",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/",
+      "hero": 947.53125,
+      "smallTargets": [],
+      "researchHeadings": [
+        "Our development direction",
+        "Four perspectiveson biology",
+        "We welcome technologies and ideas to develop together"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/company",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/company",
+      "smallTargets": [],
+      "researchHeadings": [
+        "Products andplatform technologies",
+        "Development principles",
+        "Yuchan Jeong",
+        "Explore what we could build together"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/research",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/research",
+      "smallTargets": [],
+      "researchHeadings": [
+        "Connecting technologies and research fields",
+        "Technology directions",
+        "Research fields",
+        "ENERA",
+        "FLORA",
+        "IMMERA",
+        "RENOVA",
+        "ACTIVA",
+        "Potential applications",
+        "Explore what we could build together"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/contact",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/contact",
+      "smallTargets": [],
+      "researchHeadings": [
+        "Collaboration types",
+        "Start a conversation"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/privacy",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/privacy",
+      "smallTargets": [],
+      "researchHeadings": [
+        "1. Collection and use of personal information1. 개인정보의 수집 및 이용",
+        "2. Cookies and analytics2. 쿠키 및 분석 도구",
+        "3. External services3. 외부 서비스",
+        "4. Future changes4. 향후 변경",
+        "5. Business and contact information5. 사업자 및 문의 정보"
+      ]
+    },
+    {
+      "width": 320,
+      "route": "/terms",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/terms",
+      "smallTargets": [],
+      "researchHeadings": [
+        "1. Purpose of the website1. 사이트의 목적",
+        "2. Information provided2. 제공 정보",
+        "3. Intellectual property3. 지식재산권",
+        "4. External links and services4. 외부 링크 및 서비스",
+        "5. Changes to the terms5. 약관의 변경",
+        "6. Business information6. 사업자 정보",
+        "7. Future e-commerce functions7. 전자상거래 기능 추가 시"
+      ]
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "menuClosed": "false",
+      "menuPath": "/research"
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "toggleTo": "ko"
+    },
+    {
+      "width": 320,
+      "lang": "en",
+      "persist": "ko",
+      "mail": "mailto:andrew@biotrix.co.kr?subject=%5BBIOTRIX%5D%20%ED%98%91%EB%A0%A5%20%EC%A0%9C%EC%95%88&body=%EC%86%8C%EC%86%8D%20%2F%20%EB%8B%B4%EB%8B%B9%EC%9E%90%3A%0A%ED%9A%8C%EC%8B%A0%20%EC%97%B0%EB%9D%BD%EC%B2%98%3A%0A%EA%B8%B0%EC%88%A0%20%EB%98%90%EB%8A%94%20%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%20%EA%B0%9C%EC%9A%94%3A%0A%ED%98%84%EC%9E%AC%20%EB%8B%A8%EA%B3%84%3A%0A%ED%9D%AC%EB%A7%9D%20%ED%98%91%EB%A0%A5%20%EB%B0%A9%EC%8B%9D%3A%0A"
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/",
+      "hero": 811.375,
+      "smallTargets": [],
+      "researchHeadings": [
+        "우리가 발전시키려는 기술",
+        "생명현상을 이해하는네 가지 연구 분야",
+        "함께 발전시킬 기술과 아이디어를 기다립니다"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/company",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/company",
+      "smallTargets": [],
+      "researchHeadings": [
+        "자체 제품과플랫폼 기술",
+        "개발 원칙",
+        "정유찬",
+        "함께 발전시킬 가능성을 기다립니다"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/research",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/research",
+      "smallTargets": [],
+      "researchHeadings": [
+        "기술과 연구 분야를 연결하는 구조",
+        "주요 기술 방향",
+        "연구 분야",
+        "ENERA",
+        "FLORA",
+        "IMMERA",
+        "RENOVA",
+        "ACTIVA",
+        "연구 성과의 적용 분야",
+        "함께 발전시킬 가능성을 기다립니다"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/contact",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/contact",
+      "smallTargets": [],
+      "researchHeadings": [
+        "협력 유형",
+        "협력 제안 보내기"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/privacy",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/privacy",
+      "smallTargets": [],
+      "researchHeadings": [
+        "1. Collection and use of personal information1. 개인정보의 수집 및 이용",
+        "2. Cookies and analytics2. 쿠키 및 분석 도구",
+        "3. External services3. 외부 서비스",
+        "4. Future changes4. 향후 변경",
+        "5. Business and contact information5. 사업자 및 문의 정보"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/terms",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/terms",
+      "smallTargets": [],
+      "researchHeadings": [
+        "1. Purpose of the website1. 사이트의 목적",
+        "2. Information provided2. 제공 정보",
+        "3. Intellectual property3. 지식재산권",
+        "4. External links and services4. 외부 링크 및 서비스",
+        "5. Changes to the terms5. 약관의 변경",
+        "6. Business information6. 사업자 정보",
+        "7. Future e-commerce functions7. 전자상거래 기능 추가 시"
+      ]
+    },
+    {
+      "width": 390,
+      "lang": "ko",
+      "menuClosed": "false",
+      "menuPath": "/research"
+    },
+    {
+      "width": 390,
+      "lang": "ko",
+      "toggleTo": "en"
+    },
+    {
+      "width": 390,
+      "lang": "ko",
+      "persist": "en",
+      "mail": "mailto:andrew@biotrix.co.kr?subject=%5BBIOTRIX%5D%20Collaboration%20proposal&body=Organization%20%2F%20name%3A%0AContact%20details%3A%0ATechnology%20or%20idea%3A%0ACurrent%20stage%3A%0AProposed%20collaboration%3A%0A"
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/",
+      "hero": 883.890625,
+      "smallTargets": [],
+      "researchHeadings": [
+        "Our development direction",
+        "Four perspectiveson biology",
+        "We welcome technologies and ideas to develop together"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/company",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/company",
+      "smallTargets": [],
+      "researchHeadings": [
+        "Products andplatform technologies",
+        "Development principles",
+        "Yuchan Jeong",
+        "Explore what we could build together"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/research",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/research",
+      "smallTargets": [],
+      "researchHeadings": [
+        "Connecting technologies and research fields",
+        "Technology directions",
+        "Research fields",
+        "ENERA",
+        "FLORA",
+        "IMMERA",
+        "RENOVA",
+        "ACTIVA",
+        "Potential applications",
+        "Explore what we could build together"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/contact",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/contact",
+      "smallTargets": [],
+      "researchHeadings": [
+        "Collaboration types",
+        "Start a conversation"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/privacy",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/privacy",
+      "smallTargets": [],
+      "researchHeadings": [
+        "1. Collection and use of personal information1. 개인정보의 수집 및 이용",
+        "2. Cookies and analytics2. 쿠키 및 분석 도구",
+        "3. External services3. 외부 서비스",
+        "4. Future changes4. 향후 변경",
+        "5. Business and contact information5. 사업자 및 문의 정보"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/terms",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/terms",
+      "smallTargets": [],
+      "researchHeadings": [
+        "1. Purpose of the website1. 사이트의 목적",
+        "2. Information provided2. 제공 정보",
+        "3. Intellectual property3. 지식재산권",
+        "4. External links and services4. 외부 링크 및 서비스",
+        "5. Changes to the terms5. 약관의 변경",
+        "6. Business information6. 사업자 정보",
+        "7. Future e-commerce functions7. 전자상거래 기능 추가 시"
+      ]
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "menuClosed": "false",
+      "menuPath": "/research"
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "toggleTo": "ko"
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "persist": "ko",
+      "mail": "mailto:andrew@biotrix.co.kr?subject=%5BBIOTRIX%5D%20%ED%98%91%EB%A0%A5%20%EC%A0%9C%EC%95%88&body=%EC%86%8C%EC%86%8D%20%2F%20%EB%8B%B4%EB%8B%B9%EC%9E%90%3A%0A%ED%9A%8C%EC%8B%A0%20%EC%97%B0%EB%9D%BD%EC%B2%98%3A%0A%EA%B8%B0%EC%88%A0%20%EB%98%90%EB%8A%94%20%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%20%EA%B0%9C%EC%9A%94%3A%0A%ED%98%84%EC%9E%AC%20%EB%8B%A8%EA%B3%84%3A%0A%ED%9D%AC%EB%A7%9D%20%ED%98%91%EB%A0%A5%20%EB%B0%A9%EC%8B%9D%3A%0A"
+    },
+    {
+      "width": 768,
+      "route": "/",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/",
+      "hero": 716.1875,
+      "smallTargets": [],
+      "researchHeadings": [
+        "우리가 발전시키려는 기술",
+        "생명현상을 이해하는네 가지 연구 분야",
+        "함께 발전시킬 기술과 아이디어를 기다립니다"
+      ]
+    },
+    {
+      "width": 768,
+      "route": "/company",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/company",
+      "smallTargets": [],
+      "researchHeadings": [
+        "자체 제품과플랫폼 기술",
+        "개발 원칙",
+        "정유찬",
+        "함께 발전시킬 가능성을 기다립니다"
+      ]
+    },
+    {
+      "width": 768,
+      "route": "/research",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/research",
+      "smallTargets": [],
+      "researchHeadings": [
+        "기술과 연구 분야를 연결하는 구조",
+        "주요 기술 방향",
+        "연구 분야",
+        "ENERA",
+        "FLORA",
+        "IMMERA",
+        "RENOVA",
+        "ACTIVA",
+        "연구 성과의 적용 분야",
+        "함께 발전시킬 가능성을 기다립니다"
+      ]
+    },
+    {
+      "width": 768,
+      "route": "/contact",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/contact",
+      "smallTargets": [],
+      "researchHeadings": [
+        "협력 유형",
+        "협력 제안 보내기"
+      ]
+    },
+    {
+      "width": 768,
+      "route": "/privacy",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/privacy",
+      "smallTargets": [],
+      "researchHeadings": [
+        "1. Collection and use of personal information1. 개인정보의 수집 및 이용",
+        "2. Cookies and analytics2. 쿠키 및 분석 도구",
+        "3. External services3. 외부 서비스",
+        "4. Future changes4. 향후 변경",
+        "5. Business and contact information5. 사업자 및 문의 정보"
+      ]
+    },
+    {
+      "width": 768,
+      "route": "/terms",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/terms",
+      "smallTargets": [],
+      "researchHeadings": [
+        "1. Purpose of the website1. 사이트의 목적",
+        "2. Information provided2. 제공 정보",
+        "3. Intellectual property3. 지식재산권",
+        "4. External links and services4. 외부 링크 및 서비스",
+        "5. Changes to the terms5. 약관의 변경",
+        "6. Business information6. 사업자 정보",
+        "7. Future e-commerce functions7. 전자상거래 기능 추가 시"
+      ]
+    },
+    {
+      "width": 768,
+      "lang": "ko",
+      "toggleTo": "en"
+    },
+    {
+      "width": 768,
+      "lang": "ko",
+      "persist": "en",
+      "mail": "mailto:andrew@biotrix.co.kr?subject=%5BBIOTRIX%5D%20Collaboration%20proposal&body=Organization%20%2F%20name%3A%0AContact%20details%3A%0ATechnology%20or%20idea%3A%0ACurrent%20stage%3A%0AProposed%20collaboration%3A%0A"
+    },
+    {
+      "width": 768,
+      "route": "/",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/",
+      "hero": 752.4375,
+      "smallTargets": [],
+      "researchHeadings": [
+        "Our development direction",
+        "Four perspectiveson biology",
+        "We welcome technologies and ideas to develop together"
+      ]
+    },
+    {
+      "width": 768,
+      "route": "/company",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/company",
+      "smallTargets": [],
+      "researchHeadings": [
+        "Products andplatform technologies",
+        "Development principles",
+        "Yuchan Jeong",
+        "Explore what we could build together"
+      ]
+    },
+    {
+      "width": 768,
+      "route": "/research",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/research",
+      "smallTargets": [],
+      "researchHeadings": [
+        "Connecting technologies and research fields",
+        "Technology directions",
+        "Research fields",
+        "ENERA",
+        "FLORA",
+        "IMMERA",
+        "RENOVA",
+        "ACTIVA",
+        "Potential applications",
+        "Explore what we could build together"
+      ]
+    },
+    {
+      "width": 768,
+      "route": "/contact",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/contact",
+      "smallTargets": [],
+      "researchHeadings": [
+        "Collaboration types",
+        "Start a conversation"
+      ]
+    },
+    {
+      "width": 768,
+      "route": "/privacy",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/privacy",
+      "smallTargets": [],
+      "researchHeadings": [
+        "1. Collection and use of personal information1. 개인정보의 수집 및 이용",
+        "2. Cookies and analytics2. 쿠키 및 분석 도구",
+        "3. External services3. 외부 서비스",
+        "4. Future changes4. 향후 변경",
+        "5. Business and contact information5. 사업자 및 문의 정보"
+      ]
+    },
+    {
+      "width": 768,
+      "route": "/terms",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/terms",
+      "smallTargets": [],
+      "researchHeadings": [
+        "1. Purpose of the website1. 사이트의 목적",
+        "2. Information provided2. 제공 정보",
+        "3. Intellectual property3. 지식재산권",
+        "4. External links and services4. 외부 링크 및 서비스",
+        "5. Changes to the terms5. 약관의 변경",
+        "6. Business information6. 사업자 정보",
+        "7. Future e-commerce functions7. 전자상거래 기능 추가 시"
+      ]
+    },
+    {
+      "width": 768,
+      "lang": "en",
+      "toggleTo": "ko"
+    },
+    {
+      "width": 768,
+      "lang": "en",
+      "persist": "ko",
+      "mail": "mailto:andrew@biotrix.co.kr?subject=%5BBIOTRIX%5D%20%ED%98%91%EB%A0%A5%20%EC%A0%9C%EC%95%88&body=%EC%86%8C%EC%86%8D%20%2F%20%EB%8B%B4%EB%8B%B9%EC%9E%90%3A%0A%ED%9A%8C%EC%8B%A0%20%EC%97%B0%EB%9D%BD%EC%B2%98%3A%0A%EA%B8%B0%EC%88%A0%20%EB%98%90%EB%8A%94%20%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%20%EA%B0%9C%EC%9A%94%3A%0A%ED%98%84%EC%9E%AC%20%EB%8B%A8%EA%B3%84%3A%0A%ED%9D%AC%EB%A7%9D%20%ED%98%91%EB%A0%A5%20%EB%B0%A9%EC%8B%9D%3A%0A"
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/",
+      "hero": 690,
+      "smallTargets": [],
+      "researchHeadings": [
+        "우리가 발전시키려는 기술",
+        "생명현상을 이해하는네 가지 연구 분야",
+        "함께 발전시킬 기술과 아이디어를 기다립니다"
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/company",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/company",
+      "smallTargets": [],
+      "researchHeadings": [
+        "자체 제품과플랫폼 기술",
+        "개발 원칙",
+        "정유찬",
+        "함께 발전시킬 가능성을 기다립니다"
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/research",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/research",
+      "smallTargets": [],
+      "researchHeadings": [
+        "기술과 연구 분야를 연결하는 구조",
+        "주요 기술 방향",
+        "연구 분야",
+        "ENERA",
+        "FLORA",
+        "IMMERA",
+        "RENOVA",
+        "ACTIVA",
+        "연구 성과의 적용 분야",
+        "함께 발전시킬 가능성을 기다립니다"
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/contact",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/contact",
+      "smallTargets": [],
+      "researchHeadings": [
+        "협력 유형",
+        "협력 제안 보내기"
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/privacy",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/privacy",
+      "smallTargets": [],
+      "researchHeadings": [
+        "1. Collection and use of personal information1. 개인정보의 수집 및 이용",
+        "2. Cookies and analytics2. 쿠키 및 분석 도구",
+        "3. External services3. 외부 서비스",
+        "4. Future changes4. 향후 변경",
+        "5. Business and contact information5. 사업자 및 문의 정보"
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/terms",
+      "lang": "ko",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/terms",
+      "smallTargets": [],
+      "researchHeadings": [
+        "1. Purpose of the website1. 사이트의 목적",
+        "2. Information provided2. 제공 정보",
+        "3. Intellectual property3. 지식재산권",
+        "4. External links and services4. 외부 링크 및 서비스",
+        "5. Changes to the terms5. 약관의 변경",
+        "6. Business information6. 사업자 정보",
+        "7. Future e-commerce functions7. 전자상거래 기능 추가 시"
+      ]
+    },
+    {
+      "width": 1440,
+      "lang": "ko",
+      "toggleTo": "en"
+    },
+    {
+      "width": 1440,
+      "lang": "ko",
+      "persist": "en",
+      "mail": "mailto:andrew@biotrix.co.kr?subject=%5BBIOTRIX%5D%20Collaboration%20proposal&body=Organization%20%2F%20name%3A%0AContact%20details%3A%0ATechnology%20or%20idea%3A%0ACurrent%20stage%3A%0AProposed%20collaboration%3A%0A"
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/",
+      "hero": 700.171875,
+      "smallTargets": [],
+      "researchHeadings": [
+        "Our development direction",
+        "Four perspectiveson biology",
+        "We welcome technologies and ideas to develop together"
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/company",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/company",
+      "smallTargets": [],
+      "researchHeadings": [
+        "Products andplatform technologies",
+        "Development principles",
+        "Yuchan Jeong",
+        "Explore what we could build together"
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/research",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/research",
+      "smallTargets": [],
+      "researchHeadings": [
+        "Connecting technologies and research fields",
+        "Technology directions",
+        "Research fields",
+        "ENERA",
+        "FLORA",
+        "IMMERA",
+        "RENOVA",
+        "ACTIVA",
+        "Potential applications",
+        "Explore what we could build together"
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/contact",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/contact",
+      "smallTargets": [],
+      "researchHeadings": [
+        "Collaboration types",
+        "Start a conversation"
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/privacy",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/privacy",
+      "smallTargets": [],
+      "researchHeadings": [
+        "1. Collection and use of personal information1. 개인정보의 수집 및 이용",
+        "2. Cookies and analytics2. 쿠키 및 분석 도구",
+        "3. External services3. 외부 서비스",
+        "4. Future changes4. 향후 변경",
+        "5. Business and contact information5. 사업자 및 문의 정보"
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/terms",
+      "lang": "en",
+      "overflow": false,
+      "h1": 1,
+      "brokenImages": 0,
+      "fonts": "loaded",
+      "canonical": "https://biotrix.co.kr/terms",
+      "smallTargets": [],
+      "researchHeadings": [
+        "1. Purpose of the website1. 사이트의 목적",
+        "2. Information provided2. 제공 정보",
+        "3. Intellectual property3. 지식재산권",
+        "4. External links and services4. 외부 링크 및 서비스",
+        "5. Changes to the terms5. 약관의 변경",
+        "6. Business information6. 사업자 정보",
+        "7. Future e-commerce functions7. 전자상거래 기능 추가 시"
+      ]
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "toggleTo": "ko"
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "persist": "ko",
+      "mail": "mailto:andrew@biotrix.co.kr?subject=%5BBIOTRIX%5D%20%ED%98%91%EB%A0%A5%20%EC%A0%9C%EC%95%88&body=%EC%86%8C%EC%86%8D%20%2F%20%EB%8B%B4%EB%8B%B9%EC%9E%90%3A%0A%ED%9A%8C%EC%8B%A0%20%EC%97%B0%EB%9D%BD%EC%B2%98%3A%0A%EA%B8%B0%EC%88%A0%20%EB%98%90%EB%8A%94%20%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%20%EA%B0%9C%EC%9A%94%3A%0A%ED%98%84%EC%9E%AC%20%EB%8B%A8%EA%B3%84%3A%0A%ED%9D%AC%EB%A7%9D%20%ED%98%91%EB%A0%A5%20%EB%B0%A9%EC%8B%9D%3A%0A"
+    },
+    {
+      "htmlRoute": "/index.html",
+      "afterToggle": "en"
+    },
+    {
+      "legacy": "/shop",
+      "title": "",
+      "body": "Not found"
+    }
+  ],
+  "errors": []
+}

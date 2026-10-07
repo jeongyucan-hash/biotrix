@@ -1,10 +1,2 @@
 User-agent: *
-Allow: /
-Disallow: /admin
-Disallow: /account
-Disallow: /cart
-Disallow: /product$
-Disallow: /product/
-Disallow: /product?
-Disallow: /product.html
-Sitemap: https://biotrix.co.kr/sitemap.xml
+Disallow: /
